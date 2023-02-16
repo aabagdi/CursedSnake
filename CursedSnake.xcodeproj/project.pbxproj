@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		39504142297B64F300D384F1 /* Snake.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39504141297B64F300D384F1 /* Snake.swift */; };
+		39C4DED5298628B50026D19C /* Food.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39C4DED4298628B50026D19C /* Food.swift */; };
+		39C4DED7298629780026D19C /* GameController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39C4DED6298629780026D19C /* GameController.swift */; };
 		39E3E931297670C800BE4212 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39E3E930297670C800BE4212 /* AppDelegate.swift */; };
 		39E3E933297670C800BE4212 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 39E3E932297670C800BE4212 /* GameScene.sks */; };
 		39E3E935297670C800BE4212 /* Actions.sks in Resources */ = {isa = PBXBuildFile; fileRef = 39E3E934297670C800BE4212 /* Actions.sks */; };
@@ -18,6 +21,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		39504141297B64F300D384F1 /* Snake.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Snake.swift; sourceTree = "<group>"; };
+		39C4DED4298628B50026D19C /* Food.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Food.swift; sourceTree = "<group>"; };
+		39C4DED6298629780026D19C /* GameController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameController.swift; sourceTree = "<group>"; };
 		39E3E92D297670C800BE4212 /* CursedSnake.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CursedSnake.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		39E3E930297670C800BE4212 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		39E3E932297670C800BE4212 /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
@@ -67,6 +73,9 @@
 				39E3E93A297670C800BE4212 /* Main.storyboard */,
 				39E3E93D297670C900BE4212 /* Assets.xcassets */,
 				39E3E93F297670C900BE4212 /* LaunchScreen.storyboard */,
+				39504141297B64F300D384F1 /* Snake.swift */,
+				39C4DED4298628B50026D19C /* Food.swift */,
+				39C4DED6298629780026D19C /* GameController.swift */,
 			);
 			path = CursedSnake;
 			sourceTree = "<group>";
@@ -145,7 +154,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				39E3E937297670C800BE4212 /* GameScene.swift in Sources */,
+				39C4DED7298629780026D19C /* GameController.swift in Sources */,
 				39E3E939297670C800BE4212 /* GameViewController.swift in Sources */,
+				39C4DED5298628B50026D19C /* Food.swift in Sources */,
+				39504142297B64F300D384F1 /* Snake.swift in Sources */,
 				39E3E931297670C800BE4212 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

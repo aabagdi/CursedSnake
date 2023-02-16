@@ -1,16 +1,11 @@
-//
-//  GameViewController.swift
-//  CursedSnake
-//
-//  Created by Aadit Bagdi on 1/16/23.
-//
-
 import UIKit
 import SpriteKit
 import GameplayKit
 
-class GameViewController: UIViewController {
+let displaySize: CGRect = UIScreen.main.bounds
 
+class GameViewController: UIViewController {
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -29,17 +24,5 @@ class GameViewController: UIViewController {
             view.showsFPS = true
             view.showsNodeCount = true
         }
-    }
-
-    override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
-        if UIDevice.current.userInterfaceIdiom == .phone {
-            return .allButUpsideDown
-        } else {
-            return .all
-        }
-    }
-
-    override var prefersStatusBarHidden: Bool {
-        return true
     }
 }
