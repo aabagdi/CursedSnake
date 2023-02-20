@@ -26,8 +26,54 @@ class Snake {
         return SnakeBody.count
     }
     
+    /*func incrementSnake() {
+     let newSegment = SKShapeNode(circleOfRadius: 7)
+     let firstSegDistance = CGFloat(7)
+     let normalSegDistance = CGFloat(5)
+     let snakeLength = self.returnLength()
+     newSegment.fillColor = .white
+     newSegment.zPosition = 2
+     newSegment.physicsBody = SKPhysicsBody(circleOfRadius: 3)
+     newSegment.physicsBody?.collisionBitMask = 0b0001
+     let lastSegmentPos = SnakeBody.last?.position
+     switch SnakeDirection {
+     case .up:
+     if snakeLength > 2 {
+     newSegment.position = CGPointMake(lastSegmentPos!.x, lastSegmentPos!.y - normalSegDistance)
+     }
+     else {
+     newSegment.position = CGPointMake(lastSegmentPos!.x, lastSegmentPos!.y - firstSegDistance)
+     }
+     case .down:
+     if snakeLength > 2 {
+     newSegment.position = CGPointMake(lastSegmentPos!.x, lastSegmentPos!.y + normalSegDistance)
+     }
+     else {
+     newSegment.position = CGPointMake(lastSegmentPos!.x, lastSegmentPos!.y + firstSegDistance)
+     }
+     case .left:
+     if snakeLength > 2 {
+     newSegment.position = CGPointMake(lastSegmentPos!.x + normalSegDistance, lastSegmentPos!.y)
+     }
+     else {
+     newSegment.position = CGPointMake(lastSegmentPos!.x + firstSegDistance, lastSegmentPos!.y)
+     }
+     case .right:
+     if snakeLength > 2{
+     newSegment.position = CGPointMake(lastSegmentPos!.x - normalSegDistance, lastSegmentPos!.y)
+     }
+     else {
+     newSegment.position = CGPointMake(lastSegmentPos!.x - firstSegDistance, lastSegmentPos!.y)
+     }
+     case .dead:
+     return
+     }
+     SnakeBody.append(newSegment)
+     
+     }*/
     func incrementSnake() {
         let newSegment = SKShapeNode(circleOfRadius: 5)
+        newSegment.name = "body"
         newSegment.fillColor = .white
         newSegment.zPosition = 2
         let lastSegmentPos = SnakeBody.last?.position
@@ -52,12 +98,58 @@ class Snake {
             for i in (1...(self.returnLength() - 1)).reversed() {
                 let curr = SnakeBody[i]
                 let pred = SnakeBody[i - 1]
-                
-                let predX = pred.position.x
-                let predY = pred.position.y
-                
-                let moveAction = SKAction.move(to: CGPoint(x: predX, y: predY), duration: self.SnakeSpeed)
-                curr.run(moveAction)
+                if i == 1 {
+                    switch SnakeDirection {
+                    case .up:
+                        let predX = pred.position.x
+                        let predY = pred.position.y - 12.5
+                        let moveAction = SKAction.move(to: CGPoint(x: predX, y: predY), duration: self.SnakeSpeed / 2)
+                        curr.run(moveAction)
+                    case .down:
+                        let predX = pred.position.x
+                        let predY = pred.position.y + 12.5
+                        let moveAction = SKAction.move(to: CGPoint(x: predX, y: predY), duration: self.SnakeSpeed / 2)
+                        curr.run(moveAction)
+                    case .left:
+                        let predX = pred.position.x + 12.5
+                        let predY = pred.position.y
+                        let moveAction = SKAction.move(to: CGPoint(x: predX, y: predY), duration: self.SnakeSpeed / 2)
+                        curr.run(moveAction)
+                    case .right:
+                        let predX = pred.position.x - 12.5
+                        let predY = pred.position.y
+                        let moveAction = SKAction.move(to: CGPoint(x: predX, y: predY), duration: self.SnakeSpeed / 2)
+                        curr.run(moveAction)
+                    case .dead:
+                        return
+                    }
+                }
+                else {
+                    switch SnakeDirection {
+                    case .up:
+                        let predX = pred.position.x
+                        let predY = pred.position.y - 5
+                        let moveAction = SKAction.move(to: CGPoint(x: predX, y: predY), duration: self.SnakeSpeed / 4)
+                        curr.run(moveAction)
+                    case .down:
+                        let predX = pred.position.x
+                        let predY = pred.position.y + 5
+                        let moveAction = SKAction.move(to: CGPoint(x: predX, y: predY), duration: self.SnakeSpeed / 4)
+                        curr.run(moveAction)
+                    case .left:
+                        let predX = pred.position.x + 5
+                        let predY = pred.position.y
+                        let moveAction = SKAction.move(to: CGPoint(x: predX, y: predY), duration: self.SnakeSpeed / 4)
+                        curr.run(moveAction)
+                    case .right:
+                        let predX = pred.position.x - 5
+                        let predY = pred.position.y
+                        let moveAction = SKAction.move(to: CGPoint(x: predX, y: predY), duration: self.SnakeSpeed / 4)
+                        curr.run(moveAction)
+                    case .dead:
+                        return
+                    }
+                }
             }
         }
     }
@@ -114,14 +206,15 @@ class Snake {
     
     
     init() {
-        let head = SKShapeNode(ellipseOf: CGSize(width: 20, height: 40))
+        let head = SKShapeNode(ellipseOf: CGSize(width: 20, height: 35))
+        head.name = "head"
         head.fillColor = .white
         head.zPosition = 2
         self.SnakeBody.append(head)
         self.SnakeSpeed = 0.2
-        for _ in (1...7) {
-         incrementSnake()
-         }
+        /*for _ in (1...25) {
+            incrementSnake()
+        }*/
         //self.SnakeBody = self.SnakeBody.reversed()
     }
 }

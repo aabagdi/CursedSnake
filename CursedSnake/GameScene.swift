@@ -2,10 +2,11 @@ import SpriteKit
 import UIKit
 
 
-class GameScene: SKScene {
+class GameScene: SKScene, SKPhysicsContactDelegate {
     private var player: Snake!
     private var food: SKSpriteNode!
     private var score: SKLabelNode!
+    private var soundPlayer: AudioPlayer!
     
     func randomPosition() -> CGPoint {
         let randX = CGFloat.random(in: frame.minX + 29...frame.maxX - 29)
@@ -30,11 +31,20 @@ class GameScene: SKScene {
     }
     
     override func didMove(to view: SKView) {
+        physicsWorld.contactDelegate = self
         let snake = Snake()
         snake.SnakeBody.first?.position = CGPoint(x: frame.midX, y: frame.midY - 300)
         let food = genFood()
         self.addChild(food)
         for i in snake.SnakeBody {
+            if i == snake.SnakeBody.first {
+                i.physicsBody = SKPhysicsBody(circleOfRadius: 10)
+                i.physicsBody!.categoryBitMask = 0b11
+            }
+            else {
+                i.physicsBody = SKPhysicsBody(circleOfRadius: 3)
+                i.physicsBody!.contactTestBitMask = 0b11
+            }
             self.addChild(i)
         }
         
@@ -45,12 +55,15 @@ class GameScene: SKScene {
         scoreCounter.text = String(0)
         scoreCounter.fontSize = 65
         scoreCounter.fontColor = generateRandomColor()
-        scoreCounter.position = CGPoint(x: frame.midX, y: frame.maxY - 120)
+        scoreCounter.position = CGPoint(x: frame.midX, y: frame.maxY - 150)
         self.addChild(scoreCounter)
+        
+        let soundPlayer = AudioPlayer()
         
         self.player = snake
         self.food = food
         self.score = scoreCounter
+        self.soundPlayer = soundPlayer
         
         let swipeRight = UISwipeGestureRecognizer(target: self,
                                                   action: #selector(GameScene.swipeRight(sender:)))
@@ -77,6 +90,8 @@ class GameScene: SKScene {
         let head = player!.SnakeBody.first
         let headX = head!.position.x
         let headY = head!.position.y
+        
+        head?.physicsBody!.usesPreciseCollisionDetection = true
         
         switch player!.SnakeDirection {
         case .up:
@@ -127,7 +142,7 @@ class GameScene: SKScene {
             food.removeFromParent()
             let newFood = genFood()
             self.addChild(newFood)
-            if randNum > 10 {
+            if randNum > 5 {
                 player!.incrementSnake()
                 self.addChild(player.SnakeBody.last!)
                 self.score.fontName = UIFont.familyNames.randomElement()
@@ -147,6 +162,30 @@ class GameScene: SKScene {
             self.food = newFood
         }
         
+        if player!.returnLength() >= 15 {
+            player!.SnakeSpeed = 0.15
+        }
+        
+        if player!.returnLength() >= 20 {
+            player!.SnakeSpeed = 0.1
+        }
+        
+        if player!.returnLength() >= 35 {
+            player!.SnakeSpeed = 0.08
+        }
+        
+        if player!.returnLength() >= 50 {
+            player!.SnakeSpeed = 0.06
+        }
+        
+        if player!.returnLength() >= 85 {
+            player!.SnakeSpeed = 0.04
+        }
+        
+        if player!.returnLength() >= 100 {
+            player!.SnakeSpeed = 0.03
+        }
+        
         if head!.position.x < frame.minX || head!.position.x > frame.maxX {
             player!.changeDirection(direction: .dead)
             endGame()
@@ -156,8 +195,17 @@ class GameScene: SKScene {
             player!.changeDirection(direction: .dead)
             endGame()
         }
+
         
     }
+    
+    func didBegin(_ contact: SKPhysicsContact) {
+        if contact.bodyA.node?.name == "head" || contact.bodyB.node?.name == "head" {
+            player!.changeDirection(direction: .dead)
+            endGame()
+        }
+    }
+    
     
     @objc func swipeRight(sender: UISwipeGestureRecognizer) {
         if player!.SnakeDirection != .left && player!.SnakeDirection != .right {
@@ -199,23 +247,28 @@ class GameScene: SKScene {
     }
     
     func endGame() {
+        self.soundPlayer.play(sound: "Explosion")
+        let gameOver = SKLabelNode(fontNamed: "Zapfino")
+        let moveIntoView = SKAction.move(to: CGPoint(x: self.frame.midX, y: self.frame.midY), duration: 5)
+        let rotate = SKAction.rotate(byAngle: 20 * Double.pi, duration: 5)
+        let fadeAway = SKAction.fadeOut(withDuration: 1.5)
+        let scale = SKAction.scale(by: 30, duration: 1.5)
+        gameOver.zPosition = 3
+        gameOver.text = "Game over, hmbpmhpbhmh"
+        gameOver.fontSize = 24
+        gameOver.fontColor = SKColor.white
+        gameOver.position = CGPoint(x: self.frame.midX, y: self.frame.midY - 550)
+        self.addChild(gameOver)
         for i in player!.SnakeBody.reversed() {
-            let fadeAway = SKAction.fadeOut(withDuration: 4.0)
+            i.fillColor = SKColor.orange
+            i.run(scale)
             i.run(fadeAway, completion: {() -> Void in
-                print("faded")
                 i.removeFromParent()
             })
         }
-        food.removeFromParent()
-        let gameOver = SKLabelNode(fontNamed: "Zapfino")
-        let moveIntoView = SKAction.move(to: CGPoint(x: frame.midX, y: frame.midY), duration: 5)
-        let rotate = SKAction.rotate(byAngle: 20 * Double.pi, duration: 5)
-        gameOver.zPosition = 3
-        gameOver.text = "Game over, hmbpmhpbhmh"
-        gameOver.fontSize = 25
-        gameOver.fontColor = SKColor.white
-        gameOver.position = CGPoint(x: frame.midX, y: frame.midY - 550)
-        self.addChild(gameOver)
+        self.food.run(fadeAway, completion: {() -> Void in
+            self.food.removeFromParent()
+        })
         gameOver.run(moveIntoView)
         gameOver.run(rotate)
         return

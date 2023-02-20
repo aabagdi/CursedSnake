@@ -8,8 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		39504142297B64F300D384F1 /* Snake.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39504141297B64F300D384F1 /* Snake.swift */; };
+		395BE112299EEE3600C03742 /* AudioPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 395BE111299EEE3600C03742 /* AudioPlayer.swift */; };
+		395BE114299EEFC300C03742 /* Explosion.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 395BE113299EEFC300C03742 /* Explosion.mp3 */; };
 		39C4DED5298628B50026D19C /* Food.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39C4DED4298628B50026D19C /* Food.swift */; };
-		39C4DED7298629780026D19C /* GameController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39C4DED6298629780026D19C /* GameController.swift */; };
 		39E3E931297670C800BE4212 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39E3E930297670C800BE4212 /* AppDelegate.swift */; };
 		39E3E933297670C800BE4212 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 39E3E932297670C800BE4212 /* GameScene.sks */; };
 		39E3E935297670C800BE4212 /* Actions.sks in Resources */ = {isa = PBXBuildFile; fileRef = 39E3E934297670C800BE4212 /* Actions.sks */; };
@@ -22,8 +23,9 @@
 
 /* Begin PBXFileReference section */
 		39504141297B64F300D384F1 /* Snake.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Snake.swift; sourceTree = "<group>"; };
+		395BE111299EEE3600C03742 /* AudioPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioPlayer.swift; sourceTree = "<group>"; };
+		395BE113299EEFC300C03742 /* Explosion.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Explosion.mp3; sourceTree = "<group>"; };
 		39C4DED4298628B50026D19C /* Food.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Food.swift; sourceTree = "<group>"; };
-		39C4DED6298629780026D19C /* GameController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameController.swift; sourceTree = "<group>"; };
 		39E3E92D297670C800BE4212 /* CursedSnake.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CursedSnake.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		39E3E930297670C800BE4212 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		39E3E932297670C800BE4212 /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
@@ -46,6 +48,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		395BE115299EEFD100C03742 /* Sounds */ = {
+			isa = PBXGroup;
+			children = (
+				395BE113299EEFC300C03742 /* Explosion.mp3 */,
+			);
+			path = Sounds;
+			sourceTree = "<group>";
+		};
 		39E3E924297670C800BE4212 = {
 			isa = PBXGroup;
 			children = (
@@ -65,6 +75,7 @@
 		39E3E92F297670C800BE4212 /* CursedSnake */ = {
 			isa = PBXGroup;
 			children = (
+				395BE115299EEFD100C03742 /* Sounds */,
 				39E3E930297670C800BE4212 /* AppDelegate.swift */,
 				39E3E932297670C800BE4212 /* GameScene.sks */,
 				39E3E934297670C800BE4212 /* Actions.sks */,
@@ -75,7 +86,7 @@
 				39E3E93F297670C900BE4212 /* LaunchScreen.storyboard */,
 				39504141297B64F300D384F1 /* Snake.swift */,
 				39C4DED4298628B50026D19C /* Food.swift */,
-				39C4DED6298629780026D19C /* GameController.swift */,
+				395BE111299EEE3600C03742 /* AudioPlayer.swift */,
 			);
 			path = CursedSnake;
 			sourceTree = "<group>";
@@ -141,6 +152,7 @@
 				39E3E93C297670C800BE4212 /* Main.storyboard in Resources */,
 				39E3E933297670C800BE4212 /* GameScene.sks in Resources */,
 				39E3E93E297670C900BE4212 /* Assets.xcassets in Resources */,
+				395BE114299EEFC300C03742 /* Explosion.mp3 in Resources */,
 				39E3E941297670C900BE4212 /* LaunchScreen.storyboard in Resources */,
 				39E3E935297670C800BE4212 /* Actions.sks in Resources */,
 			);
@@ -154,11 +166,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				39E3E937297670C800BE4212 /* GameScene.swift in Sources */,
-				39C4DED7298629780026D19C /* GameController.swift in Sources */,
 				39E3E939297670C800BE4212 /* GameViewController.swift in Sources */,
 				39C4DED5298628B50026D19C /* Food.swift in Sources */,
 				39504142297B64F300D384F1 /* Snake.swift in Sources */,
 				39E3E931297670C800BE4212 /* AppDelegate.swift in Sources */,
+				395BE112299EEE3600C03742 /* AudioPlayer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
