@@ -26,56 +26,13 @@ class Snake {
         return SnakeBody.count
     }
     
-    /*func incrementSnake() {
-     let newSegment = SKShapeNode(circleOfRadius: 7)
-     let firstSegDistance = CGFloat(7)
-     let normalSegDistance = CGFloat(5)
-     let snakeLength = self.returnLength()
-     newSegment.fillColor = .white
-     newSegment.zPosition = 2
-     newSegment.physicsBody = SKPhysicsBody(circleOfRadius: 3)
-     newSegment.physicsBody?.collisionBitMask = 0b0001
-     let lastSegmentPos = SnakeBody.last?.position
-     switch SnakeDirection {
-     case .up:
-     if snakeLength > 2 {
-     newSegment.position = CGPointMake(lastSegmentPos!.x, lastSegmentPos!.y - normalSegDistance)
-     }
-     else {
-     newSegment.position = CGPointMake(lastSegmentPos!.x, lastSegmentPos!.y - firstSegDistance)
-     }
-     case .down:
-     if snakeLength > 2 {
-     newSegment.position = CGPointMake(lastSegmentPos!.x, lastSegmentPos!.y + normalSegDistance)
-     }
-     else {
-     newSegment.position = CGPointMake(lastSegmentPos!.x, lastSegmentPos!.y + firstSegDistance)
-     }
-     case .left:
-     if snakeLength > 2 {
-     newSegment.position = CGPointMake(lastSegmentPos!.x + normalSegDistance, lastSegmentPos!.y)
-     }
-     else {
-     newSegment.position = CGPointMake(lastSegmentPos!.x + firstSegDistance, lastSegmentPos!.y)
-     }
-     case .right:
-     if snakeLength > 2{
-     newSegment.position = CGPointMake(lastSegmentPos!.x - normalSegDistance, lastSegmentPos!.y)
-     }
-     else {
-     newSegment.position = CGPointMake(lastSegmentPos!.x - firstSegDistance, lastSegmentPos!.y)
-     }
-     case .dead:
-     return
-     }
-     SnakeBody.append(newSegment)
-     
-     }*/
     func incrementSnake() {
         let newSegment = SKShapeNode(circleOfRadius: 5)
         newSegment.name = "body"
         newSegment.fillColor = .white
         newSegment.zPosition = 2
+        newSegment.physicsBody = SKPhysicsBody(circleOfRadius: 3)
+        newSegment.physicsBody!.contactTestBitMask = 0b11
         let lastSegmentPos = SnakeBody.last?.position
         switch SnakeDirection {
         case .up:
@@ -90,7 +47,6 @@ class Snake {
             return
         }
         SnakeBody.append(newSegment)
-        
     }
     
     func moveTail() {
@@ -204,17 +160,20 @@ class Snake {
         }
     }
     
-    
     init() {
         let head = SKShapeNode(ellipseOf: CGSize(width: 20, height: 35))
         head.name = "head"
         head.fillColor = .white
         head.zPosition = 2
+        head.physicsBody = SKPhysicsBody(circleOfRadius: 8)
+        head.physicsBody!.categoryBitMask = 0b11
+        head.physicsBody!.usesPreciseCollisionDetection = true
         self.SnakeBody.append(head)
         self.SnakeSpeed = 0.2
-        /*for _ in (1...25) {
-            incrementSnake()
-        }*/
+        //self.incrementSnake()
+        /*for _ in (0...25) {
+         incrementSnake()
+         }*/
         //self.SnakeBody = self.SnakeBody.reversed()
     }
 }

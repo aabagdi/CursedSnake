@@ -1,7 +1,6 @@
 import SpriteKit
 import UIKit
 
-
 class GameScene: SKScene, SKPhysicsContactDelegate {
     private var player: Snake!
     private var food: SKSpriteNode!
@@ -10,7 +9,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     
     func randomPosition() -> CGPoint {
         let randX = CGFloat.random(in: frame.minX + 29...frame.maxX - 29)
-        let randY = CGFloat.random(in: frame.minY + 29...frame.maxY - 50)
+        let randY = CGFloat.random(in: frame.minY + 29...frame.maxY - 35)
         return CGPoint(x: randX, y: randY)
     }
     
@@ -37,14 +36,6 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         let food = genFood()
         self.addChild(food)
         for i in snake.SnakeBody {
-            if i == snake.SnakeBody.first {
-                i.physicsBody = SKPhysicsBody(circleOfRadius: 10)
-                i.physicsBody!.categoryBitMask = 0b11
-            }
-            else {
-                i.physicsBody = SKPhysicsBody(circleOfRadius: 3)
-                i.physicsBody!.contactTestBitMask = 0b11
-            }
             self.addChild(i)
         }
         
@@ -55,7 +46,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         scoreCounter.text = String(0)
         scoreCounter.fontSize = 65
         scoreCounter.fontColor = generateRandomColor()
-        scoreCounter.position = CGPoint(x: frame.midX, y: frame.maxY - 150)
+        scoreCounter.position = CGPoint(x: frame.midX, y: frame.maxY - 140)
         self.addChild(scoreCounter)
         
         let soundPlayer = AudioPlayer()
@@ -91,7 +82,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         let headX = head!.position.x
         let headY = head!.position.y
         
-        head?.physicsBody!.usesPreciseCollisionDetection = true
+        head?.physicsBody?.usesPreciseCollisionDetection = true
         
         switch player!.SnakeDirection {
         case .up:
@@ -195,17 +186,18 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             player!.changeDirection(direction: .dead)
             endGame()
         }
-
-        
     }
     
     func didBegin(_ contact: SKPhysicsContact) {
+        if contact.bodyB.node?.parent == nil {
+            return
+        }
         if contact.bodyA.node?.name == "head" || contact.bodyB.node?.name == "head" {
             player!.changeDirection(direction: .dead)
             endGame()
+            print("pompom")
         }
     }
-    
     
     @objc func swipeRight(sender: UISwipeGestureRecognizer) {
         if player!.SnakeDirection != .left && player!.SnakeDirection != .right {
@@ -259,18 +251,23 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         gameOver.fontColor = SKColor.white
         gameOver.position = CGPoint(x: self.frame.midX, y: self.frame.midY - 550)
         self.addChild(gameOver)
-        for i in player!.SnakeBody.reversed() {
-            i.fillColor = SKColor.orange
-            i.run(scale)
-            i.run(fadeAway, completion: {() -> Void in
-                i.removeFromParent()
+        for i in player!.SnakeBody {
+            var nodeCopy = i
+            i.removeFromParent()
+            nodeCopy.physicsBody = nil
+            self.addChild(nodeCopy)
+            nodeCopy.fillColor = SKColor.orange
+            nodeCopy.run(scale)
+            nodeCopy.run(fadeAway, completion: {() -> Void in
+                nodeCopy.removeFromParent()
             })
+            
+
         }
         self.food.run(fadeAway, completion: {() -> Void in
             self.food.removeFromParent()
         })
         gameOver.run(moveIntoView)
         gameOver.run(rotate)
-        return
     }
 }
