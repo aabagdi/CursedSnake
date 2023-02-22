@@ -1,15 +1,17 @@
 import SpriteKit
 import UIKit
+import SwiftUI
 
 class GameScene: SKScene, SKPhysicsContactDelegate {
     private var player: Snake!
     private var food: SKSpriteNode!
     private var score: SKLabelNode!
     private var soundPlayer: AudioPlayer!
+    private var BGMPlayer: AudioPlayer!
     
     func randomPosition() -> CGPoint {
         let randX = CGFloat.random(in: frame.minX + 29...frame.maxX - 29)
-        let randY = CGFloat.random(in: frame.minY + 29...frame.maxY - 35)
+        let randY = CGFloat.random(in: frame.minY + 29...frame.maxY - 40)
         return CGPoint(x: randX, y: randY)
     }
     
@@ -46,15 +48,19 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         scoreCounter.text = String(0)
         scoreCounter.fontSize = 65
         scoreCounter.fontColor = generateRandomColor()
-        scoreCounter.position = CGPoint(x: frame.midX, y: frame.maxY - 140)
+        scoreCounter.position = CGPoint(x: frame.midX, y: frame.maxY - 120)
         self.addChild(scoreCounter)
         
         let soundPlayer = AudioPlayer()
+        let BGMPlayer = AudioPlayer()
         
         self.player = snake
         self.food = food
         self.score = scoreCounter
         self.soundPlayer = soundPlayer
+        self.BGMPlayer = BGMPlayer
+        
+        self.BGMPlayer.play(sound: "Megadeth")
         
         let swipeRight = UISwipeGestureRecognizer(target: self,
                                                   action: #selector(GameScene.swipeRight(sender:)))
@@ -129,6 +135,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             return
         }
         if head!.intersects(food) {
+            self.soundPlayer.play(sound: "Chew")
             let randNum = Int.random(in: 0...100)
             food.removeFromParent()
             let newFood = genFood()
@@ -141,6 +148,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
                 self.score.text = String(Int(self.score.text!)! + 1)
             }
             else {
+                self.soundPlayer.play(sound: "Omg")
                 for _  in (0...player!.returnLength()) {
                     player!.incrementSnake()
                     self.addChild(player.SnakeBody.last!)
@@ -199,6 +207,15 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         }
     }
     
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        let touches:UITouch = touches.first!
+        let touchPos = touches.location(in: self)
+        let touchedNode = self.atPoint(touchPos)
+        if touchedNode.name == "Pause" {
+            scene?.view?.isPaused.toggle()
+        }
+    }
+    
     @objc func swipeRight(sender: UISwipeGestureRecognizer) {
         if player!.SnakeDirection != .left && player!.SnakeDirection != .right {
             player!.changeDirection(direction: .right)
@@ -239,6 +256,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     }
     
     func endGame() {
+        self.BGMPlayer.pause()
         self.soundPlayer.play(sound: "Explosion")
         let gameOver = SKLabelNode(fontNamed: "Zapfino")
         let moveIntoView = SKAction.move(to: CGPoint(x: self.frame.midX, y: self.frame.midY), duration: 5)
@@ -252,22 +270,35 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         gameOver.position = CGPoint(x: self.frame.midX, y: self.frame.midY - 550)
         self.addChild(gameOver)
         for i in player!.SnakeBody {
-            var nodeCopy = i
+            let nodeCopy = i
             i.removeFromParent()
             nodeCopy.physicsBody = nil
-            self.addChild(nodeCopy)
             nodeCopy.fillColor = SKColor.orange
+            self.addChild(nodeCopy)
             nodeCopy.run(scale)
             nodeCopy.run(fadeAway, completion: {() -> Void in
                 nodeCopy.removeFromParent()
             })
             
-
+            
         }
         self.food.run(fadeAway, completion: {() -> Void in
             self.food.removeFromParent()
+        })
+        
+        let pauseButton = self.childNode(withName: "Pause")
+        pauseButton!.run(fadeAway, completion: {() -> Void in
+            pauseButton!.removeFromParent()
         })
         gameOver.run(moveIntoView)
         gameOver.run(rotate)
     }
 }
+
+/*struct GameView: View {
+    var body: some View {
+        SpriteView(scene: GameScene(size: CGSize(width: UIScreen.main.bounds.size.width, height: UIScreen.main.bounds.size.height)
+))
+            .frame(width: UIScreen.main.bounds.size.width, height: UIScreen.main.bounds.size.height)
+    }
+}*/

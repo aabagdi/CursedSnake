@@ -10,6 +10,12 @@
 		39504142297B64F300D384F1 /* Snake.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39504141297B64F300D384F1 /* Snake.swift */; };
 		395BE112299EEE3600C03742 /* AudioPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 395BE111299EEE3600C03742 /* AudioPlayer.swift */; };
 		395BE114299EEFC300C03742 /* Explosion.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 395BE113299EEFC300C03742 /* Explosion.mp3 */; };
+		395BE11729A5357600C03742 /* Chew.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 395BE11629A5357600C03742 /* Chew.mp3 */; };
+		395BE11929A5376E00C03742 /* Omg.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 395BE11829A5376E00C03742 /* Omg.mp3 */; };
+		395BE12129A53DF800C03742 /* Megadeth.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 395BE12029A53DF800C03742 /* Megadeth.mp3 */; };
+		395BE12629A592B900C03742 /* TitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 395BE12529A592B900C03742 /* TitleView.swift */; };
+		395BE12829A595D800C03742 /* CursedSnakeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 395BE12729A595D800C03742 /* CursedSnakeApp.swift */; };
+		399D7D7629A5BD5700CC922F /* Adam'sFont-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 399D7D7529A5BD5700CC922F /* Adam'sFont-Regular.otf */; };
 		39C4DED5298628B50026D19C /* Food.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39C4DED4298628B50026D19C /* Food.swift */; };
 		39E3E931297670C800BE4212 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39E3E930297670C800BE4212 /* AppDelegate.swift */; };
 		39E3E933297670C800BE4212 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 39E3E932297670C800BE4212 /* GameScene.sks */; };
@@ -25,6 +31,13 @@
 		39504141297B64F300D384F1 /* Snake.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Snake.swift; sourceTree = "<group>"; };
 		395BE111299EEE3600C03742 /* AudioPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioPlayer.swift; sourceTree = "<group>"; };
 		395BE113299EEFC300C03742 /* Explosion.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Explosion.mp3; sourceTree = "<group>"; };
+		395BE11629A5357600C03742 /* Chew.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Chew.mp3; sourceTree = "<group>"; };
+		395BE11829A5376E00C03742 /* Omg.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Omg.mp3; sourceTree = "<group>"; };
+		395BE12029A53DF800C03742 /* Megadeth.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Megadeth.mp3; sourceTree = "<group>"; };
+		395BE12429A591BB00C03742 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		395BE12529A592B900C03742 /* TitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleView.swift; sourceTree = "<group>"; };
+		395BE12729A595D800C03742 /* CursedSnakeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CursedSnakeApp.swift; sourceTree = "<group>"; };
+		399D7D7529A5BD5700CC922F /* Adam'sFont-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Adam'sFont-Regular.otf"; sourceTree = "<group>"; };
 		39C4DED4298628B50026D19C /* Food.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Food.swift; sourceTree = "<group>"; };
 		39E3E92D297670C800BE4212 /* CursedSnake.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CursedSnake.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		39E3E930297670C800BE4212 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -51,9 +64,20 @@
 		395BE115299EEFD100C03742 /* Sounds */ = {
 			isa = PBXGroup;
 			children = (
+				395BE11629A5357600C03742 /* Chew.mp3 */,
+				395BE11829A5376E00C03742 /* Omg.mp3 */,
 				395BE113299EEFC300C03742 /* Explosion.mp3 */,
+				395BE12029A53DF800C03742 /* Megadeth.mp3 */,
 			);
 			path = Sounds;
+			sourceTree = "<group>";
+		};
+		395BE12229A5914200C03742 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				399D7D7529A5BD5700CC922F /* Adam'sFont-Regular.otf */,
+			);
+			path = Fonts;
 			sourceTree = "<group>";
 		};
 		39E3E924297670C800BE4212 = {
@@ -75,18 +99,22 @@
 		39E3E92F297670C800BE4212 /* CursedSnake */ = {
 			isa = PBXGroup;
 			children = (
+				395BE12429A591BB00C03742 /* Info.plist */,
+				395BE12229A5914200C03742 /* Fonts */,
 				395BE115299EEFD100C03742 /* Sounds */,
-				39E3E930297670C800BE4212 /* AppDelegate.swift */,
 				39E3E932297670C800BE4212 /* GameScene.sks */,
 				39E3E934297670C800BE4212 /* Actions.sks */,
-				39E3E936297670C800BE4212 /* GameScene.swift */,
-				39E3E938297670C800BE4212 /* GameViewController.swift */,
 				39E3E93A297670C800BE4212 /* Main.storyboard */,
 				39E3E93D297670C900BE4212 /* Assets.xcassets */,
 				39E3E93F297670C900BE4212 /* LaunchScreen.storyboard */,
+				39E3E930297670C800BE4212 /* AppDelegate.swift */,
+				39E3E936297670C800BE4212 /* GameScene.swift */,
+				39E3E938297670C800BE4212 /* GameViewController.swift */,
 				39504141297B64F300D384F1 /* Snake.swift */,
 				39C4DED4298628B50026D19C /* Food.swift */,
 				395BE111299EEE3600C03742 /* AudioPlayer.swift */,
+				395BE12529A592B900C03742 /* TitleView.swift */,
+				395BE12729A595D800C03742 /* CursedSnakeApp.swift */,
 			);
 			path = CursedSnake;
 			sourceTree = "<group>";
@@ -149,10 +177,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				395BE11929A5376E00C03742 /* Omg.mp3 in Resources */,
 				39E3E93C297670C800BE4212 /* Main.storyboard in Resources */,
+				399D7D7629A5BD5700CC922F /* Adam'sFont-Regular.otf in Resources */,
 				39E3E933297670C800BE4212 /* GameScene.sks in Resources */,
 				39E3E93E297670C900BE4212 /* Assets.xcassets in Resources */,
+				395BE12129A53DF800C03742 /* Megadeth.mp3 in Resources */,
 				395BE114299EEFC300C03742 /* Explosion.mp3 in Resources */,
+				395BE11729A5357600C03742 /* Chew.mp3 in Resources */,
 				39E3E941297670C900BE4212 /* LaunchScreen.storyboard in Resources */,
 				39E3E935297670C800BE4212 /* Actions.sks in Resources */,
 			);
@@ -165,9 +197,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				395BE12829A595D800C03742 /* CursedSnakeApp.swift in Sources */,
 				39E3E937297670C800BE4212 /* GameScene.swift in Sources */,
 				39E3E939297670C800BE4212 /* GameViewController.swift in Sources */,
 				39C4DED5298628B50026D19C /* Food.swift in Sources */,
+				395BE12629A592B900C03742 /* TitleView.swift in Sources */,
 				39504142297B64F300D384F1 /* Snake.swift in Sources */,
 				39E3E931297670C800BE4212 /* AppDelegate.swift in Sources */,
 				395BE112299EEE3600C03742 /* AudioPlayer.swift in Sources */,
@@ -319,6 +353,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 3798C43WZH;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = CursedSnake/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -347,6 +382,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 3798C43WZH;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = CursedSnake/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
