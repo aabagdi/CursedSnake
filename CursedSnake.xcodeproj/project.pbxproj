@@ -15,16 +15,15 @@
 		395BE12129A53DF800C03742 /* Megadeth.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 395BE12029A53DF800C03742 /* Megadeth.mp3 */; };
 		395BE12629A592B900C03742 /* TitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 395BE12529A592B900C03742 /* TitleView.swift */; };
 		395BE12829A595D800C03742 /* CursedSnakeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 395BE12729A595D800C03742 /* CursedSnakeApp.swift */; };
+		396908FA29A8A19B00188186 /* CreditsScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 396908F929A8A19B00188186 /* CreditsScene.sks */; };
 		399D7D7629A5BD5700CC922F /* Adam'sFont-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 399D7D7529A5BD5700CC922F /* Adam'sFont-Regular.otf */; };
-		39C4DED5298628B50026D19C /* Food.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39C4DED4298628B50026D19C /* Food.swift */; };
 		39E3E931297670C800BE4212 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39E3E930297670C800BE4212 /* AppDelegate.swift */; };
 		39E3E933297670C800BE4212 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 39E3E932297670C800BE4212 /* GameScene.sks */; };
-		39E3E935297670C800BE4212 /* Actions.sks in Resources */ = {isa = PBXBuildFile; fileRef = 39E3E934297670C800BE4212 /* Actions.sks */; };
 		39E3E937297670C800BE4212 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39E3E936297670C800BE4212 /* GameScene.swift */; };
-		39E3E939297670C800BE4212 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39E3E938297670C800BE4212 /* GameViewController.swift */; };
 		39E3E93C297670C800BE4212 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 39E3E93A297670C800BE4212 /* Main.storyboard */; };
 		39E3E93E297670C900BE4212 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 39E3E93D297670C900BE4212 /* Assets.xcassets */; };
 		39E3E941297670C900BE4212 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 39E3E93F297670C900BE4212 /* LaunchScreen.storyboard */; };
+		39FF9AC829A6C10F00F38A3D /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39FF9AC729A6C10F00F38A3D /* GameViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,17 +36,16 @@
 		395BE12429A591BB00C03742 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		395BE12529A592B900C03742 /* TitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleView.swift; sourceTree = "<group>"; };
 		395BE12729A595D800C03742 /* CursedSnakeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CursedSnakeApp.swift; sourceTree = "<group>"; };
+		396908F929A8A19B00188186 /* CreditsScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = CreditsScene.sks; sourceTree = "<group>"; };
 		399D7D7529A5BD5700CC922F /* Adam'sFont-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Adam'sFont-Regular.otf"; sourceTree = "<group>"; };
-		39C4DED4298628B50026D19C /* Food.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Food.swift; sourceTree = "<group>"; };
 		39E3E92D297670C800BE4212 /* CursedSnake.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CursedSnake.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		39E3E930297670C800BE4212 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		39E3E932297670C800BE4212 /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
-		39E3E934297670C800BE4212 /* Actions.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Actions.sks; sourceTree = "<group>"; };
 		39E3E936297670C800BE4212 /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
-		39E3E938297670C800BE4212 /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
 		39E3E93B297670C800BE4212 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		39E3E93D297670C900BE4212 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		39E3E940297670C900BE4212 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		39FF9AC729A6C10F00F38A3D /* GameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,24 +97,31 @@
 		39E3E92F297670C800BE4212 /* CursedSnake */ = {
 			isa = PBXGroup;
 			children = (
+				39FF9ACB29A72C7E00F38A3D /* ViewsAndScenes */,
 				395BE12429A591BB00C03742 /* Info.plist */,
 				395BE12229A5914200C03742 /* Fonts */,
 				395BE115299EEFD100C03742 /* Sounds */,
-				39E3E932297670C800BE4212 /* GameScene.sks */,
-				39E3E934297670C800BE4212 /* Actions.sks */,
 				39E3E93A297670C800BE4212 /* Main.storyboard */,
 				39E3E93D297670C900BE4212 /* Assets.xcassets */,
 				39E3E93F297670C900BE4212 /* LaunchScreen.storyboard */,
 				39E3E930297670C800BE4212 /* AppDelegate.swift */,
-				39E3E936297670C800BE4212 /* GameScene.swift */,
-				39E3E938297670C800BE4212 /* GameViewController.swift */,
 				39504141297B64F300D384F1 /* Snake.swift */,
-				39C4DED4298628B50026D19C /* Food.swift */,
+				39FF9AC729A6C10F00F38A3D /* GameViewController.swift */,
 				395BE111299EEE3600C03742 /* AudioPlayer.swift */,
-				395BE12529A592B900C03742 /* TitleView.swift */,
 				395BE12729A595D800C03742 /* CursedSnakeApp.swift */,
 			);
 			path = CursedSnake;
+			sourceTree = "<group>";
+		};
+		39FF9ACB29A72C7E00F38A3D /* ViewsAndScenes */ = {
+			isa = PBXGroup;
+			children = (
+				395BE12529A592B900C03742 /* TitleView.swift */,
+				39E3E936297670C800BE4212 /* GameScene.swift */,
+				39E3E932297670C800BE4212 /* GameScene.sks */,
+				396908F929A8A19B00188186 /* CreditsScene.sks */,
+			);
+			path = ViewsAndScenes;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -186,7 +191,7 @@
 				395BE114299EEFC300C03742 /* Explosion.mp3 in Resources */,
 				395BE11729A5357600C03742 /* Chew.mp3 in Resources */,
 				39E3E941297670C900BE4212 /* LaunchScreen.storyboard in Resources */,
-				39E3E935297670C800BE4212 /* Actions.sks in Resources */,
+				396908FA29A8A19B00188186 /* CreditsScene.sks in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -199,9 +204,8 @@
 			files = (
 				395BE12829A595D800C03742 /* CursedSnakeApp.swift in Sources */,
 				39E3E937297670C800BE4212 /* GameScene.swift in Sources */,
-				39E3E939297670C800BE4212 /* GameViewController.swift in Sources */,
-				39C4DED5298628B50026D19C /* Food.swift in Sources */,
 				395BE12629A592B900C03742 /* TitleView.swift in Sources */,
+				39FF9AC829A6C10F00F38A3D /* GameViewController.swift in Sources */,
 				39504142297B64F300D384F1 /* Snake.swift in Sources */,
 				39E3E931297670C800BE4212 /* AppDelegate.swift in Sources */,
 				395BE112299EEE3600C03742 /* AudioPlayer.swift in Sources */,

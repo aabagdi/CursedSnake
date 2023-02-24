@@ -1,6 +1,7 @@
 import UIKit
 import SpriteKit
 import GameplayKit
+import SwiftUI
 
 let displaySize: CGRect = UIScreen.main.bounds
 

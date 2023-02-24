@@ -11,6 +11,8 @@ import SpriteKit
 
 struct TitleView: View {
     @State var startGame = false
+    @State var goToCredits = false
+    
     var body: some View {
         NavigationStack {
             VStack {
@@ -27,7 +29,14 @@ struct TitleView: View {
                             .edgesIgnoringSafeArea([.top, .bottom])
                     }
                     Button("Credits") {
-                        
+                        goToCredits.toggle()
+                    }
+                    .navigationDestination(isPresented: $goToCredits) {
+                        SpriteView(scene: SKScene(fileNamed: "CreditsScene")!)
+                            .navigationBarTitle("Thank you!!")
+                            .onDisappear(perform: {
+                                goToCredits = false
+                            })
                     }
                 }.buttonStyle(.borderedProminent)
                 

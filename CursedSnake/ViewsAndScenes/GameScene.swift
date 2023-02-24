@@ -1,6 +1,5 @@
 import SpriteKit
 import UIKit
-import SwiftUI
 
 class GameScene: SKScene, SKPhysicsContactDelegate {
     private var player: Snake!
