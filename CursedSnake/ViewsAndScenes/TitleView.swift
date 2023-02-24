@@ -13,6 +13,7 @@ struct TitleView: View {
     @State var startGame = false
     @State var goToCredits = false
     var body: some View {
+        let TitleThemePlayer = AudioPlayer()
         NavigationStack {
             VStack {
                 Text("Cursed Snake").font(.custom("Adam'sFontRegular", size: 52)).multilineTextAlignment(.center)
@@ -35,8 +36,12 @@ struct TitleView: View {
                         SpriteView(scene: creditsScene)
                     }
                 }.buttonStyle(.borderedProminent)
-            }
-        }
+            }.onDisappear(perform: {
+                TitleThemePlayer.stop()
+            })
+        }.onAppear(perform: {
+            TitleThemePlayer.play(sound: "TitleScreen")
+        })
     }
 }
 

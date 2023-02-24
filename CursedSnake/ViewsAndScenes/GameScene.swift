@@ -59,7 +59,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         self.soundPlayer = soundPlayer
         self.BGMPlayer = BGMPlayer
         
-        self.BGMPlayer.play(sound: "Megadeth")
+        self.BGMPlayer.play(sound: "BGM")
         
         let swipeRight = UISwipeGestureRecognizer(target: self,
                                                   action: #selector(GameScene.swipeRight(sender:)))
@@ -255,7 +255,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     }
     
     func endGame() {
-        self.BGMPlayer.pause()
+        self.BGMPlayer.stop()
         self.soundPlayer.play(sound: "Explosion")
         let gameOver = SKLabelNode(fontNamed: "Zapfino")
         let moveIntoView = SKAction.move(to: CGPoint(x: self.frame.midX, y: self.frame.midY), duration: 5)

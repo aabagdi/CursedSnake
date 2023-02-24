@@ -14,15 +14,15 @@ class AudioPlayer {
         let soundEffect = Bundle.main.url(forResource: sound, withExtension: "mp3")
         self.AudioPlayer = try! AVAudioPlayer(contentsOf: soundEffect!)
         self.AudioPlayer.prepareToPlay()
-        if sound == "Megadeth" {
+        if sound == "BGM" || sound == "TitleScreen" {
             self.AudioPlayer.volume = 0.5
             self.AudioPlayer.numberOfLoops = -1
         }
         self.AudioPlayer?.play()
     }
     
-    func pause() {
-        self.AudioPlayer.pause()
+    func stop() {
+        self.AudioPlayer.stop()
     }
     
 }

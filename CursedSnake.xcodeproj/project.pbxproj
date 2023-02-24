@@ -12,10 +12,11 @@
 		395BE114299EEFC300C03742 /* Explosion.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 395BE113299EEFC300C03742 /* Explosion.mp3 */; };
 		395BE11729A5357600C03742 /* Chew.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 395BE11629A5357600C03742 /* Chew.mp3 */; };
 		395BE11929A5376E00C03742 /* Omg.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 395BE11829A5376E00C03742 /* Omg.mp3 */; };
-		395BE12129A53DF800C03742 /* Megadeth.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 395BE12029A53DF800C03742 /* Megadeth.mp3 */; };
 		395BE12629A592B900C03742 /* TitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 395BE12529A592B900C03742 /* TitleView.swift */; };
 		395BE12829A595D800C03742 /* CursedSnakeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 395BE12729A595D800C03742 /* CursedSnakeApp.swift */; };
 		396908FA29A8A19B00188186 /* CreditsScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 396908F929A8A19B00188186 /* CreditsScene.sks */; };
+		39867DF929A9552B00E9F059 /* BGM.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 39867DF829A9552B00E9F059 /* BGM.mp3 */; };
+		39867DFB29A9559F00E9F059 /* TitleScreen.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 39867DFA29A9559F00E9F059 /* TitleScreen.mp3 */; };
 		399D7D7629A5BD5700CC922F /* Adam'sFont-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 399D7D7529A5BD5700CC922F /* Adam'sFont-Regular.otf */; };
 		39E3E931297670C800BE4212 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39E3E930297670C800BE4212 /* AppDelegate.swift */; };
 		39E3E933297670C800BE4212 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 39E3E932297670C800BE4212 /* GameScene.sks */; };
@@ -32,11 +33,12 @@
 		395BE113299EEFC300C03742 /* Explosion.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Explosion.mp3; sourceTree = "<group>"; };
 		395BE11629A5357600C03742 /* Chew.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Chew.mp3; sourceTree = "<group>"; };
 		395BE11829A5376E00C03742 /* Omg.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Omg.mp3; sourceTree = "<group>"; };
-		395BE12029A53DF800C03742 /* Megadeth.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Megadeth.mp3; sourceTree = "<group>"; };
 		395BE12429A591BB00C03742 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		395BE12529A592B900C03742 /* TitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleView.swift; sourceTree = "<group>"; };
 		395BE12729A595D800C03742 /* CursedSnakeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CursedSnakeApp.swift; sourceTree = "<group>"; };
 		396908F929A8A19B00188186 /* CreditsScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = CreditsScene.sks; sourceTree = "<group>"; };
+		39867DF829A9552B00E9F059 /* BGM.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = BGM.mp3; sourceTree = "<group>"; };
+		39867DFA29A9559F00E9F059 /* TitleScreen.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = TitleScreen.mp3; sourceTree = "<group>"; };
 		399D7D7529A5BD5700CC922F /* Adam'sFont-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Adam'sFont-Regular.otf"; sourceTree = "<group>"; };
 		39E3E92D297670C800BE4212 /* CursedSnake.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CursedSnake.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		39E3E930297670C800BE4212 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -62,10 +64,11 @@
 		395BE115299EEFD100C03742 /* Sounds */ = {
 			isa = PBXGroup;
 			children = (
+				39867DF829A9552B00E9F059 /* BGM.mp3 */,
 				395BE11629A5357600C03742 /* Chew.mp3 */,
 				395BE11829A5376E00C03742 /* Omg.mp3 */,
 				395BE113299EEFC300C03742 /* Explosion.mp3 */,
-				395BE12029A53DF800C03742 /* Megadeth.mp3 */,
+				39867DFA29A9559F00E9F059 /* TitleScreen.mp3 */,
 			);
 			path = Sounds;
 			sourceTree = "<group>";
@@ -187,10 +190,11 @@
 				399D7D7629A5BD5700CC922F /* Adam'sFont-Regular.otf in Resources */,
 				39E3E933297670C800BE4212 /* GameScene.sks in Resources */,
 				39E3E93E297670C900BE4212 /* Assets.xcassets in Resources */,
-				395BE12129A53DF800C03742 /* Megadeth.mp3 in Resources */,
+				39867DFB29A9559F00E9F059 /* TitleScreen.mp3 in Resources */,
 				395BE114299EEFC300C03742 /* Explosion.mp3 in Resources */,
 				395BE11729A5357600C03742 /* Chew.mp3 in Resources */,
 				39E3E941297670C900BE4212 /* LaunchScreen.storyboard in Resources */,
+				39867DF929A9552B00E9F059 /* BGM.mp3 in Resources */,
 				396908FA29A8A19B00188186 /* CreditsScene.sks in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
