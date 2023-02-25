@@ -10,8 +10,10 @@ import SpriteKit
 
 
 struct TitleView: View {
+    
     @State var startGame = false
     @State var goToCredits = false
+    
     var body: some View {
         let TitleThemePlayer = AudioPlayer()
         NavigationStack {
