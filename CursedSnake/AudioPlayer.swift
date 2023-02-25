@@ -18,11 +18,23 @@ class AudioPlayer {
             self.AudioPlayer.volume = 0.5
             self.AudioPlayer.numberOfLoops = -1
         }
-        self.AudioPlayer?.play()
+        self.AudioPlayer.play()
     }
     
     func stop() {
         self.AudioPlayer.stop()
+    }
+    
+    func pause() {
+        self.AudioPlayer.pause()
+    }
+    
+    func resume() {
+        self.AudioPlayer.play()
+    }
+    
+    func isPlaying() -> Bool {
+        return self.AudioPlayer.isPlaying
     }
     
 }

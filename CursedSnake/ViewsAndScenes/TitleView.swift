@@ -32,16 +32,17 @@ struct TitleView: View {
                         goToCredits.toggle()
                     }
                     .navigationDestination(isPresented: $goToCredits) {
-                        let creditsScene = SKScene(fileNamed: "CreditsScene")!
+                        let creditsScene = CreditsScene()
                         SpriteView(scene: creditsScene)
                     }
                 }.buttonStyle(.borderedProminent)
-            }.onDisappear(perform: {
+            }.onAppear(perform: {
+                TitleThemePlayer.play(sound: "TitleScreen")
+            })
+            .onDisappear(perform: {
                 TitleThemePlayer.stop()
             })
-        }.onAppear(perform: {
-            TitleThemePlayer.play(sound: "TitleScreen")
-        })
+        }
     }
 }
 

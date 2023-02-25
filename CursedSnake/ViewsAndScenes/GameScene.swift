@@ -1,4 +1,5 @@
 import SpriteKit
+import SwiftUI
 import UIKit
 
 class GameScene: SKScene, SKPhysicsContactDelegate {
@@ -7,6 +8,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     private var score: SKLabelNode!
     private var soundPlayer: AudioPlayer!
     private var BGMPlayer: AudioPlayer!
+    @Environment(\.dismiss) var dismiss
     
     func randomPosition() -> CGPoint {
         let randX = CGFloat.random(in: frame.minX + 29...frame.maxX - 29)
@@ -39,9 +41,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         for i in snake.SnakeBody {
             self.addChild(i)
         }
-        
         let initFont = UIFont.familyNames.randomElement()
-        
         let scoreCounter = SKLabelNode(fontNamed: initFont)
         scoreCounter.zPosition = 3
         scoreCounter.text = String(0)
@@ -49,7 +49,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         scoreCounter.fontColor = generateRandomColor()
         scoreCounter.position = CGPoint(x: frame.midX, y: frame.maxY - 120)
         self.addChild(scoreCounter)
-        
+
         let soundPlayer = AudioPlayer()
         let BGMPlayer = AudioPlayer()
         
@@ -212,7 +212,17 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         let touchedNode = self.atPoint(touchPos)
         if touchedNode.name == "Pause" {
             scene?.view?.isPaused.toggle()
+            if BGMPlayer.isPlaying() {
+                BGMPlayer.pause()
+            }
+            else {
+                BGMPlayer.resume()
+            }
         }
+        else if touchedNode.name == "returnToMenu" {
+
+        }
+        
     }
     
     @objc func swipeRight(sender: UISwipeGestureRecognizer) {
@@ -258,10 +268,21 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         self.BGMPlayer.stop()
         self.soundPlayer.play(sound: "Explosion")
         let gameOver = SKLabelNode(fontNamed: "Zapfino")
+        
         let moveIntoView = SKAction.move(to: CGPoint(x: self.frame.midX, y: self.frame.midY), duration: 5)
+        let moveDown = SKAction.move(to: CGPoint(x: self.frame.midX, y: self.frame.midY - 100), duration: 2)
         let rotate = SKAction.rotate(byAngle: 20 * Double.pi, duration: 5)
         let fadeAway = SKAction.fadeOut(withDuration: 1.5)
-        let scale = SKAction.scale(by: 30, duration: 1.5)
+        let explode = SKAction.scale(by: 30, duration: 1.5)
+        
+        let returnToMenu = SKLabelNode(fontNamed: "Party LET")
+        returnToMenu.zPosition = 3
+        returnToMenu.text = "Tap to return to main menu"
+        returnToMenu.fontSize = 50
+        returnToMenu.fontColor = .cyan
+        returnToMenu.position = CGPoint(x: self.frame.midX - 500, y: self.frame.midY)
+        self.addChild(returnToMenu)
+        
         gameOver.zPosition = 3
         gameOver.text = "Game over, hmbpmhpbhmh"
         gameOver.fontSize = 24
@@ -274,30 +295,25 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             nodeCopy.physicsBody = nil
             nodeCopy.fillColor = SKColor.orange
             self.addChild(nodeCopy)
-            nodeCopy.run(scale)
+            nodeCopy.run(explode)
             nodeCopy.run(fadeAway, completion: {() -> Void in
                 nodeCopy.removeFromParent()
             })
-            
-            
         }
         self.food.run(fadeAway, completion: {() -> Void in
             self.food.removeFromParent()
         })
         
         let pauseButton = self.childNode(withName: "Pause")
-        pauseButton!.run(fadeAway, completion: {() -> Void in
-            pauseButton!.removeFromParent()
-        })
+        pauseButton!.removeFromParent()
         gameOver.run(moveIntoView)
-        gameOver.run(rotate)
+        gameOver.run(rotate, completion: {
+            returnToMenu.run(moveIntoView, completion: {
+                returnToMenu.run(moveDown, completion: {
+                    returnToMenu.name = "returnToMenu"
+                })
+            })
+        })
+        
     }
 }
-
-/*struct GameView: View {
-    var body: some View {
-        SpriteView(scene: GameScene(size: CGSize(width: UIScreen.main.bounds.size.width, height: UIScreen.main.bounds.size.height)
-))
-            .frame(width: UIScreen.main.bounds.size.width, height: UIScreen.main.bounds.size.height)
-    }
-}*/
