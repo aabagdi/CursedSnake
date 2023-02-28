@@ -1,6 +1,7 @@
 import SpriteKit
 import SwiftUI
 import UIKit
+import GameKit
 
 class GameScene: SKScene, SKPhysicsContactDelegate {
     private var player: Snake!
@@ -220,7 +221,6 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             }
         }
         else if touchedNode.name == "returnToMenu" {
-            //let vc = UIHostingController(rootView: TitleView())
             
         }
         

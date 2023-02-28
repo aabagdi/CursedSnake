@@ -24,7 +24,7 @@ struct TitleView: View {
                         startGame.toggle()
                     }
                     .navigationDestination(isPresented: $startGame) {
-                        SpriteView(scene: SKScene(fileNamed: "GameScene")!)
+                            GameViewControllerRepresentable()
                             .navigationBarBackButtonHidden(true)
                             .navigationBarTitle("")
                             .navigationBarHidden(true)
@@ -47,4 +47,3 @@ struct TitleView: View {
         }
     }
 }
-

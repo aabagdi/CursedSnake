@@ -1,9 +1,6 @@
 import UIKit
 import SpriteKit
-import GameplayKit
 import SwiftUI
-
-let displaySize: CGRect = UIScreen.main.bounds
 
 class GameViewController: UIViewController {
     
@@ -25,5 +22,22 @@ class GameViewController: UIViewController {
             view.showsFPS = true
             view.showsNodeCount = true
         }
+    }
+    
+    override func loadView() {
+        self.view = SKView()
+    }
+}
+
+struct GameViewControllerRepresentable : UIViewControllerRepresentable {
+    typealias UIViewControllerType = GameViewController
+    
+    func makeUIViewController(context: Context) -> GameViewController {
+        let vc = GameViewController()
+        return vc
+    }
+    
+    func updateUIViewController(_ uiViewController: GameViewController, context: Context) {
+        
     }
 }
