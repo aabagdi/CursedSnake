@@ -83,14 +83,14 @@
 			path = Sounds;
 			sourceTree = "<group>";
 		};
-		395BE12229A5914200C03742 /* Resoruces */ = {
+		395BE12229A5914200C03742 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
 				39504141297B64F300D384F1 /* Snake.swift */,
 				395BE111299EEE3600C03742 /* AudioPlayer.swift */,
 				399D7D7529A5BD5700CC922F /* Adam'sFont-Regular.otf */,
 			);
-			path = Resoruces;
+			path = Resources;
 			sourceTree = "<group>";
 		};
 		39E3E924297670C800BE4212 = {
@@ -115,7 +115,7 @@
 				390EAACD29AD59ED00557C2F /* ViewControllers */,
 				39FF9ACB29A72C7E00F38A3D /* ViewsAndScenes */,
 				395BE12429A591BB00C03742 /* Info.plist */,
-				395BE12229A5914200C03742 /* Resoruces */,
+				395BE12229A5914200C03742 /* Resources */,
 				395BE115299EEFD100C03742 /* Sounds */,
 				39E3E93D297670C900BE4212 /* Assets.xcassets */,
 				39867DFE29AA689100E9F059 /* Main.storyboard */,
