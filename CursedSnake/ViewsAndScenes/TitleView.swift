@@ -8,41 +8,46 @@
 import SwiftUI
 import SpriteKit
 
-
 struct TitleView: View {
     
-    @State var startGame = false
-    @State var goToCredits = false
+    @StateObject private var TitleModel = TitleViewModel()
+    let TitleThemePlayer = AudioPlayer()
     
     var body: some View {
-        let TitleThemePlayer = AudioPlayer()
         NavigationStack {
             VStack {
                 Text("Cursed Snake").font(.custom("Adam'sFontRegular", size: 52)).multilineTextAlignment(.center)
                 VStack{
                     Button("Play Game") {
-                        startGame.toggle()
+                        TitleModel.startGame.toggle()
                     }
-                    .navigationDestination(isPresented: $startGame) {
+                    .navigationDestination(isPresented: $TitleModel.startGame) {
                             GameViewControllerRepresentable()
                             .navigationBarBackButtonHidden(true)
                             .navigationBarTitle("")
                             .navigationBarHidden(true)
                             .edgesIgnoringSafeArea([.top, .bottom])
+                        /*SpriteView(scene: SKScene(fileNamed: "GameScene")!)
+                                                    .navigationBarBackButtonHidden(true)
+                                                    .navigationBarTitle("")
+                                                    .navigationBarHidden(true)
+                                                    .edgesIgnoringSafeArea([.top, .bottom])*/
                     }
                     Button("Credits") {
-                        goToCredits.toggle()
+                        TitleModel.goToCredits.toggle()
                     }
-                    .navigationDestination(isPresented: $goToCredits) {
+                    .navigationDestination(isPresented: $TitleModel.goToCredits) {
                         let creditsScene = CreditsScene()
                         SpriteView(scene: creditsScene)
                     }
                 }.buttonStyle(.borderedProminent)
             }.onAppear(perform: {
-                TitleThemePlayer.play(sound: "TitleScreen")
+                TitleModel.displayingTitle.toggle()
+                self.TitleThemePlayer.play(sound: "TitleScreen")
             })
             .onDisappear(perform: {
-                TitleThemePlayer.stop()
+                TitleModel.displayingTitle.toggle()
+                self.TitleThemePlayer.stop()
             })
         }
     }

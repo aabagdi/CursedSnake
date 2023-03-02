@@ -9,7 +9,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     private var score: SKLabelNode!
     private var soundPlayer: AudioPlayer!
     private var BGMPlayer: AudioPlayer!
-    @Environment(\.dismiss) var dismiss
+    @StateObject private var TitleModel = TitleView.TitleViewModel()
+
     
     func randomPosition() -> CGPoint {
         let randX = CGFloat.random(in: frame.minX + 29...frame.maxX - 29)
@@ -221,7 +222,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             }
         }
         else if touchedNode.name == "returnToMenu" {
-            
+            let vc = UIHostingController(rootView: TitleView())
+            view?.presentScene(vc)
         }
         
     }

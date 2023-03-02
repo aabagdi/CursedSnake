@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		390EAAD129AD5C8D00557C2F /* TitleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 390EAAD029AD5C8D00557C2F /* TitleViewController.swift */; };
+		390EAAD329AEF7B000557C2F /* TitleViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 390EAAD229AEF7B000557C2F /* TitleViewModel.swift */; };
 		39504142297B64F300D384F1 /* Snake.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39504141297B64F300D384F1 /* Snake.swift */; };
 		395BE112299EEE3600C03742 /* AudioPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 395BE111299EEE3600C03742 /* AudioPlayer.swift */; };
 		395BE114299EEFC300C03742 /* Explosion.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 395BE113299EEFC300C03742 /* Explosion.mp3 */; };
@@ -29,7 +29,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		390EAAD029AD5C8D00557C2F /* TitleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleViewController.swift; sourceTree = "<group>"; };
+		390EAAD229AEF7B000557C2F /* TitleViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleViewModel.swift; sourceTree = "<group>"; };
 		39504141297B64F300D384F1 /* Snake.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Snake.swift; sourceTree = "<group>"; };
 		395BE111299EEE3600C03742 /* AudioPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioPlayer.swift; sourceTree = "<group>"; };
 		395BE113299EEFC300C03742 /* Explosion.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Explosion.mp3; sourceTree = "<group>"; };
@@ -67,7 +67,6 @@
 			isa = PBXGroup;
 			children = (
 				39FF9AC729A6C10F00F38A3D /* GameViewController.swift */,
-				390EAAD029AD5C8D00557C2F /* TitleViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -122,6 +121,7 @@
 				39867DFE29AA689100E9F059 /* Main.storyboard */,
 				39E3E930297670C800BE4212 /* AppDelegate.swift */,
 				395BE12729A595D800C03742 /* CursedSnakeApp.swift */,
+				390EAAD229AEF7B000557C2F /* TitleViewModel.swift */,
 			);
 			path = CursedSnake;
 			sourceTree = "<group>";
@@ -221,10 +221,10 @@
 				39E3E937297670C800BE4212 /* GameScene.swift in Sources */,
 				395BE12629A592B900C03742 /* TitleView.swift in Sources */,
 				39FF9AC829A6C10F00F38A3D /* GameViewController.swift in Sources */,
-				390EAAD129AD5C8D00557C2F /* TitleViewController.swift in Sources */,
 				39504142297B64F300D384F1 /* Snake.swift in Sources */,
 				39E3E931297670C800BE4212 /* AppDelegate.swift in Sources */,
 				395BE112299EEE3600C03742 /* AudioPlayer.swift in Sources */,
+				390EAAD329AEF7B000557C2F /* TitleViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
