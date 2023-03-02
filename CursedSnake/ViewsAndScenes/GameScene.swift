@@ -223,7 +223,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         }
         else if touchedNode.name == "returnToMenu" {
             let vc = UIHostingController(rootView: TitleView())
-            view?.presentScene(vc)
+            // TODO: are there any edge cases when wither view or window are nil?
+            self.view!.window!.rootViewController = vc
         }
         
     }
