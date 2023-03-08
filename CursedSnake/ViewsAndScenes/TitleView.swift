@@ -11,6 +11,8 @@ import GameKit
 
 struct TitleView: View {
     
+    @Environment (\.colorScheme) var colorScheme: ColorScheme
+    
     @StateObject private var TitleModel = TitleViewModel()
     let TitleThemePlayer = AudioPlayer()
     
@@ -33,8 +35,17 @@ struct TitleView: View {
                         TitleModel.goToCredits.toggle()
                     }
                     .navigationDestination(isPresented: $TitleModel.goToCredits) {
-                        let creditsScene = CreditsScene()
-                        SpriteView(scene: creditsScene)
+                        switch self.colorScheme {
+                        case .light:
+                            let creditsScene = CreditsSceneLight()
+                            SpriteView(scene: creditsScene)
+                        case .dark:
+                            let creditsScene = CreditsSceneDark()
+                            SpriteView(scene: creditsScene)
+                        @unknown default:
+                            let creditsScene = CreditsSceneLight()
+                            SpriteView(scene: creditsScene)
+                        }
                     }
                     Button("Game Center") {
                         TitleModel.showLeaderboard.toggle()

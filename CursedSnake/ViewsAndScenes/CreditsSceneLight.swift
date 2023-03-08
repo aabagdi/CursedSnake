@@ -8,9 +8,9 @@
 import Foundation
 import SpriteKit
 
-class CreditsScene: SKScene {
+class CreditsSceneLight: SKScene {
     override func didMove(to view: SKView) {
-        let newScene = SKScene(fileNamed: "CreditsScene")!
+        let newScene = SKScene(fileNamed: "CreditsSceneLight")!
         self.view?.presentScene(newScene)
     }
 }

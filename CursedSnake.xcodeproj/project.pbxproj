@@ -15,10 +15,10 @@
 		395BE11929A5376E00C03742 /* Omg.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 395BE11829A5376E00C03742 /* Omg.mp3 */; };
 		395BE12629A592B900C03742 /* TitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 395BE12529A592B900C03742 /* TitleView.swift */; };
 		395BE12829A595D800C03742 /* CursedSnakeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 395BE12729A595D800C03742 /* CursedSnakeApp.swift */; };
-		396908FA29A8A19B00188186 /* CreditsScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 396908F929A8A19B00188186 /* CreditsScene.sks */; };
+		396908FA29A8A19B00188186 /* CreditsSceneLight.sks in Resources */ = {isa = PBXBuildFile; fileRef = 396908F929A8A19B00188186 /* CreditsSceneLight.sks */; };
 		39867DF929A9552B00E9F059 /* BGM.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 39867DF829A9552B00E9F059 /* BGM.mp3 */; };
 		39867DFB29A9559F00E9F059 /* TitleScreen.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 39867DFA29A9559F00E9F059 /* TitleScreen.mp3 */; };
-		39867DFD29A9E3D700E9F059 /* CreditsScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39867DFC29A9E3D700E9F059 /* CreditsScene.swift */; };
+		39867DFD29A9E3D700E9F059 /* CreditsSceneLight.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39867DFC29A9E3D700E9F059 /* CreditsSceneLight.swift */; };
 		39867DFF29AA689100E9F059 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 39867DFE29AA689100E9F059 /* Main.storyboard */; };
 		399D7D7629A5BD5700CC922F /* Adam'sFont-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 399D7D7529A5BD5700CC922F /* Adam'sFont-Regular.otf */; };
 		39E3E931297670C800BE4212 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39E3E930297670C800BE4212 /* AppDelegate.swift */; };
@@ -26,6 +26,8 @@
 		39E3E937297670C800BE4212 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39E3E936297670C800BE4212 /* GameScene.swift */; };
 		39E3E93E297670C900BE4212 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 39E3E93D297670C900BE4212 /* Assets.xcassets */; };
 		39E5539329B2E4AA0042DF1F /* LeaderboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39E5539229B2E4AA0042DF1F /* LeaderboardView.swift */; };
+		39E5539529B941BB0042DF1F /* CreditsSceneDark.sks in Resources */ = {isa = PBXBuildFile; fileRef = 39E5539429B941BB0042DF1F /* CreditsSceneDark.sks */; };
+		39E5539729B942CF0042DF1F /* CreditsSceneDark.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39E5539629B942CF0042DF1F /* CreditsSceneDark.swift */; };
 		39FF9AC829A6C10F00F38A3D /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39FF9AC729A6C10F00F38A3D /* GameViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -39,10 +41,10 @@
 		395BE12429A591BB00C03742 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		395BE12529A592B900C03742 /* TitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleView.swift; sourceTree = "<group>"; };
 		395BE12729A595D800C03742 /* CursedSnakeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CursedSnakeApp.swift; sourceTree = "<group>"; };
-		396908F929A8A19B00188186 /* CreditsScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = CreditsScene.sks; sourceTree = "<group>"; };
+		396908F929A8A19B00188186 /* CreditsSceneLight.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = CreditsSceneLight.sks; sourceTree = "<group>"; };
 		39867DF829A9552B00E9F059 /* BGM.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = BGM.mp3; sourceTree = "<group>"; };
 		39867DFA29A9559F00E9F059 /* TitleScreen.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = TitleScreen.mp3; sourceTree = "<group>"; };
-		39867DFC29A9E3D700E9F059 /* CreditsScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditsScene.swift; sourceTree = "<group>"; };
+		39867DFC29A9E3D700E9F059 /* CreditsSceneLight.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditsSceneLight.swift; sourceTree = "<group>"; };
 		39867DFE29AA689100E9F059 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		399D7D7529A5BD5700CC922F /* Adam'sFont-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Adam'sFont-Regular.otf"; sourceTree = "<group>"; };
 		39E3E92D297670C800BE4212 /* CursedSnake.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CursedSnake.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -52,6 +54,8 @@
 		39E3E93D297670C900BE4212 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		39E5538C29B1990C0042DF1F /* CursedSnakeRelease.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = CursedSnakeRelease.entitlements; sourceTree = "<group>"; };
 		39E5539229B2E4AA0042DF1F /* LeaderboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeaderboardView.swift; sourceTree = "<group>"; };
+		39E5539429B941BB0042DF1F /* CreditsSceneDark.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = CreditsSceneDark.sks; sourceTree = "<group>"; };
+		39E5539629B942CF0042DF1F /* CreditsSceneDark.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreditsSceneDark.swift; sourceTree = "<group>"; };
 		39FF9AC729A6C10F00F38A3D /* GameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -136,8 +140,10 @@
 				395BE12529A592B900C03742 /* TitleView.swift */,
 				39E3E936297670C800BE4212 /* GameScene.swift */,
 				39E3E932297670C800BE4212 /* GameScene.sks */,
-				39867DFC29A9E3D700E9F059 /* CreditsScene.swift */,
-				396908F929A8A19B00188186 /* CreditsScene.sks */,
+				39867DFC29A9E3D700E9F059 /* CreditsSceneLight.swift */,
+				39E5539629B942CF0042DF1F /* CreditsSceneDark.swift */,
+				396908F929A8A19B00188186 /* CreditsSceneLight.sks */,
+				39E5539429B941BB0042DF1F /* CreditsSceneDark.sks */,
 				39E5539229B2E4AA0042DF1F /* LeaderboardView.swift */,
 			);
 			path = ViewsAndScenes;
@@ -203,6 +209,7 @@
 			files = (
 				395BE11929A5376E00C03742 /* Omg.mp3 in Resources */,
 				39867DFF29AA689100E9F059 /* Main.storyboard in Resources */,
+				39E5539529B941BB0042DF1F /* CreditsSceneDark.sks in Resources */,
 				399D7D7629A5BD5700CC922F /* Adam'sFont-Regular.otf in Resources */,
 				39E3E933297670C800BE4212 /* GameScene.sks in Resources */,
 				39E3E93E297670C900BE4212 /* Assets.xcassets in Resources */,
@@ -210,7 +217,7 @@
 				395BE114299EEFC300C03742 /* Explosion.mp3 in Resources */,
 				395BE11729A5357600C03742 /* Chew.mp3 in Resources */,
 				39867DF929A9552B00E9F059 /* BGM.mp3 in Resources */,
-				396908FA29A8A19B00188186 /* CreditsScene.sks in Resources */,
+				396908FA29A8A19B00188186 /* CreditsSceneLight.sks in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -222,12 +229,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				395BE12829A595D800C03742 /* CursedSnakeApp.swift in Sources */,
-				39867DFD29A9E3D700E9F059 /* CreditsScene.swift in Sources */,
+				39867DFD29A9E3D700E9F059 /* CreditsSceneLight.swift in Sources */,
 				39E3E937297670C800BE4212 /* GameScene.swift in Sources */,
 				395BE12629A592B900C03742 /* TitleView.swift in Sources */,
 				39FF9AC829A6C10F00F38A3D /* GameViewController.swift in Sources */,
 				39504142297B64F300D384F1 /* Snake.swift in Sources */,
 				39E5539329B2E4AA0042DF1F /* LeaderboardView.swift in Sources */,
+				39E5539729B942CF0042DF1F /* CreditsSceneDark.swift in Sources */,
 				39E3E931297670C800BE4212 /* AppDelegate.swift in Sources */,
 				395BE112299EEE3600C03742 /* AudioPlayer.swift in Sources */,
 				390EAAD329AEF7B000557C2F /* TitleViewModel.swift in Sources */,

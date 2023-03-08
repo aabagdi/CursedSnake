@@ -47,7 +47,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         scoreCounter.text = String(0)
         scoreCounter.fontSize = 65
         scoreCounter.fontColor = generateRandomColor()
-        scoreCounter.position = CGPoint(x: frame.midX, y: frame.maxY - 120)
+        scoreCounter.position = CGPoint(x: frame.midX, y: frame.maxY - 125)
         self.addChild(scoreCounter)
         
         let soundPlayer = AudioPlayer()
@@ -269,12 +269,23 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         let currentScore = Int(self.score.text!)
         if (GKLocalPlayer.local.isAuthenticated) {
             GKLeaderboard.loadLeaderboards(IDs:["com.aabagdi.CursedSnake.DailyTopScores"]) { (fetchedLBs, error) in
-                guard let lb = fetchedLBs?.first else { return }
-                guard let endDate = lb.startDate?.addingTimeInterval(lb.duration), endDate > Date() else { return }
-                lb.submitScore(currentScore!, context: 0, player: GKLocalPlayer.local) { error in }
+                guard let daily = fetchedLBs?.first else { return }
+                //guard let allTime = fetchedLBs?[1] else { return }
+                //guard let endDate = daily.startDate?.addingTimeInterval(daily.duration), endDate > Date() else { return }
+                daily.submitScore(currentScore!, context: 0, player: GKLocalPlayer.local) { error in }
                 //GKLeaderboard.submitScore(currentScore!, context: 0, player: GKLocalPlayer.local, leaderboardIDs: ["com.aabagdi.CursedSnake.DailyTopScores"], completionHandler: { error in })
+                //allTime.submitScore(currentScore!, context: 0, player: GKLocalPlayer.local) { error in }
                 print("Woo")
             }
+            /*GKLeaderboard.loadLeaderboards(IDs:["com.aabagdi.CursedSnake.AllTime"]) { (fetchedLBs, error) in
+                guard let allTime = fetchedLBs?.first else { return }
+                //guard let allTime = fetchedLBs?[1] else { return }
+                //guard let endDate = daily.startDate?.addingTimeInterval(daily.duration), endDate > Date() else { return }
+                allTime.submitScore(currentScore!, context: 0, player: GKLocalPlayer.local) { error in }
+                //GKLeaderboard.submitScore(currentScore!, context: 0, player: GKLocalPlayer.local, leaderboardIDs: ["com.aabagdi.CursedSnake.DailyTopScores"], completionHandler: { error in })
+                //allTime.submitScore(currentScore!, context: 0, player: GKLocalPlayer.local) { error in }
+                print("Woo")
+            }*/
         }
     }
     
