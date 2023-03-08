@@ -9,12 +9,10 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     private var score: SKLabelNode!
     private var soundPlayer: AudioPlayer!
     private var BGMPlayer: AudioPlayer!
-    @StateObject private var TitleModel = TitleView.TitleViewModel()
-
     
     func randomPosition() -> CGPoint {
         let randX = CGFloat.random(in: frame.minX + 29...frame.maxX - 29)
-        let randY = CGFloat.random(in: frame.minY + 29...frame.maxY - 40)
+        let randY = CGFloat.random(in: frame.minY + 29...frame.maxY - 55)
         return CGPoint(x: randX, y: randY)
     }
     
@@ -51,7 +49,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         scoreCounter.fontColor = generateRandomColor()
         scoreCounter.position = CGPoint(x: frame.midX, y: frame.maxY - 120)
         self.addChild(scoreCounter)
-
+        
         let soundPlayer = AudioPlayer()
         let BGMPlayer = AudioPlayer()
         
@@ -204,7 +202,6 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         if contact.bodyA.node?.name == "head" || contact.bodyB.node?.name == "head" {
             player!.changeDirection(direction: .dead)
             endGame()
-            print("pompom")
         }
     }
     
@@ -268,9 +265,27 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         self.view!.presentScene(gameScene)
     }
     
+    func submitScore() async {
+        let currentScore = Int(self.score.text!)
+        if (GKLocalPlayer.local.isAuthenticated) {
+            GKLeaderboard.loadLeaderboards(IDs:["com.aabagdi.CursedSnake.DailyTopScores"]) { (fetchedLBs, error) in
+                guard let lb = fetchedLBs?.first else { return }
+                guard let endDate = lb.startDate?.addingTimeInterval(lb.duration), endDate > Date() else { return }
+                lb.submitScore(currentScore!, context: 0, player: GKLocalPlayer.local) { error in }
+                //GKLeaderboard.submitScore(currentScore!, context: 0, player: GKLocalPlayer.local, leaderboardIDs: ["com.aabagdi.CursedSnake.DailyTopScores"], completionHandler: { error in })
+                print("Woo")
+            }
+        }
+    }
+    
     func endGame() {
         self.BGMPlayer.stop()
         self.soundPlayer.play(sound: "Explosion")
+        
+        Task {
+            await submitScore()
+        }
+        
         let gameOver = SKLabelNode(fontNamed: "Zapfino")
         
         let moveIntoView = SKAction.move(to: CGPoint(x: self.frame.midX, y: self.frame.midY), duration: 5)
@@ -318,6 +333,5 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
                 })
             })
         })
-        
     }
 }

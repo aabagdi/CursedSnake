@@ -7,6 +7,7 @@
 
 import SwiftUI
 import SpriteKit
+import GameKit
 
 struct TitleView: View {
     
@@ -22,16 +23,11 @@ struct TitleView: View {
                         TitleModel.startGame.toggle()
                     }
                     .navigationDestination(isPresented: $TitleModel.startGame) {
-                            GameViewControllerRepresentable()
+                        GameViewControllerRepresentable()
                             .navigationBarBackButtonHidden(true)
                             .navigationBarTitle("")
                             .navigationBarHidden(true)
                             .edgesIgnoringSafeArea([.top, .bottom])
-                        /*SpriteView(scene: SKScene(fileNamed: "GameScene")!)
-                                                    .navigationBarBackButtonHidden(true)
-                                                    .navigationBarTitle("")
-                                                    .navigationBarHidden(true)
-                                                    .edgesIgnoringSafeArea([.top, .bottom])*/
                     }
                     Button("Credits") {
                         TitleModel.goToCredits.toggle()
@@ -40,13 +36,18 @@ struct TitleView: View {
                         let creditsScene = CreditsScene()
                         SpriteView(scene: creditsScene)
                     }
+                    Button("Game Center") {
+                        TitleModel.showLeaderboard.toggle()
+                    }
+                    .sheet(isPresented: $TitleModel.showLeaderboard) {
+                        GameCenterView()
+                    }
                 }.buttonStyle(.borderedProminent)
             }.onAppear(perform: {
-                TitleModel.displayingTitle.toggle()
+                TitleModel.authenticateUser()
                 self.TitleThemePlayer.play(sound: "TitleScreen")
             })
             .onDisappear(perform: {
-                TitleModel.displayingTitle.toggle()
                 self.TitleThemePlayer.stop()
             })
         }
