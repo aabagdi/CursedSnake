@@ -10,13 +10,21 @@ import SpriteKit
 
 class CreditsScene: SKScene {
     override func didMove(to view: SKView) {
-        if UITraitCollection.current.userInterfaceStyle == .light {
+        switch UITraitCollection.current.userInterfaceStyle {
+        case .light:
             let newScene = SKScene(fileNamed: "CreditsSceneLight")!
             self.view?.presentScene(newScene)
-        }
-        
-        else {
+
+        case .dark:
             let newScene = SKScene(fileNamed: "CreditsSceneDark")!
+            self.view?.presentScene(newScene)
+            
+        case .unspecified:
+            let newScene = SKScene(fileNamed: "CreditsSceneLight")!
+            self.view?.presentScene(newScene)
+            
+        @unknown default:
+            let newScene = SKScene(fileNamed: "CreditsSceneLight")!
             self.view?.presentScene(newScene)
         }
     }

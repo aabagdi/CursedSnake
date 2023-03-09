@@ -37,12 +37,16 @@ class Snake {
         switch SnakeDirection {
         case .up:
             newSegment.position = CGPointMake(lastSegmentPos!.x, lastSegmentPos!.y - 10.0)
+            
         case .down:
             newSegment.position = CGPointMake(lastSegmentPos!.x, lastSegmentPos!.y + 10.0)
+            
         case .left:
             newSegment.position = CGPointMake(lastSegmentPos!.x + 10.0, lastSegmentPos!.y)
+            
         case .right:
             newSegment.position = CGPointMake(lastSegmentPos!.x - 10.0, lastSegmentPos!.y)
+            
         case .dead:
             return
         }
