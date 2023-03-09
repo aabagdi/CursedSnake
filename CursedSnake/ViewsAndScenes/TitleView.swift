@@ -35,18 +35,11 @@ struct TitleView: View {
                         TitleModel.goToCredits.toggle()
                     }
                     .navigationDestination(isPresented: $TitleModel.goToCredits) {
-                        switch self.colorScheme {
-                        case .light:
-                            let creditsScene = CreditsSceneLight()
-                            SpriteView(scene: creditsScene)
-                        case .dark:
-                            let creditsScene = CreditsSceneDark()
-                            SpriteView(scene: creditsScene)
-                        @unknown default:
-                            let creditsScene = CreditsSceneLight()
-                            SpriteView(scene: creditsScene)
-                        }
+                        let creditsScene = CreditsScene()
+                        SpriteView(scene: creditsScene)
                     }
+                        
+                        
                     Button("Game Center") {
                         TitleModel.showLeaderboard.toggle()
                     }
