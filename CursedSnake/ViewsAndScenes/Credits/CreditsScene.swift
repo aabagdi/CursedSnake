@@ -14,18 +14,16 @@ class CreditsScene: SKScene {
         case .light:
             let newScene = SKScene(fileNamed: "CreditsSceneLight")!
             self.view?.presentScene(newScene)
-
+    
         case .dark:
             let newScene = SKScene(fileNamed: "CreditsSceneDark")!
             self.view?.presentScene(newScene)
             
         case .unspecified:
-            let newScene = SKScene(fileNamed: "CreditsSceneLight")!
-            self.view?.presentScene(newScene)
+            break
             
         @unknown default:
-            let newScene = SKScene(fileNamed: "CreditsSceneLight")!
-            self.view?.presentScene(newScene)
+            break
         }
     }
 }

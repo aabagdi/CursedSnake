@@ -31,12 +31,11 @@ struct TitleView: View {
                             .navigationBarHidden(true)
                             .edgesIgnoringSafeArea([.top, .bottom])
                     }
-                    Button("Credits") {
-                        TitleModel.goToCredits.toggle()
+                    Button("Settings") {
+                        TitleModel.goToSettings.toggle()
                     }
-                    .navigationDestination(isPresented: $TitleModel.goToCredits) {
-                        let creditsScene = CreditsScene()
-                        SpriteView(scene: creditsScene)
+                    .navigationDestination(isPresented: $TitleModel.goToSettings) {
+                        SettingsView()
                     }
                         
                         

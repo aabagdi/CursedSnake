@@ -9,10 +9,11 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     private var score: SKLabelNode!
     private var soundPlayer: AudioPlayer!
     private var BGMPlayer: AudioPlayer!
+    private var GestureRecognizers: [UIGestureRecognizer] = []
     
     func randomPosition() -> CGPoint {
         let randX = CGFloat.random(in: frame.minX + 29...frame.maxX - 29)
-        let randY = CGFloat.random(in: frame.minY + 29...frame.maxY - 55)
+        let randY = CGFloat.random(in: frame.minY + 29...frame.maxY - 70)
         return CGPoint(x: randX, y: randY)
     }
     
@@ -80,6 +81,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
                                                  action: #selector(GameScene.swipeDown(sender:)))
         swipeDown.direction = .down
         view.addGestureRecognizer(swipeDown)
+        self.GestureRecognizers = [swipeUp, swipeDown, swipeLeft, swipeRight]
     }
     
     override func update(_ currentTime: TimeInterval) {
@@ -108,7 +110,6 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             let moveAction = SKAction.move(to: CGPoint(x: headX, y: headY - 20.0), duration: player!.SnakeSpeed)
             head!.run(moveAction)
             player!.moveTail()
-            
             
         case .left:
             /*for i in player!.SnakeBody {
@@ -210,13 +211,14 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         let touchPos = touches.location(in: self)
         let touchedNode = self.atPoint(touchPos)
         if touchedNode.name == "Pause" {
-            scene?.view?.isPaused.toggle()
-            if BGMPlayer.isPlaying() {
-                BGMPlayer.pause()
-            }
-            else {
-                BGMPlayer.resume()
-            }
+            /*scene?.view?.isPaused.toggle()
+             if BGMPlayer.isPlaying() {
+             BGMPlayer.pause()
+             }
+             else {
+             BGMPlayer.resume()
+             }*/
+            pauseUnpause()
         }
         else if touchedNode.name == "returnToMenu" {
             let vc = UIHostingController(rootView: TitleView())
@@ -224,6 +226,28 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             self.view!.window!.rootViewController = vc
         }
         
+    }
+    
+    func pauseUnpause() {
+        scene?.view?.isPaused.toggle()
+        switch scene?.view?.isPaused {
+        case true:
+            BGMPlayer.pause()
+            for recognizer in GestureRecognizers {
+                view?.removeGestureRecognizer(recognizer)
+            }
+        case false:
+            BGMPlayer.resume()
+            for recognizer in GestureRecognizers {
+                view?.addGestureRecognizer(recognizer)
+            }
+    
+        case .none:
+            break
+            
+        case .some(_):
+            break
+        }
     }
     
     @objc func swipeRight(sender: UISwipeGestureRecognizer) {
@@ -278,18 +302,18 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
                 print("Woo")
             }
             /*GKLeaderboard.loadLeaderboards(IDs:["com.aabagdi.CursedSnake.AllTime"]) { (fetchedLBs, error) in
-                guard let allTime = fetchedLBs?.first else { return }
-                //guard let allTime = fetchedLBs?[1] else { return }
-                //guard let endDate = daily.startDate?.addingTimeInterval(daily.duration), endDate > Date() else { return }
-                allTime.submitScore(currentScore!, context: 0, player: GKLocalPlayer.local) { error in }
-                //GKLeaderboard.submitScore(currentScore!, context: 0, player: GKLocalPlayer.local, leaderboardIDs: ["com.aabagdi.CursedSnake.DailyTopScores"], completionHandler: { error in })
-                //allTime.submitScore(currentScore!, context: 0, player: GKLocalPlayer.local) { error in }
-                print("Woo")
-            }*/
+             guard let allTime = fetchedLBs?.first else { return }
+             //guard let allTime = fetchedLBs?[1] else { return }
+             //guard let endDate = daily.startDate?.addingTimeInterval(daily.duration), endDate > Date() else { return }
+             allTime.submitScore(currentScore!, context: 0, player: GKLocalPlayer.local) { error in }
+             //GKLeaderboard.submitScore(currentScore!, context: 0, player: GKLocalPlayer.local, leaderboardIDs: ["com.aabagdi.CursedSnake.DailyTopScores"], completionHandler: { error in })
+             //allTime.submitScore(currentScore!, context: 0, player: GKLocalPlayer.local) { error in }
+             print("Woo")
+             }*/
         }
     }
     
-    func endGame() {
+func endGame() {
         self.BGMPlayer.stop()
         self.soundPlayer.play(sound: "Explosion")
         

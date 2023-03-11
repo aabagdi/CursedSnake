@@ -27,6 +27,9 @@
 		39E5539329B2E4AA0042DF1F /* LeaderboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39E5539229B2E4AA0042DF1F /* LeaderboardView.swift */; };
 		39E5539529B941BB0042DF1F /* CreditsSceneDark.sks in Resources */ = {isa = PBXBuildFile; fileRef = 39E5539429B941BB0042DF1F /* CreditsSceneDark.sks */; };
 		39E5539929B99DC40042DF1F /* CreditsScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39E5539829B99DC40042DF1F /* CreditsScene.swift */; };
+		39E5539B29BD177B0042DF1F /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39E5539A29BD177B0042DF1F /* SettingsView.swift */; };
+		39E5539D29BD17AA0042DF1F /* RootSettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39E5539C29BD17AA0042DF1F /* RootSettingView.swift */; };
+		39E5539F29BD28180042DF1F /* SoundSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39E5539E29BD28180042DF1F /* SoundSettingsView.swift */; };
 		39FF9AC829A6C10F00F38A3D /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39FF9AC729A6C10F00F38A3D /* GameViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -54,6 +57,9 @@
 		39E5539229B2E4AA0042DF1F /* LeaderboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeaderboardView.swift; sourceTree = "<group>"; };
 		39E5539429B941BB0042DF1F /* CreditsSceneDark.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = CreditsSceneDark.sks; sourceTree = "<group>"; };
 		39E5539829B99DC40042DF1F /* CreditsScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreditsScene.swift; sourceTree = "<group>"; };
+		39E5539A29BD177B0042DF1F /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		39E5539C29BD17AA0042DF1F /* RootSettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootSettingView.swift; sourceTree = "<group>"; };
+		39E5539E29BD28180042DF1F /* SoundSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundSettingsView.swift; sourceTree = "<group>"; };
 		39FF9AC729A6C10F00F38A3D /* GameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -132,15 +138,42 @@
 			path = CursedSnake;
 			sourceTree = "<group>";
 		};
-		39FF9ACB29A72C7E00F38A3D /* ViewsAndScenes */ = {
+		39E553A029BD29800042DF1F /* Settings */ = {
 			isa = PBXGroup;
 			children = (
-				395BE12529A592B900C03742 /* TitleView.swift */,
+				39E5539A29BD177B0042DF1F /* SettingsView.swift */,
+				39E5539C29BD17AA0042DF1F /* RootSettingView.swift */,
+				39E5539E29BD28180042DF1F /* SoundSettingsView.swift */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		39E553A129BD29890042DF1F /* Game */ = {
+			isa = PBXGroup;
+			children = (
 				39E3E936297670C800BE4212 /* GameScene.swift */,
 				39E3E932297670C800BE4212 /* GameScene.sks */,
+			);
+			path = Game;
+			sourceTree = "<group>";
+		};
+		39E553A229BD29990042DF1F /* Credits */ = {
+			isa = PBXGroup;
+			children = (
 				39E5539829B99DC40042DF1F /* CreditsScene.swift */,
 				396908F929A8A19B00188186 /* CreditsSceneLight.sks */,
 				39E5539429B941BB0042DF1F /* CreditsSceneDark.sks */,
+			);
+			path = Credits;
+			sourceTree = "<group>";
+		};
+		39FF9ACB29A72C7E00F38A3D /* ViewsAndScenes */ = {
+			isa = PBXGroup;
+			children = (
+				39E553A229BD29990042DF1F /* Credits */,
+				39E553A129BD29890042DF1F /* Game */,
+				39E553A029BD29800042DF1F /* Settings */,
+				395BE12529A592B900C03742 /* TitleView.swift */,
 				39E5539229B2E4AA0042DF1F /* LeaderboardView.swift */,
 			);
 			path = ViewsAndScenes;
@@ -228,13 +261,16 @@
 				395BE12829A595D800C03742 /* CursedSnakeApp.swift in Sources */,
 				39E3E937297670C800BE4212 /* GameScene.swift in Sources */,
 				395BE12629A592B900C03742 /* TitleView.swift in Sources */,
+				39E5539F29BD28180042DF1F /* SoundSettingsView.swift in Sources */,
 				39FF9AC829A6C10F00F38A3D /* GameViewController.swift in Sources */,
 				39E5539929B99DC40042DF1F /* CreditsScene.swift in Sources */,
+				39E5539D29BD17AA0042DF1F /* RootSettingView.swift in Sources */,
 				39504142297B64F300D384F1 /* Snake.swift in Sources */,
 				39E5539329B2E4AA0042DF1F /* LeaderboardView.swift in Sources */,
 				39E3E931297670C800BE4212 /* AppDelegate.swift in Sources */,
 				395BE112299EEE3600C03742 /* AudioPlayer.swift in Sources */,
 				390EAAD329AEF7B000557C2F /* TitleViewModel.swift in Sources */,
+				39E5539B29BD177B0042DF1F /* SettingsView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

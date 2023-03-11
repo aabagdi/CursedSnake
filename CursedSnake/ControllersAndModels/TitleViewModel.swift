@@ -11,7 +11,7 @@ import GameKit
 extension TitleView {
     class TitleViewModel : ObservableObject {
         @Published var startGame = false
-        @Published var goToCredits = false
+        @Published var goToSettings = false
         @Published var showLeaderboard = false
         
         func authenticateUser() {
