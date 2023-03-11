@@ -83,7 +83,7 @@
 			path = ControllersAndModels;
 			sourceTree = "<group>";
 		};
-		395BE115299EEFD100C03742 /* Sounds */ = {
+		395BE115299EEFD100C03742 /* SoundsAndMusic */ = {
 			isa = PBXGroup;
 			children = (
 				39867DF829A9552B00E9F059 /* BGM.mp3 */,
@@ -92,7 +92,7 @@
 				395BE113299EEFC300C03742 /* Explosion.mp3 */,
 				39867DFA29A9559F00E9F059 /* TitleScreen.mp3 */,
 			);
-			path = Sounds;
+			path = SoundsAndMusic;
 			sourceTree = "<group>";
 		};
 		395BE12229A5914200C03742 /* Resources */ = {
@@ -129,7 +129,7 @@
 				39FF9ACB29A72C7E00F38A3D /* ViewsAndScenes */,
 				395BE12429A591BB00C03742 /* Info.plist */,
 				395BE12229A5914200C03742 /* Resources */,
-				395BE115299EEFD100C03742 /* Sounds */,
+				395BE115299EEFD100C03742 /* SoundsAndMusic */,
 				39E3E93D297670C900BE4212 /* Assets.xcassets */,
 				39867DFE29AA689100E9F059 /* Main.storyboard */,
 				39E3E930297670C800BE4212 /* AppDelegate.swift */,
