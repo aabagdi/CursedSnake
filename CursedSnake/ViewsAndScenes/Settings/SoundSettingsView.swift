@@ -6,6 +6,8 @@
 //
 
 import SwiftUI
+import Foundation
+
 
 struct SoundSettingsView: View {
     var body: some View {

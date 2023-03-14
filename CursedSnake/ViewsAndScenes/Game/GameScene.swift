@@ -1,7 +1,9 @@
-import SpriteKit
+import Foundation
 import SwiftUI
+import SpriteKit
 import UIKit
 import GameKit
+import GameplayKit
 
 class GameScene: SKScene, SKPhysicsContactDelegate {
     private var player: Snake!
@@ -10,6 +12,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     private var soundPlayer: AudioPlayer!
     private var BGMPlayer: AudioPlayer!
     private var GestureRecognizers: [UIGestureRecognizer] = []
+    private var randomDist: GKRandomDistribution!
     
     func randomPosition() -> CGPoint {
         let randX = CGFloat.random(in: frame.minX + 29...frame.maxX - 29)
@@ -53,12 +56,14 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         
         let soundPlayer = AudioPlayer()
         let BGMPlayer = AudioPlayer()
+        let dist = GKRandomDistribution(randomSource: GKMersenneTwisterRandomSource(), lowestValue: 0, highestValue: 99)
         
         self.player = snake
         self.food = food
         self.score = scoreCounter
         self.soundPlayer = soundPlayer
         self.BGMPlayer = BGMPlayer
+        self.randomDist = dist
         
         self.BGMPlayer.play(sound: "BGM")
         
@@ -136,7 +141,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         }
         if head!.intersects(food) {
             self.soundPlayer.play(sound: "Chew")
-            let randNum = Int.random(in: 0...100)
+            let randNum = self.randomDist.nextInt()
             food.removeFromParent()
             let newFood = genFood()
             self.addChild(newFood)

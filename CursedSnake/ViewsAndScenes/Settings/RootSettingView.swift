@@ -7,6 +7,8 @@
 
 import SwiftUI
 import SpriteKit
+import Foundation
+
 
 struct RootSettingView: View {
     let viewToDisplay: String

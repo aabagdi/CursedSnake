@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import Foundation
 
 struct SettingsView: View {
     let settings: Array<Setting> = [
