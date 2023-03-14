@@ -37,4 +37,12 @@ class AudioPlayer {
         return self.AudioPlayer.isPlaying
     }
     
+    func getVol() -> Float {
+        return self.AudioPlayer.volume
+    }
+    
+    func setVol(newVol: Float) {
+        self.AudioPlayer.volume = newVol
+    }
+    
 }
