@@ -22,5 +22,15 @@ extension TitleView {
                 }
             }
         }
+        
+        func initUserDefaults() {
+            let defaults = UserDefaults.standard
+            if defaults.bool(forKey: "UserDefaultsSet") == false {
+                defaults.set(true, forKey: "UserDefaultsSet")
+                defaults.set(0.5, forKey: "MusicVol")
+                defaults.set(1.0, forKey: "SoundVol")
+            }
+        }
+        
     }
 }

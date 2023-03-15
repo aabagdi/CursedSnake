@@ -13,8 +13,6 @@ import Foundation
 
 struct TitleView: View {
     
-    @Environment (\.colorScheme) var colorScheme: ColorScheme
-    
     @StateObject private var TitleModel = TitleViewModel()
     let TitleThemePlayer = AudioPlayer()
     
@@ -49,8 +47,10 @@ struct TitleView: View {
                     }
                 }.buttonStyle(.borderedProminent)
             }.onAppear(perform: {
-                TitleModel.authenticateUser()
+                //TitleModel.authenticateUser()
+                TitleModel.initUserDefaults()
                 self.TitleThemePlayer.play(sound: "TitleScreen")
+                self.TitleThemePlayer.setVol(newVol: UserDefaults.standard.float(forKey: "MusicVol"))
             })
             .onDisappear(perform: {
                 self.TitleThemePlayer.stop()

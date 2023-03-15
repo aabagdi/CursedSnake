@@ -66,6 +66,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         self.randomDist = dist
         
         self.BGMPlayer.play(sound: "BGM")
+        self.BGMPlayer.setVol(newVol: UserDefaults.standard.float(forKey: "MusicVol"))
         
         let swipeRight = UISwipeGestureRecognizer(target: self,
                                                   action: #selector(GameScene.swipeRight(sender:)))
@@ -141,6 +142,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         }
         if head!.intersects(food) {
             self.soundPlayer.play(sound: "Chew")
+            self.soundPlayer.setVol(newVol: UserDefaults.standard.float(forKey: "SoundVol"))
             let randNum = self.randomDist.nextInt()
             food.removeFromParent()
             let newFood = genFood()
