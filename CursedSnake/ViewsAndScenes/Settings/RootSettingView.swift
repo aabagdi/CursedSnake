@@ -14,8 +14,8 @@ struct RootSettingView: View {
     let viewToDisplay: String
     var body: some View {
         switch viewToDisplay {
-        case "Sound":
-            SoundSettingsView()
+        case "Volume":
+            VolumeSettingsView()
             
         case "Credits":
             let creditsScene = CreditsScene()

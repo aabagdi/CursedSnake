@@ -10,7 +10,7 @@ import Foundation
 
 struct SettingsView: View {
     let settings: Array<Setting> = [
-        Setting(title: "Sound", color: .red, imageName: "speaker.wave.2.fill"),
+        Setting(title: "Volume", color: .red, imageName: "speaker.wave.2.fill"),
         Setting(title: "Credits", color: .yellow, imageName: "text.alignleft")
     ]
     var body: some View {
