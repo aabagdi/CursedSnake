@@ -14,8 +14,7 @@ class AudioPlayer {
         let soundEffect = Bundle.main.url(forResource: sound, withExtension: "mp3")
         self.AudioPlayer = try! AVAudioPlayer(contentsOf: soundEffect!)
         self.AudioPlayer.prepareToPlay()
-        if sound == "BGM" || sound == "TitleScreen" {
-            self.AudioPlayer.volume = 0.5
+        if sound == "Cursed Snake" || sound == "Cursed Pong" || sound == "Aadit's Presidential Breakdown" || sound == "TitleScreen" {
             self.AudioPlayer.numberOfLoops = -1
         }
         self.AudioPlayer.play()

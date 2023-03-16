@@ -47,7 +47,7 @@ struct TitleView: View {
                     }
                 }.buttonStyle(.borderedProminent)
             }.onAppear(perform: {
-                TitleModel.authenticateUser()
+                //TitleModel.authenticateUser()
                 TitleModel.initUserDefaults()
                 self.TitleThemePlayer.play(sound: "TitleScreen")
                 self.TitleThemePlayer.setVol(newVol: UserDefaults.standard.float(forKey: "MusicVol"))

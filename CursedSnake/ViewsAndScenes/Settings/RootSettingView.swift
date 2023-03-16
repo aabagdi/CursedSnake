@@ -17,6 +17,9 @@ struct RootSettingView: View {
         case "Volume":
             VolumeSettingsView()
             
+        case "Background Music":
+            BGMSettingsView()
+            
         case "Credits":
             let creditsScene = CreditsScene()
             SpriteView(scene: creditsScene)

@@ -65,7 +65,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         self.BGMPlayer = BGMPlayer
         self.randomDist = dist
         
-        self.BGMPlayer.play(sound: "BGM")
+        self.BGMPlayer.play(sound: UserDefaults.standard.string(forKey: "BGM") ?? "Cursed Snake Theme")
         self.BGMPlayer.setVol(newVol: UserDefaults.standard.float(forKey: "MusicVol"))
         
         let swipeRight = UISwipeGestureRecognizer(target: self,
@@ -248,7 +248,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             for recognizer in GestureRecognizers {
                 view?.addGestureRecognizer(recognizer)
             }
-    
+            
         case .none:
             break
             
@@ -320,16 +320,14 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         }
     }
     
-func endGame() {
+    func endGame() {
         self.BGMPlayer.stop()
         self.soundPlayer.play(sound: "Explosion")
-        
+        self.soundPlayer.setVol(newVol: UserDefaults.standard.float(forKey: "SoundVol"))
         Task {
             await submitScore()
         }
-        
         let gameOver = SKLabelNode(fontNamed: "Zapfino")
-        
         let moveIntoView = SKAction.move(to: CGPoint(x: self.frame.midX, y: self.frame.midY), duration: 5)
         let moveDown = SKAction.move(to: CGPoint(x: self.frame.midX, y: self.frame.midY - 100), duration: 2)
         let rotate = SKAction.rotate(byAngle: 20 * Double.pi, duration: 5)
