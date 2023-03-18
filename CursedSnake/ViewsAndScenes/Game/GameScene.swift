@@ -156,6 +156,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             }
             else {
                 self.soundPlayer.play(sound: "Omg")
+                self.soundPlayer.setVol(newVol: UserDefaults.standard.float(forKey: "SoundVol"))
                 for _  in (0...player!.returnLength()) {
                     player!.incrementSnake()
                     self.addChild(player.SnakeBody.last!)
