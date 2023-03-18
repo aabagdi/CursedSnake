@@ -13,10 +13,12 @@ class CreditsScene: SKScene {
         switch UITraitCollection.current.userInterfaceStyle {
         case .light:
             let newScene = SKScene(fileNamed: "CreditsSceneLight")!
+            newScene.scaleMode = .fill
             self.view?.presentScene(newScene)
     
         case .dark:
             let newScene = SKScene(fileNamed: "CreditsSceneDark")!
+            newScene.scaleMode = .fill
             self.view?.presentScene(newScene)
             
         case .unspecified:

@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		390EAAD329AEF7B000557C2F /* TitleViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 390EAAD229AEF7B000557C2F /* TitleViewModel.swift */; };
+		3920E19F29C66FB100CCAFC8 /* CreditsSceneLight.sks in Resources */ = {isa = PBXBuildFile; fileRef = 3920E19E29C66FB100CCAFC8 /* CreditsSceneLight.sks */; };
 		39504142297B64F300D384F1 /* Snake.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39504141297B64F300D384F1 /* Snake.swift */; };
 		395BE112299EEE3600C03742 /* AudioPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 395BE111299EEE3600C03742 /* AudioPlayer.swift */; };
 		395BE114299EEFC300C03742 /* Explosion.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 395BE113299EEFC300C03742 /* Explosion.mp3 */; };
@@ -15,7 +16,7 @@
 		395BE11929A5376E00C03742 /* Omg.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 395BE11829A5376E00C03742 /* Omg.mp3 */; };
 		395BE12629A592B900C03742 /* TitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 395BE12529A592B900C03742 /* TitleView.swift */; };
 		395BE12829A595D800C03742 /* CursedSnakeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 395BE12729A595D800C03742 /* CursedSnakeApp.swift */; };
-		396908FA29A8A19B00188186 /* CreditsSceneLight.sks in Resources */ = {isa = PBXBuildFile; fileRef = 396908F929A8A19B00188186 /* CreditsSceneLight.sks */; };
+		396908FA29A8A19B00188186 /* CreditsSceneDark.sks in Resources */ = {isa = PBXBuildFile; fileRef = 396908F929A8A19B00188186 /* CreditsSceneDark.sks */; };
 		39867DFF29AA689100E9F059 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 39867DFE29AA689100E9F059 /* Main.storyboard */; };
 		399D7D7629A5BD5700CC922F /* Adam'sFont-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 399D7D7529A5BD5700CC922F /* Adam'sFont-Regular.otf */; };
 		39E3E931297670C800BE4212 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39E3E930297670C800BE4212 /* AppDelegate.swift */; };
@@ -32,12 +33,12 @@
 		39E553AC29C28AD90042DF1F /* BGMSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39E553AB29C28AD90042DF1F /* BGMSettingsView.swift */; };
 		39E553AE29C292AD0042DF1F /* Aadit's Presidential Breakdown.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 39E553AD29C292AD0042DF1F /* Aadit's Presidential Breakdown.mp3 */; };
 		39E553B029C2937C0042DF1F /* Cursed Snake Theme.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 39E553AF29C2937C0042DF1F /* Cursed Snake Theme.mp3 */; };
-		39E553B429C299390042DF1F /* CreditsSceneDark.sks in Resources */ = {isa = PBXBuildFile; fileRef = 39E553B329C299390042DF1F /* CreditsSceneDark.sks */; };
 		39FF9AC829A6C10F00F38A3D /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39FF9AC729A6C10F00F38A3D /* GameViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		390EAAD229AEF7B000557C2F /* TitleViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleViewModel.swift; sourceTree = "<group>"; };
+		3920E19E29C66FB100CCAFC8 /* CreditsSceneLight.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = CreditsSceneLight.sks; sourceTree = "<group>"; };
 		39504141297B64F300D384F1 /* Snake.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Snake.swift; sourceTree = "<group>"; };
 		395BE111299EEE3600C03742 /* AudioPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioPlayer.swift; sourceTree = "<group>"; };
 		395BE113299EEFC300C03742 /* Explosion.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Explosion.mp3; sourceTree = "<group>"; };
@@ -46,7 +47,7 @@
 		395BE12429A591BB00C03742 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		395BE12529A592B900C03742 /* TitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleView.swift; sourceTree = "<group>"; };
 		395BE12729A595D800C03742 /* CursedSnakeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CursedSnakeApp.swift; sourceTree = "<group>"; };
-		396908F929A8A19B00188186 /* CreditsSceneLight.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = CreditsSceneLight.sks; sourceTree = "<group>"; };
+		396908F929A8A19B00188186 /* CreditsSceneDark.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = CreditsSceneDark.sks; sourceTree = "<group>"; };
 		39867DFE29AA689100E9F059 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		399D7D7529A5BD5700CC922F /* Adam'sFont-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Adam'sFont-Regular.otf"; sourceTree = "<group>"; };
 		39E3E92D297670C800BE4212 /* CursedSnake.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CursedSnake.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -65,7 +66,6 @@
 		39E553AB29C28AD90042DF1F /* BGMSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BGMSettingsView.swift; sourceTree = "<group>"; };
 		39E553AD29C292AD0042DF1F /* Aadit's Presidential Breakdown.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Aadit's Presidential Breakdown.mp3"; sourceTree = "<group>"; };
 		39E553AF29C2937C0042DF1F /* Cursed Snake Theme.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Cursed Snake Theme.mp3"; sourceTree = "<group>"; };
-		39E553B329C299390042DF1F /* CreditsSceneDark.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = CreditsSceneDark.sks; sourceTree = "<group>"; };
 		39FF9AC729A6C10F00F38A3D /* GameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -170,8 +170,8 @@
 			isa = PBXGroup;
 			children = (
 				39E5539829B99DC40042DF1F /* CreditsScene.swift */,
-				396908F929A8A19B00188186 /* CreditsSceneLight.sks */,
-				39E553B329C299390042DF1F /* CreditsSceneDark.sks */,
+				396908F929A8A19B00188186 /* CreditsSceneDark.sks */,
+				3920E19E29C66FB100CCAFC8 /* CreditsSceneLight.sks */,
 			);
 			path = Credits;
 			sourceTree = "<group>";
@@ -246,7 +246,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				39E553B429C299390042DF1F /* CreditsSceneDark.sks in Resources */,
+				3920E19F29C66FB100CCAFC8 /* CreditsSceneLight.sks in Resources */,
 				395BE11929A5376E00C03742 /* Omg.mp3 in Resources */,
 				39867DFF29AA689100E9F059 /* Main.storyboard in Resources */,
 				399D7D7629A5BD5700CC922F /* Adam'sFont-Regular.otf in Resources */,
@@ -258,7 +258,7 @@
 				395BE11729A5357600C03742 /* Chew.mp3 in Resources */,
 				39E553AE29C292AD0042DF1F /* Aadit's Presidential Breakdown.mp3 in Resources */,
 				39E553AA29C28A380042DF1F /* Cursed Pong Theme.mp3 in Resources */,
-				396908FA29A8A19B00188186 /* CreditsSceneLight.sks in Resources */,
+				396908FA29A8A19B00188186 /* CreditsSceneDark.sks in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

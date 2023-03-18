@@ -15,8 +15,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     private var randomDist: GKRandomDistribution!
     
     func randomPosition() -> CGPoint {
-        let randX = CGFloat.random(in: frame.minX + 29...frame.maxX - 29)
-        let randY = CGFloat.random(in: frame.minY + 29...frame.maxY - 70)
+        let randX = CGFloat.random(in: -166...166)
+        let randY = CGFloat.random(in: -408...367)
         return CGPoint(x: randX, y: randY)
     }
     
@@ -39,7 +39,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     override func didMove(to view: SKView) {
         physicsWorld.contactDelegate = self
         let snake = Snake()
-        snake.SnakeBody.first?.position = CGPoint(x: frame.midX, y: frame.midY - 300)
+        snake.SnakeBody.first?.position = CGPoint(x: 0, y: -300)
         let food = genFood()
         self.addChild(food)
         for i in snake.SnakeBody {
@@ -51,7 +51,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         scoreCounter.text = String(0)
         scoreCounter.fontSize = 65
         scoreCounter.fontColor = generateRandomColor()
-        scoreCounter.position = CGPoint(x: frame.midX, y: frame.maxY - 125)
+        scoreCounter.position = CGPoint(x: 0, y: 312)
         self.addChild(scoreCounter)
         
         let soundPlayer = AudioPlayer()
@@ -328,8 +328,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             await submitScore()
         }
         let gameOver = SKLabelNode(fontNamed: "Zapfino")
-        let moveIntoView = SKAction.move(to: CGPoint(x: self.frame.midX, y: self.frame.midY), duration: 5)
-        let moveDown = SKAction.move(to: CGPoint(x: self.frame.midX, y: self.frame.midY - 100), duration: 2)
+        let moveIntoView = SKAction.move(to: CGPoint(x: 0, y: 0), duration: 5)
+        let moveDown = SKAction.move(to: CGPoint(x: 0, y: -100), duration: 2)
         let rotate = SKAction.rotate(byAngle: 20 * Double.pi, duration: 5)
         let fadeAway = SKAction.fadeOut(withDuration: 1.5)
         let explode = SKAction.scale(by: 30, duration: 1.5)
@@ -339,14 +339,14 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         returnToMenu.text = "Tap to return to main menu"
         returnToMenu.fontSize = 50
         returnToMenu.fontColor = .cyan
-        returnToMenu.position = CGPoint(x: self.frame.midX - 500, y: self.frame.midY)
+        returnToMenu.position = CGPoint(x: -500, y: 0)
         self.addChild(returnToMenu)
         
         gameOver.zPosition = 3
         gameOver.text = "Game over, hmbpmhpbhmh"
         gameOver.fontSize = 24
         gameOver.fontColor = SKColor.white
-        gameOver.position = CGPoint(x: self.frame.midX, y: self.frame.midY - 550)
+        gameOver.position = CGPoint(x: 0, y: -550)
         self.addChild(gameOver)
         for i in player!.SnakeBody {
             let nodeCopy = i
