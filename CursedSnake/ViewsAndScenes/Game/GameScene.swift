@@ -67,6 +67,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         
         self.BGMPlayer.play(sound: UserDefaults.standard.string(forKey: "BGM") ?? "Cursed Snake Theme")
         self.BGMPlayer.setVol(newVol: UserDefaults.standard.float(forKey: "MusicVol"))
+        self.BGMPlayer.triggerLoop()
         
         let swipeRight = UISwipeGestureRecognizer(target: self,
                                                   action: #selector(GameScene.swipeRight(sender:)))
@@ -235,16 +236,20 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         }
         
     }
-    
+        
     func pauseUnpause() {
         scene?.view?.isPaused.toggle()
         switch scene?.view?.isPaused {
         case true:
+            soundPlayer.play(sound: "Pause")
+            self.soundPlayer.setVol(newVol: UserDefaults.standard.float(forKey: "SoundVol"))
             BGMPlayer.pause()
             for recognizer in GestureRecognizers {
                 view?.removeGestureRecognizer(recognizer)
             }
         case false:
+            soundPlayer.play(sound: "Unpause")
+            self.soundPlayer.setVol(newVol: UserDefaults.standard.float(forKey: "SoundVol"))
             BGMPlayer.resume()
             for recognizer in GestureRecognizers {
                 view?.addGestureRecognizer(recognizer)

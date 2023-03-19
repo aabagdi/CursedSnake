@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		390EAAD329AEF7B000557C2F /* TitleViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 390EAAD229AEF7B000557C2F /* TitleViewModel.swift */; };
 		3920E19F29C66FB100CCAFC8 /* CreditsSceneLight.sks in Resources */ = {isa = PBXBuildFile; fileRef = 3920E19E29C66FB100CCAFC8 /* CreditsSceneLight.sks */; };
+		3920E1A229C6BA2200CCAFC8 /* Pause.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 3920E1A029C6BA2200CCAFC8 /* Pause.mp3 */; };
+		3920E1A329C6BA2200CCAFC8 /* Unpause.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 3920E1A129C6BA2200CCAFC8 /* Unpause.mp3 */; };
 		39504142297B64F300D384F1 /* Snake.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39504141297B64F300D384F1 /* Snake.swift */; };
 		395BE112299EEE3600C03742 /* AudioPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 395BE111299EEE3600C03742 /* AudioPlayer.swift */; };
 		395BE114299EEFC300C03742 /* Explosion.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 395BE113299EEFC300C03742 /* Explosion.mp3 */; };
@@ -39,6 +41,8 @@
 /* Begin PBXFileReference section */
 		390EAAD229AEF7B000557C2F /* TitleViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleViewModel.swift; sourceTree = "<group>"; };
 		3920E19E29C66FB100CCAFC8 /* CreditsSceneLight.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = CreditsSceneLight.sks; sourceTree = "<group>"; };
+		3920E1A029C6BA2200CCAFC8 /* Pause.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Pause.mp3; sourceTree = "<group>"; };
+		3920E1A129C6BA2200CCAFC8 /* Unpause.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Unpause.mp3; sourceTree = "<group>"; };
 		39504141297B64F300D384F1 /* Snake.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Snake.swift; sourceTree = "<group>"; };
 		395BE111299EEE3600C03742 /* AudioPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioPlayer.swift; sourceTree = "<group>"; };
 		395BE113299EEFC300C03742 /* Explosion.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Explosion.mp3; sourceTree = "<group>"; };
@@ -92,6 +96,8 @@
 		395BE115299EEFD100C03742 /* SoundsAndMusic */ = {
 			isa = PBXGroup;
 			children = (
+				3920E1A029C6BA2200CCAFC8 /* Pause.mp3 */,
+				3920E1A129C6BA2200CCAFC8 /* Unpause.mp3 */,
 				39E553AF29C2937C0042DF1F /* Cursed Snake Theme.mp3 */,
 				39E553A929C28A380042DF1F /* Cursed Pong Theme.mp3 */,
 				39E553AD29C292AD0042DF1F /* Aadit's Presidential Breakdown.mp3 */,
@@ -248,7 +254,9 @@
 			files = (
 				3920E19F29C66FB100CCAFC8 /* CreditsSceneLight.sks in Resources */,
 				395BE11929A5376E00C03742 /* Omg.mp3 in Resources */,
+				3920E1A329C6BA2200CCAFC8 /* Unpause.mp3 in Resources */,
 				39867DFF29AA689100E9F059 /* Main.storyboard in Resources */,
+				3920E1A229C6BA2200CCAFC8 /* Pause.mp3 in Resources */,
 				399D7D7629A5BD5700CC922F /* Adam'sFont-Regular.otf in Resources */,
 				39E3E933297670C800BE4212 /* GameScene.sks in Resources */,
 				39E553B029C2937C0042DF1F /* Cursed Snake Theme.mp3 in Resources */,

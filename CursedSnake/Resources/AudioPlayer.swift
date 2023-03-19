@@ -14,10 +14,14 @@ class AudioPlayer {
         let soundEffect = Bundle.main.url(forResource: sound, withExtension: "mp3")
         self.AudioPlayer = try! AVAudioPlayer(contentsOf: soundEffect!)
         self.AudioPlayer.prepareToPlay()
-        if sound == "Cursed Snake" || sound == "Cursed Pong" || sound == "Aadit's Presidential Breakdown" || sound == "TitleScreen" {
+        /*if sound == "Cursed Snake" || sound == "Cursed Pong" || sound == "Aadit's Presidential Breakdown" || sound == "TitleScreen" {
             self.AudioPlayer.numberOfLoops = -1
-        }
+        }*/
         self.AudioPlayer.play()
+    }
+    
+    func triggerLoop() {
+        self.AudioPlayer.numberOfLoops = -1
     }
     
     func stop() {
@@ -43,5 +47,4 @@ class AudioPlayer {
     func setVol(newVol: Float) {
         self.AudioPlayer.volume = newVol
     }
-    
 }
