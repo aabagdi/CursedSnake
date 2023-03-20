@@ -131,18 +131,13 @@ class Snake {
         
         else if SnakeDirection == .left && direction != .right {
             SnakeDirection = direction
-            /*let moveAction = SKAction.move(to: CGPoint(x: tail!.position.x - CGFloat(20), y: tail!.position.y), duration: 0.05)
-             tail!.run(moveAction)*/
             let rotation = SKAction.rotate(byAngle: -(Double.pi) / 2.0, duration: 0.00000000005)
             head!.run(rotation)
             tail!.position.x = tail!.position.x + CGFloat(10)
-            //tail!.position.y = tail!.position.y + (CGFloat(20) * CGFloat(self.returnLength()))
         }
         
         else if SnakeDirection == .right && direction != .left {
             SnakeDirection = direction
-            /*let moveAction = SKAction.move(to: CGPoint(x: tail!.position.x + CGFloat(20), y: tail!.position.y), duration: 0.05)
-             tail!.run(moveAction)*/
             let rotation = SKAction.rotate(byAngle: (Double.pi) / 2.0, duration: 0.00000000005)
             head!.run(rotation)
             tail!.position.x = tail!.position.x - CGFloat(10)
@@ -150,8 +145,6 @@ class Snake {
         
         else if SnakeDirection == .up && direction != .down {
             SnakeDirection = direction
-            /*let moveAction = SKAction.move(to: CGPoint(x: tail!.position.x, y: tail!.position.y + CGFloat(20)), duration: 0.05)
-             tail!.run(moveAction)*/
             let rotation = SKAction.rotate(byAngle: (Double.pi) / 2.0, duration: 0.00000000005)
             head!.run(rotation)
             tail!.position.y = tail!.position.y - CGFloat(10)
@@ -162,8 +155,6 @@ class Snake {
             SnakeDirection = direction
             let rotation = SKAction.rotate(byAngle: -(Double.pi) / 2.0, duration: 0.00000000005)
             head!.run(rotation)
-            /*let moveAction = SKAction.move(to: CGPoint(x: tail!.position.x, y: tail!.position.y - CGFloat(20)), duration: 0.05)
-             tail!.run(moveAction)*/
             tail!.position.y = tail!.position.y + CGFloat(10)
         }
     }
@@ -182,6 +173,7 @@ class Snake {
         if currentX < -190.0 {
             currentX = -190.0
         }
+        
         else if currentX > 190.0 {
             currentX = 190.0
         }
@@ -194,7 +186,6 @@ class Snake {
             currentY = 432.0
         }
         return CGPointMake(currentX, currentY)
-        
     }
     
     init() {

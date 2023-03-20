@@ -37,8 +37,6 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     }
     
     override func didMove(to view: SKView) {
-        print(frame.maxX)
-        print(frame.maxY)
         physicsWorld.contactDelegate = self
         let snake = Snake()
         snake.SnakeBody.first?.position = CGPoint(x: 0, y: -300)
@@ -102,29 +100,17 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         
         switch player!.SnakeDirection {
         case .up:
-            /*for i in player!.SnakeBody {
-             i.position.y += player!.SnakeSpeed
-             }
-             head!.position.y += 20*/
             
             let moveAction = SKAction.move(to: CGPoint(x: headX, y: headY + 20.0), duration: player!.SnakeSpeed)
             head!.run(moveAction)
             player!.moveTail()
             
         case .down:
-            /*for i in player!.SnakeBody {
-             i.position.y -= player!.SnakeSpeed
-             }
-             head!.position.y -= 20*/
             let moveAction = SKAction.move(to: CGPoint(x: headX, y: headY - 20.0), duration: player!.SnakeSpeed)
             head!.run(moveAction)
             player!.moveTail()
             
         case .left:
-            /*for i in player!.SnakeBody {
-             i.position.x -= player!.SnakeSpeed
-             }
-             head!.position.x -= 20*/
             let moveAction = SKAction.move(to: CGPoint(x: headX - 20.0, y: headY), duration: player!.SnakeSpeed)
             head!.run(moveAction)
             //player!.incrementSnake()
@@ -132,10 +118,6 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             player!.moveTail()
             
         case .right:
-            /*for i in player!.SnakeBody {
-             i.position.x += player!.SnakeSpeed
-             }
-             head!.position.x += 20*/
             let moveAction = SKAction.move(to: CGPoint(x: headX + 20.0, y: headY), duration: player!.SnakeSpeed)
             head!.run(moveAction)
             player!.moveTail()
@@ -222,13 +204,6 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         let touchPos = touches.location(in: self)
         let touchedNode = self.atPoint(touchPos)
         if touchedNode.name == "Pause" {
-            /*scene?.view?.isPaused.toggle()
-             if BGMPlayer.isPlaying() {
-             BGMPlayer.pause()
-             }
-             else {
-             BGMPlayer.resume()
-             }*/
             pauseUnpause()
         }
         else if touchedNode.name == "returnToMenu" {
@@ -309,22 +284,9 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         if (GKLocalPlayer.local.isAuthenticated) {
             GKLeaderboard.loadLeaderboards(IDs:["com.aabagdi.CursedSnake.DailyTopScores"]) { (fetchedLBs, error) in
                 guard let daily = fetchedLBs?.first else { return }
-                //guard let allTime = fetchedLBs?[1] else { return }
-                //guard let endDate = daily.startDate?.addingTimeInterval(daily.duration), endDate > Date() else { return }
                 daily.submitScore(currentScore!, context: 0, player: GKLocalPlayer.local) { error in }
-                //GKLeaderboard.submitScore(currentScore!, context: 0, player: GKLocalPlayer.local, leaderboardIDs: ["com.aabagdi.CursedSnake.DailyTopScores"], completionHandler: { error in })
-                //allTime.submitScore(currentScore!, context: 0, player: GKLocalPlayer.local) { error in }
                 print("Woo")
             }
-            /*GKLeaderboard.loadLeaderboards(IDs:["com.aabagdi.CursedSnake.AllTime"]) { (fetchedLBs, error) in
-             guard let allTime = fetchedLBs?.first else { return }
-             //guard let allTime = fetchedLBs?[1] else { return }
-             //guard let endDate = daily.startDate?.addingTimeInterval(daily.duration), endDate > Date() else { return }
-             allTime.submitScore(currentScore!, context: 0, player: GKLocalPlayer.local) { error in }
-             //GKLeaderboard.submitScore(currentScore!, context: 0, player: GKLocalPlayer.local, leaderboardIDs: ["com.aabagdi.CursedSnake.DailyTopScores"], completionHandler: { error in })
-             //allTime.submitScore(currentScore!, context: 0, player: GKLocalPlayer.local) { error in }
-             print("Woo")
-             }*/
         }
     }
     
