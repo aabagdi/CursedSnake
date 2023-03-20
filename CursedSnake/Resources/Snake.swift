@@ -89,22 +89,26 @@ class Snake {
                     case .up:
                         let predX = pred.position.x
                         let predY = pred.position.y - 5
-                        let moveAction = SKAction.move(to: CGPoint(x: predX, y: predY), duration: self.SnakeSpeed / 4)
+                        let predPos = boundaryCheck(point: CGPointMake(predX, predY))
+                        let moveAction = SKAction.move(to: predPos, duration: self.SnakeSpeed / 4)
                         curr.run(moveAction)
                     case .down:
                         let predX = pred.position.x
                         let predY = pred.position.y + 5
-                        let moveAction = SKAction.move(to: CGPoint(x: predX, y: predY), duration: self.SnakeSpeed / 4)
+                        let predPos = boundaryCheck(point: CGPointMake(predX, predY))
+                        let moveAction = SKAction.move(to: predPos, duration: self.SnakeSpeed / 4)
                         curr.run(moveAction)
                     case .left:
                         let predX = pred.position.x + 5
                         let predY = pred.position.y
-                        let moveAction = SKAction.move(to: CGPoint(x: predX, y: predY), duration: self.SnakeSpeed / 4)
+                        let predPos = boundaryCheck(point: CGPointMake(predX, predY))
+                        let moveAction = SKAction.move(to: predPos, duration: self.SnakeSpeed / 4)
                         curr.run(moveAction)
                     case .right:
                         let predX = pred.position.x - 5
                         let predY = pred.position.y
-                        let moveAction = SKAction.move(to: CGPoint(x: predX, y: predY), duration: self.SnakeSpeed / 4)
+                        let predPos = boundaryCheck(point: CGPointMake(predX, predY))
+                        let moveAction = SKAction.move(to: predPos, duration: self.SnakeSpeed / 4)
                         curr.run(moveAction)
                     case .dead:
                         return
@@ -162,6 +166,35 @@ class Snake {
              tail!.run(moveAction)*/
             tail!.position.y = tail!.position.y + CGFloat(10)
         }
+    }
+    
+    func boundaryCheck(point: CGPoint) -> CGPoint {
+        var currentX = point.x
+        var currentY = point.y
+        
+        let xRange = -190.0...190.0
+        let yRange = -432.0...432.0
+        
+        if xRange.contains(currentX) && yRange.contains(currentY) {
+            return point
+        }
+        
+        if currentX < -190.0 {
+            currentX = -190.0
+        }
+        else if currentX > 190.0 {
+            currentX = 190.0
+        }
+        
+        if currentY < -432.0 {
+            currentY = -432.0
+        }
+        
+        else if currentY > 432.0 {
+            currentY = 432.0
+        }
+        return CGPointMake(currentX, currentY)
+        
     }
     
     init() {

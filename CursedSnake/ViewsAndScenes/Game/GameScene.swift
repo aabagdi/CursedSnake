@@ -37,6 +37,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     }
     
     override func didMove(to view: SKView) {
+        print(frame.maxX)
+        print(frame.maxY)
         physicsWorld.contactDelegate = self
         let snake = Snake()
         snake.SnakeBody.first?.position = CGPoint(x: 0, y: -300)

@@ -51,6 +51,7 @@ struct TitleView: View {
                 TitleModel.initUserDefaults()
                 self.TitleThemePlayer.play(sound: "TitleScreen")
                 self.TitleThemePlayer.setVol(newVol: UserDefaults.standard.float(forKey: "MusicVol"))
+                self.TitleThemePlayer.triggerLoop()
             })
             .onDisappear(perform: {
                 self.TitleThemePlayer.stop()
