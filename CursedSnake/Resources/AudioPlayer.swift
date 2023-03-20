@@ -15,12 +15,9 @@ class AudioPlayer {
         self.AudioPlayer = try! AVAudioPlayer(contentsOf: soundEffect!)
         self.AudioPlayer.prepareToPlay()
         self.AudioPlayer.play()
-        do {
-           try AVAudioSession.sharedInstance().setCategory(.ambient)
-           try AVAudioSession.sharedInstance().setActive(true, options: .notifyOthersOnDeactivation)
-        } catch {
-           NSLog(error.localizedDescription)
-        }
+        try! AVAudioSession.sharedInstance().setCategory(.ambient)
+        try! AVAudioSession.sharedInstance().setActive(true, options: .notifyOthersOnDeactivation)
+        
     }
     
     func triggerLoop() {
