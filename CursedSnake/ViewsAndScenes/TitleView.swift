@@ -19,35 +19,47 @@ struct TitleView: View {
     var body: some View {
         NavigationStack {
             VStack {
-                Text("Cursed Snake").font(.custom("Adam'sFontRegular", size: 52)).multilineTextAlignment(.center)
-                VStack{
-                    Button("Play Game") {
-                        TitleModel.startGame.toggle()
+                GeometryReader{ g in
+                    VStack {
+                        Text("Cursed Snake")
+                            //.font(.custom("Adam'sFontRegular", size: 400))
+                            .font(.custom("Adam'sFontRegular", size: g.size.height))
+                            .multilineTextAlignment(.center)
+                            .lineLimit(2)
+                            .minimumScaleFactor(0.01)
                     }
-                    .navigationDestination(isPresented: $TitleModel.startGame) {
-                        GameViewControllerRepresentable()
-                            .navigationBarBackButtonHidden(true)
-                            .navigationBarTitle("")
-                            .navigationBarHidden(true)
-                            .edgesIgnoringSafeArea([.top, .bottom])
-                    }
-                    Button("Settings") {
-                        TitleModel.goToSettings.toggle()
-                    }
-                    .navigationDestination(isPresented: $TitleModel.goToSettings) {
-                        SettingsView()
-                    }
+                }
+                    VStack{
+                        Button("Play Game") {
+                            TitleModel.startGame.toggle()
+                        }
+                        .navigationDestination(isPresented: $TitleModel.startGame) {
+                            GameViewControllerRepresentable()
+                                .navigationBarBackButtonHidden(true)
+                                .navigationBarTitle("")
+                                .navigationBarHidden(true)
+                                .edgesIgnoringSafeArea([.top, .bottom])
+                        }
+                        Button("Settings") {
+                            TitleModel.goToSettings.toggle()
+                        }
+                        .navigationDestination(isPresented: $TitleModel.goToSettings) {
+                            SettingsView()
+                        }
                         
-                        
-                    Button("Game Center") {
-                        TitleModel.showLeaderboard.toggle()
-                    }
-                    .sheet(isPresented: $TitleModel.showLeaderboard) {
-                        GameCenterView()
-                    }
-                }.buttonStyle(.borderedProminent)
-            }.onAppear(perform: {
-                TitleModel.authenticateUser()
+                        Button("Game Center") {
+                            TitleModel.showLeaderboard.toggle()
+                        }
+                        .sheet(isPresented: $TitleModel.showLeaderboard) {
+                            GameCenterView()
+                        }
+                    }.buttonStyle(.borderedProminent)
+                        .controlSize(.large)
+                        .font(.system(size: 35, weight: Font.Weight.bold))
+                
+            }.scaledToFit()
+            .onAppear(perform: {
+                //TitleModel.authenticateUser()
                 TitleModel.initUserDefaults()
                 self.TitleThemePlayer.play(sound: "TitleScreen")
                 self.TitleThemePlayer.setVol(newVol: UserDefaults.standard.float(forKey: "MusicVol"))

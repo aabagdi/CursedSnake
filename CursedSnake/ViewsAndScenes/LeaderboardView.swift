@@ -1,7 +1,3 @@
-//
-//  GameCenterView.swift
-//  StairStepperMaster
-//
 //  Created by Saamer Mansoor on 6/6/22.
 //
 import Foundation

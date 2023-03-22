@@ -29,10 +29,20 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     }
     
     func genFood() -> SKSpriteNode {
+        let randNum = Int.random(in: 0...10000)
+        if randNum < 1 {
+            let claw = SKSpriteNode(imageNamed: "Claw.png")
+            claw.position = randomPosition()
+            claw.zPosition = 2
+            claw.setScale(0.1)
+            claw.name = "Claw"
+            return claw
+        }
         let food = SKSpriteNode(imageNamed: "Egg.png")
         food.position = randomPosition()
         food.zPosition = 2
         food.setScale(0.03)
+        food.name = "Egg"
         return food
     }
     
@@ -56,7 +66,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         
         let soundPlayer = AudioPlayer()
         let BGMPlayer = AudioPlayer()
-        let dist = GKRandomDistribution(randomSource: GKMersenneTwisterRandomSource(), lowestValue: 0, highestValue: 99)
+        let dist = GKRandomDistribution(randomSource: GKMersenneTwisterRandomSource(), lowestValue: 1, highestValue: 101)
         
         self.player = snake
         self.food = food
@@ -126,30 +136,34 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             return
         }
         if head!.intersects(food) {
-            self.soundPlayer.play(sound: "Chew")
-            self.soundPlayer.setVol(newVol: UserDefaults.standard.float(forKey: "SoundVol"))
-            let randNum = self.randomDist.nextInt()
-            food.removeFromParent()
             let newFood = genFood()
             self.addChild(newFood)
-            if randNum > 5 {
-                player!.incrementSnake()
-                self.addChild(player.SnakeBody.last!)
-                self.score.fontName = UIFont.familyNames.randomElement()
-                self.score.fontColor = generateRandomColor()
-                self.score.text = String(Int(self.score.text!)! + 1)
-            }
-            else {
-                self.soundPlayer.play(sound: "Omg")
+            food.removeFromParent()
+            self.score.fontName = UIFont.familyNames.randomElement()
+            self.score.fontColor = generateRandomColor()
+            if food.name == "Egg" {
+                self.soundPlayer.play(sound: "Chew")
                 self.soundPlayer.setVol(newVol: UserDefaults.standard.float(forKey: "SoundVol"))
-                for _  in (0...player!.returnLength()) {
+                let randNum = self.randomDist.nextInt()
+                if randNum > 1 {
                     player!.incrementSnake()
                     self.addChild(player.SnakeBody.last!)
+                    self.score.fontName = UIFont.familyNames.randomElement()
+                    self.score.fontColor = generateRandomColor()
+                    self.score.text = String(Int(self.score.text!)! + 1)
                 }
-                self.score.fontName = UIFont.familyNames.randomElement()
-                self.score.fontColor = generateRandomColor()
-                self.score.text = String(Int(self.score.text!)! - 1)
-                
+                else {
+                    self.soundPlayer.play(sound: "Omg")
+                    self.soundPlayer.setVol(newVol: UserDefaults.standard.float(forKey: "SoundVol"))
+                    for _  in (0...player!.returnLength()) {
+                        player!.incrementSnake()
+                        self.addChild(player.SnakeBody.last!)
+                    }
+                    self.score.text = String(Int(self.score.text!)! - 1)
+                }
+            }
+            else {
+                self.score.text = String(Int(self.score.text!)! + 69)
             }
             self.food = newFood
         }

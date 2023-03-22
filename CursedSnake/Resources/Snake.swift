@@ -163,13 +163,6 @@ class Snake {
         var currentX = point.x
         var currentY = point.y
         
-        let xRange = -190.0...190.0
-        let yRange = -432.0...432.0
-        
-        if xRange.contains(currentX) && yRange.contains(currentY) {
-            return point
-        }
-        
         if currentX < -190.0 {
             currentX = -190.0
         }
@@ -202,6 +195,5 @@ class Snake {
         /*for _ in (0...25) {
          incrementSnake()
          }*/
-        //self.SnakeBody = self.SnakeBody.reversed()
     }
 }
