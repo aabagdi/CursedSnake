@@ -35,7 +35,7 @@ struct SnakeColorView: View {
                     }.frame(width: 50, height: 50)
                 }
                 Spacer()
-            }
+            }.listRowBackground(LinearGradient(gradient: Gradient(colors: [Color("Bi Pink"), Color("Bi Purple"), Color("Bi Blue")]), startPoint: .top, endPoint: .bottom))
         }
     }
 }
