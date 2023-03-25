@@ -18,15 +18,15 @@ class Snake {
         case dead
     }
     
-    var SnakeDirection: SnakeStates = .up
-    var SnakeSpeed: CGFloat
+    private var SnakeDirection: SnakeStates = .up
+    private var SnakeSpeed: CGFloat
     
-    var SnakeBody = [SKShapeNode]()
+    private var SnakeBody = [SKShapeNode]()
     
-    var SnakeHeadColor = UserDefaults.standard.string(forKey: "HeadColor")
-    var SnakeBodyColor = UserDefaults.standard.string(forKey: "BodyColor")
+    private var SnakeHeadColor = UserDefaults.standard.string(forKey: "HeadColor")
+    private var SnakeBodyColor = UserDefaults.standard.string(forKey: "BodyColor")
     
-    func returnLength() -> Int {
+    func getLength() -> Int {
         return SnakeBody.count
     }
     
@@ -57,9 +57,36 @@ class Snake {
         SnakeBody.append(newSegment)
     }
     
+    func lengthDependantSpeed() {
+        let snakeLength = self.getLength()
+        if snakeLength >= 16 {
+            self.setSpeed(speed: 0.15)
+        }
+        
+        if snakeLength >= 21 {
+            self.setSpeed(speed: 0.1)
+        }
+        
+        if snakeLength >= 36 {
+            self.setSpeed(speed: 0.08)
+        }
+        
+        if snakeLength >= 51 {
+            self.setSpeed(speed: 0.06)
+        }
+        
+        if snakeLength >= 86 {
+            self.setSpeed(speed: 0.04)
+        }
+        
+        if snakeLength >= 101 {
+            self.setSpeed(speed: 0.03)
+        }
+    }
+    
     func moveTail() {
-        if self.returnLength() > 1 {
-            for i in (1...(self.returnLength() - 1)).reversed() {
+        if self.getLength() > 1 {
+            for i in (1...(self.getLength() - 1)).reversed() {
                 let curr = SnakeBody[i]
                 let pred = SnakeBody[i - 1]
                 if i == 1 {
@@ -180,6 +207,22 @@ class Snake {
         return CGPointMake(currentX, currentY)
     }
     
+    func getBody() -> [SKShapeNode] {
+        return SnakeBody
+    }
+    
+    func getDirection() -> SnakeStates {
+        return SnakeDirection
+    }
+    
+    func getSpeed() -> CGFloat {
+        return SnakeSpeed
+    }
+    
+    func setSpeed(speed: CGFloat) {
+        self.SnakeSpeed = speed
+    }
+    
     init() {
         let head = SKShapeNode(ellipseOf: CGSize(width: 20, height: 35))
         head.name = "head"
@@ -188,6 +231,7 @@ class Snake {
         head.physicsBody = SKPhysicsBody(circleOfRadius: 8)
         head.physicsBody!.categoryBitMask = 0b11
         head.physicsBody!.usesPreciseCollisionDetection = true
+        head.position = CGPoint(x: 0, y: -300)
         self.SnakeBody.append(head)
         self.SnakeSpeed = 0.2
         //self.incrementSnake()

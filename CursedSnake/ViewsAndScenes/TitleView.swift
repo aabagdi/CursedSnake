@@ -52,6 +52,9 @@ struct TitleView: View {
                     .sheet(isPresented: $model.showLeaderboard) {
                         GameCenterView()
                     }
+                    Button("Reset Score") {
+                        GKAchievement.resetAchievements()
+                    }
                 }.buttonStyle(.borderedProminent)
                     .controlSize(.large)
                     .font(.system(size: 35, weight: Font.Weight.bold))
@@ -59,7 +62,6 @@ struct TitleView: View {
             }.scaledToFit()
                 .onAppear(perform: {
                     model.authenticateUser()
-                    //GKAchievement.resetAchievements()
                     model.initUserDefaults()
                     self.TitleThemePlayer.play(sound: "TitleScreen")
                     self.TitleThemePlayer.setVol(newVol: UserDefaults.standard.float(forKey: "MusicVol"))
