@@ -25,7 +25,7 @@ struct SnakeColorView: View {
                             .strokeBorder(.white, lineWidth: 3.2)
                         
                     }.frame(width: 100, height: 175)
-                    ForEach(0..<8) { _ in
+                    ForEach(0..<7) { _ in
                         ZStack {
                             Circle()
                                 .fill(BodyColor)

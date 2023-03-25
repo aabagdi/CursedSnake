@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		390EAAD329AEF7B000557C2F /* TitleModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 390EAAD229AEF7B000557C2F /* TitleModel.swift */; };
+		390EAAD329AEF7B000557C2F /* TitleViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 390EAAD229AEF7B000557C2F /* TitleViewModel.swift */; };
 		3920E19F29C66FB100CCAFC8 /* CreditsSceneLight.sks in Resources */ = {isa = PBXBuildFile; fileRef = 3920E19E29C66FB100CCAFC8 /* CreditsSceneLight.sks */; };
 		3920E1A229C6BA2200CCAFC8 /* Pause.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 3920E1A029C6BA2200CCAFC8 /* Pause.mp3 */; };
 		3920E1A329C6BA2200CCAFC8 /* Unpause.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 3920E1A129C6BA2200CCAFC8 /* Unpause.mp3 */; };
@@ -41,7 +41,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		390EAAD229AEF7B000557C2F /* TitleModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleModel.swift; sourceTree = "<group>"; };
+		390EAAD229AEF7B000557C2F /* TitleViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleViewModel.swift; sourceTree = "<group>"; };
 		3920E19E29C66FB100CCAFC8 /* CreditsSceneLight.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = CreditsSceneLight.sks; sourceTree = "<group>"; };
 		3920E1A029C6BA2200CCAFC8 /* Pause.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Pause.mp3; sourceTree = "<group>"; };
 		3920E1A129C6BA2200CCAFC8 /* Unpause.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Unpause.mp3; sourceTree = "<group>"; };
@@ -91,7 +91,7 @@
 		390EAACD29AD59ED00557C2F /* ControllersAndModels */ = {
 			isa = PBXGroup;
 			children = (
-				390EAAD229AEF7B000557C2F /* TitleModel.swift */,
+				390EAAD229AEF7B000557C2F /* TitleViewModel.swift */,
 				39FF9AC729A6C10F00F38A3D /* GameViewController.swift */,
 			);
 			path = ControllersAndModels;
@@ -304,11 +304,8 @@
 				39E5539329B2E4AA0042DF1F /* LeaderboardView.swift in Sources */,
 				39E3E931297670C800BE4212 /* AppDelegate.swift in Sources */,
 				395BE112299EEE3600C03742 /* AudioPlayer.swift in Sources */,
-				390EAAD329AEF7B000557C2F /* TitleModel.swift in Sources */,
-<<<<<<< Updated upstream
-=======
+				390EAAD329AEF7B000557C2F /* TitleViewModel.swift in Sources */,
 				39845DF029CE2868007FD994 /* SnakeColorView.swift in Sources */,
->>>>>>> Stashed changes
 				39E5539B29BD177B0042DF1F /* SettingsView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

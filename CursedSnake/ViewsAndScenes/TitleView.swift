@@ -57,18 +57,6 @@ struct TitleView: View {
                     .font(.system(size: 35, weight: Font.Weight.bold))
                 
             }.scaledToFit()
-<<<<<<< Updated upstream
-            .onAppear(perform: {
-                //TitleModel.authenticateUser()
-                TitleModel.initUserDefaults()
-                self.TitleThemePlayer.play(sound: "TitleScreen")
-                self.TitleThemePlayer.setVol(newVol: UserDefaults.standard.float(forKey: "MusicVol"))
-                self.TitleThemePlayer.triggerLoop()
-            })
-            .onDisappear(perform: {
-                self.TitleThemePlayer.stop()
-            })
-=======
                 .onAppear(perform: {
                     model.authenticateUser()
                     //GKAchievement.resetAchievements()
@@ -80,7 +68,6 @@ struct TitleView: View {
                 .onDisappear(perform: {
                     self.TitleThemePlayer.stop()
                 })
->>>>>>> Stashed changes
         }
     }
 }
