@@ -43,6 +43,16 @@ extension GameScene {
             return food
         }
         
+        func submitScore(score: Int) async {
+            if (GKLocalPlayer.local.isAuthenticated) {
+                GKLeaderboard.loadLeaderboards(IDs:["com.aabagdi.CursedSnake.DailyTopScores"]) { (fetchedLBs, error) in
+                    guard let daily = fetchedLBs?.first else { return }
+                    daily.submitScore(score, context: 0, player: GKLocalPlayer.local) { error in }
+                    print("Woo")
+                }
+            }
+        }
+        
         func calcAchievements(score: Int, claw: Bool) {
             GKAchievement.loadAchievements(completionHandler: { (achievements: [GKAchievement]?, error: Error?) in
                 let fifteenID = "15"

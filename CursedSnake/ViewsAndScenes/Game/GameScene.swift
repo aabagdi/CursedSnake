@@ -244,30 +244,12 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         return UIScreen.main.bounds.size.width
     }
     
-    func goToGameScene() {
-        let screenWidth = self.windowWidth()
-        let screenHeight = self.windowHeight()
-        let gameScene: GameScene = GameScene(size: CGSize(width: screenWidth, height: screenHeight))
-        self.view!.presentScene(gameScene)
-    }
-    
-    func submitScore() async {
-        let currentScore = Int(self.score.text!)
-        if (GKLocalPlayer.local.isAuthenticated) {
-            GKLeaderboard.loadLeaderboards(IDs:["com.aabagdi.CursedSnake.DailyTopScores"]) { (fetchedLBs, error) in
-                guard let daily = fetchedLBs?.first else { return }
-                daily.submitScore(currentScore!, context: 0, player: GKLocalPlayer.local) { error in }
-                print("Woo")
-            }
-        }
-    }
-    
     func endGame() {
         self.BGMPlayer.stop()
         self.soundPlayer.play(sound: "Explosion")
         self.soundPlayer.setVol(newVol: UserDefaults.standard.float(forKey: "SoundVol"))
         Task {
-            await submitScore()
+            await SnakeModel.submitScore(score: Int(self.score.text!)!)
         }
         let body = player.getBody()
         let gameOver = SKLabelNode(fontNamed: "Zapfino")

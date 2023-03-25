@@ -52,7 +52,7 @@ struct TitleView: View {
                     .sheet(isPresented: $model.showLeaderboard) {
                         GameCenterView()
                     }
-                    Button("Reset Score") {
+                    Button("Reset GC") {
                         GKAchievement.resetAchievements()
                     }
                 }.buttonStyle(.borderedProminent)
