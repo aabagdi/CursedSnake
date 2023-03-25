@@ -7,6 +7,7 @@
 
 import Foundation
 import SpriteKit
+import SwiftUI
 
 class Snake {
     enum SnakeStates {
@@ -22,6 +23,9 @@ class Snake {
     
     var SnakeBody = [SKShapeNode]()
     
+    var SnakeHeadColor = UserDefaults.standard.string(forKey: "HeadColor")
+    var SnakeBodyColor = UserDefaults.standard.string(forKey: "BodyColor")
+    
     func returnLength() -> Int {
         return SnakeBody.count
     }
@@ -29,7 +33,7 @@ class Snake {
     func incrementSnake() {
         let newSegment = SKShapeNode(circleOfRadius: 5)
         newSegment.name = "body"
-        newSegment.fillColor = .white
+        newSegment.fillColor = UIColor(Color(rawValue: SnakeBodyColor ?? ".white") ?? .white)
         newSegment.zPosition = 2
         newSegment.physicsBody = SKPhysicsBody(circleOfRadius: 3)
         newSegment.physicsBody!.contactTestBitMask = 0b11
@@ -167,6 +171,7 @@ class Snake {
             currentX = -190.0
         }
         
+<<<<<<< Updated upstream
         else if currentX > 190.0 {
             currentX = 190.0
         }
@@ -178,13 +183,21 @@ class Snake {
         else if currentY > 432.0 {
             currentY = 432.0
         }
+=======
+        currentX = currentX < xRange.lowerBound ? xRange.lowerBound : currentX
+        currentX = currentX > xRange.upperBound ? xRange.upperBound : currentX
+        
+        currentY = currentY < yRange.lowerBound ? yRange.lowerBound : currentY
+        currentY = currentY > yRange.upperBound ? yRange.upperBound : currentY
+        
+>>>>>>> Stashed changes
         return CGPointMake(currentX, currentY)
     }
     
     init() {
         let head = SKShapeNode(ellipseOf: CGSize(width: 20, height: 35))
         head.name = "head"
-        head.fillColor = .white
+        head.fillColor = UIColor(Color(rawValue: SnakeHeadColor ?? ".white") ?? .white)
         head.zPosition = 2
         head.physicsBody = SKPhysicsBody(circleOfRadius: 8)
         head.physicsBody!.categoryBitMask = 0b11

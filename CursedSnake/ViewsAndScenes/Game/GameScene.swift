@@ -13,6 +13,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     private var BGMPlayer: AudioPlayer!
     private var GestureRecognizers: [UIGestureRecognizer] = []
     private var randomDist: GKRandomDistribution!
+    private var encounteredClaw : Bool = false
     
     func randomPosition() -> CGPoint {
         let randX = CGFloat.random(in: -166...166)
@@ -27,6 +28,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         
         return UIColor(hue: hue, saturation: saturation, brightness: brightness, alpha: 1)
     }
+    
     
     func genFood() -> SKSpriteNode {
         let randNum = Int.random(in: 0...10000)
@@ -62,6 +64,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         scoreCounter.fontSize = 65
         scoreCounter.fontColor = generateRandomColor()
         scoreCounter.position = CGPoint(x: 0, y: 312)
+        scoreCounter.name = "ScoreCounter"
         self.addChild(scoreCounter)
         
         let soundPlayer = AudioPlayer()
@@ -163,32 +166,40 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
                 }
             }
             else {
+                self.encounteredClaw = true
                 self.score.text = String(Int(self.score.text!)! + 69)
             }
             self.food = newFood
+            calcAchievements()
+        }
+        if head!.intersects(self.score) {
+            if self.score.fontName == "Adam'sFontRegular" {
+                player!.changeDirection(direction: .dead)
+                endGame()
+            }
         }
         
-        if player!.returnLength() >= 15 {
+        if player!.returnLength() >= 14 {
             player!.SnakeSpeed = 0.15
         }
         
-        if player!.returnLength() >= 20 {
+        if player!.returnLength() >= 19 {
             player!.SnakeSpeed = 0.1
         }
         
-        if player!.returnLength() >= 35 {
+        if player!.returnLength() >= 34 {
             player!.SnakeSpeed = 0.08
         }
         
-        if player!.returnLength() >= 50 {
+        if player!.returnLength() >= 49 {
             player!.SnakeSpeed = 0.06
         }
         
-        if player!.returnLength() >= 85 {
+        if player!.returnLength() >= 84 {
             player!.SnakeSpeed = 0.04
         }
         
-        if player!.returnLength() >= 100 {
+        if player!.returnLength() >= 99 {
             player!.SnakeSpeed = 0.03
         }
         
@@ -227,7 +238,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         }
         
     }
-        
+    
     func pauseUnpause() {
         scene?.view?.isPaused.toggle()
         switch scene?.view?.isPaused {
@@ -252,6 +263,158 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         case .some(_):
             break
         }
+    }
+    
+    func calcAchievements() {
+        GKAchievement.loadAchievements(completionHandler: { (achievements: [GKAchievement]?, error: Error?) in
+            let fifteenID = "15"
+            var fifteenAchievement: GKAchievement? = nil
+            
+            // Find an existing achievement.
+            fifteenAchievement = achievements?.first(where: { $0.identifier == fifteenID})
+            
+            // Otherwise, create a new achievement.
+            if fifteenAchievement == nil {
+                fifteenAchievement = GKAchievement(identifier: fifteenID)
+            }
+            
+            if Int(self.score.text!)! >= 15 {
+                fifteenAchievement?.showsCompletionBanner = true
+                fifteenAchievement?.percentComplete = 100
+            }
+            
+            // Insert code to report the percentage.
+            
+            if error != nil {
+                // Handle the error that occurs.
+                print("Error: \(String(describing: error))")
+            }
+            
+            let thirtyID = "30"
+            var thirtyAchievement: GKAchievement? = nil
+            
+            // Find an existing achievement.
+            thirtyAchievement = achievements?.first(where: { $0.identifier == thirtyID})
+            
+            // Otherwise, create a new achievement.
+            if thirtyAchievement == nil {
+                thirtyAchievement = GKAchievement(identifier: thirtyID)
+            }
+            
+            if Int(self.score.text!)! >= 30 {
+                thirtyAchievement?.showsCompletionBanner = true
+                thirtyAchievement?.percentComplete = 100
+            }
+            
+            // Insert code to report the percentage.
+            
+            if error != nil {
+                // Handle the error that occurs.
+                print("Error: \(String(describing: error))")
+            }
+            
+            let fiftyID = "50"
+            var fiftyAchievement: GKAchievement? = nil
+            
+            // Find an existing achievement.
+            fiftyAchievement = achievements?.first(where: { $0.identifier == fiftyID})
+            
+            // Otherwise, create a new achievement.
+            if fiftyAchievement == nil {
+                fiftyAchievement = GKAchievement(identifier: fiftyID)
+            }
+            
+            if Int(self.score.text!)! >= 50 {
+                fiftyAchievement?.showsCompletionBanner = true
+                fiftyAchievement?.percentComplete = 100
+            }
+            
+            // Insert code to report the percentage.
+            
+            if error != nil {
+                // Handle the error that occurs.
+                print("Error: \(String(describing: error))")
+            }
+            
+            let hundredID = "100"
+            var hundredAchievement: GKAchievement? = nil
+            
+            // Find an existing achievement.
+            hundredAchievement = achievements?.first(where: { $0.identifier == hundredID})
+            
+            // Otherwise, create a new achievement.
+            if hundredAchievement == nil {
+                hundredAchievement = GKAchievement(identifier: hundredID)
+            }
+            
+            if Int(self.score.text!)! >= 100 {
+                hundredAchievement?.showsCompletionBanner = true
+                hundredAchievement?.percentComplete = 100
+            }
+            
+            // Insert code to report the percentage.
+            
+            if error != nil {
+                // Handle the error that occurs.
+                print("Error: \(String(describing: error))")
+            }
+            
+            let negativeID = "1"
+            var negativeAchievement: GKAchievement? = nil
+            
+            // Find an existing achievement.
+            negativeAchievement = achievements?.first(where: { $0.identifier == negativeID})
+            
+            // Otherwise, create a new achievement.
+            if negativeAchievement == nil {
+                negativeAchievement = GKAchievement(identifier: negativeID)
+            }
+            
+            if Int(self.score.text!)! < 0 {
+                negativeAchievement?.showsCompletionBanner = true
+                negativeAchievement?.percentComplete = 100
+            }
+            
+            // Insert code to report the percentage.
+            
+            if error != nil {
+                // Handle the error that occurs.
+                print("Error: \(String(describing: error))")
+            }
+            
+            let clawID = "69"
+            var clawAchievement: GKAchievement? = nil
+            
+            // Find an existing achievement.
+            clawAchievement = achievements?.first(where: { $0.identifier == clawID})
+            
+            // Otherwise, create a new achievement.
+            if clawAchievement == nil {
+                clawAchievement = GKAchievement(identifier: clawID)
+            }
+            
+            if self.encounteredClaw {
+                clawAchievement?.showsCompletionBanner = true
+                clawAchievement?.percentComplete = 100
+            }
+            
+            // Insert code to report the percentage.
+            
+            if error != nil {
+                // Handle the error that occurs.
+                print("Error: \(String(describing: error))")
+            }
+            
+            let achievementsToReport: [GKAchievement] = [fifteenAchievement!, thirtyAchievement!, fiftyAchievement!, hundredAchievement!, clawAchievement!, negativeAchievement!]
+            
+            // Report the progress to Game Center.
+            GKAchievement.report(achievementsToReport, withCompletionHandler: {(error: Error?) in
+                if error != nil {
+                    // Handle the error that occurs.
+                    print("Error: \(String(describing: error))")
+                }
+            })
+        })
     }
     
     @objc func swipeRight(sender: UISwipeGestureRecognizer) {

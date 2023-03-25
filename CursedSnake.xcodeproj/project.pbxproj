@@ -20,6 +20,8 @@
 		395BE12629A592B900C03742 /* TitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 395BE12529A592B900C03742 /* TitleView.swift */; };
 		395BE12829A595D800C03742 /* CursedSnakeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 395BE12729A595D800C03742 /* CursedSnakeApp.swift */; };
 		396908FA29A8A19B00188186 /* CreditsSceneDark.sks in Resources */ = {isa = PBXBuildFile; fileRef = 396908F929A8A19B00188186 /* CreditsSceneDark.sks */; };
+		39845DF029CE2868007FD994 /* SnakeColorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39845DEF29CE2868007FD994 /* SnakeColorView.swift */; };
+		39845DF229CE7CDB007FD994 /* Color+RawRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39845DF129CE7CDB007FD994 /* Color+RawRepresentable.swift */; };
 		39867DFF29AA689100E9F059 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 39867DFE29AA689100E9F059 /* Main.storyboard */; };
 		399D7D7629A5BD5700CC922F /* Adam'sFont-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 399D7D7529A5BD5700CC922F /* Adam'sFont-Regular.otf */; };
 		39E3E931297670C800BE4212 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39E3E930297670C800BE4212 /* AppDelegate.swift */; };
@@ -53,6 +55,8 @@
 		395BE12529A592B900C03742 /* TitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleView.swift; sourceTree = "<group>"; };
 		395BE12729A595D800C03742 /* CursedSnakeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CursedSnakeApp.swift; sourceTree = "<group>"; };
 		396908F929A8A19B00188186 /* CreditsSceneDark.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = CreditsSceneDark.sks; sourceTree = "<group>"; };
+		39845DEF29CE2868007FD994 /* SnakeColorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnakeColorView.swift; sourceTree = "<group>"; };
+		39845DF129CE7CDB007FD994 /* Color+RawRepresentable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Color+RawRepresentable.swift"; sourceTree = "<group>"; };
 		39867DFE29AA689100E9F059 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		399D7D7529A5BD5700CC922F /* Adam'sFont-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Adam'sFont-Regular.otf"; sourceTree = "<group>"; };
 		39E3E92D297670C800BE4212 /* CursedSnake.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CursedSnake.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -119,6 +123,14 @@
 			path = Resources;
 			sourceTree = "<group>";
 		};
+		39845DF329CE7CDF007FD994 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				39845DF129CE7CDB007FD994 /* Color+RawRepresentable.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		39E3E924297670C800BE4212 = {
 			isa = PBXGroup;
 			children = (
@@ -139,6 +151,7 @@
 			isa = PBXGroup;
 			children = (
 				39E5538C29B1990C0042DF1F /* CursedSnakeRelease.entitlements */,
+				39845DF329CE7CDF007FD994 /* Extensions */,
 				390EAACD29AD59ED00557C2F /* ControllersAndModels */,
 				39FF9ACB29A72C7E00F38A3D /* ViewsAndScenes */,
 				395BE12429A591BB00C03742 /* Info.plist */,
@@ -159,6 +172,7 @@
 				39E5539C29BD17AA0042DF1F /* RootSettingView.swift */,
 				39E5539E29BD28180042DF1F /* VolumeSettingsView.swift */,
 				39E553AB29C28AD90042DF1F /* BGMSettingsView.swift */,
+				39845DEF29CE2868007FD994 /* SnakeColorView.swift */,
 			);
 			path = Settings;
 			sourceTree = "<group>";
@@ -284,12 +298,17 @@
 				39E553AC29C28AD90042DF1F /* BGMSettingsView.swift in Sources */,
 				39FF9AC829A6C10F00F38A3D /* GameViewController.swift in Sources */,
 				39E5539929B99DC40042DF1F /* CreditsScene.swift in Sources */,
+				39845DF229CE7CDB007FD994 /* Color+RawRepresentable.swift in Sources */,
 				39E5539D29BD17AA0042DF1F /* RootSettingView.swift in Sources */,
 				39504142297B64F300D384F1 /* Snake.swift in Sources */,
 				39E5539329B2E4AA0042DF1F /* LeaderboardView.swift in Sources */,
 				39E3E931297670C800BE4212 /* AppDelegate.swift in Sources */,
 				395BE112299EEE3600C03742 /* AudioPlayer.swift in Sources */,
 				390EAAD329AEF7B000557C2F /* TitleModel.swift in Sources */,
+<<<<<<< Updated upstream
+=======
+				39845DF029CE2868007FD994 /* SnakeColorView.swift in Sources */,
+>>>>>>> Stashed changes
 				39E5539B29BD177B0042DF1F /* SettingsView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -430,7 +449,7 @@
 				INFOPLIST_KEY_UIStatusBarHidden = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
-				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -464,7 +483,7 @@
 				INFOPLIST_KEY_UIStatusBarHidden = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
-				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
