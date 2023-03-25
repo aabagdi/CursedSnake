@@ -31,8 +31,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     
     
     func genFood() -> SKSpriteNode {
-        let randNum = Int.random(in: 0...10000)
-        if randNum < 1 {
+        let randNum = Int.random(in: 1...1001)
+        if randNum < 2 {
             let claw = SKSpriteNode(imageNamed: "Claw.png")
             claw.position = randomPosition()
             claw.zPosition = 2
@@ -69,14 +69,12 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         
         let soundPlayer = AudioPlayer()
         let BGMPlayer = AudioPlayer()
-        let dist = GKRandomDistribution(randomSource: GKMersenneTwisterRandomSource(), lowestValue: 1, highestValue: 101)
         
         self.player = snake
         self.food = food
         self.score = scoreCounter
         self.soundPlayer = soundPlayer
         self.BGMPlayer = BGMPlayer
-        self.randomDist = dist
         
         self.BGMPlayer.play(sound: UserDefaults.standard.string(forKey: "BGM") ?? "Cursed Snake Theme")
         self.BGMPlayer.setVol(newVol: UserDefaults.standard.float(forKey: "MusicVol"))
@@ -147,7 +145,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             if food.name == "Egg" {
                 self.soundPlayer.play(sound: "Chew")
                 self.soundPlayer.setVol(newVol: UserDefaults.standard.float(forKey: "SoundVol"))
-                let randNum = self.randomDist.nextInt()
+                let randNum = Int.random(in: 1...101)
                 if randNum > 1 {
                     player!.incrementSnake()
                     self.addChild(player.SnakeBody.last!)
