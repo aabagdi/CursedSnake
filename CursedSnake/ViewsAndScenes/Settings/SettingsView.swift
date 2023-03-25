@@ -12,8 +12,8 @@ struct SettingsView: View {
     let settings: Array<Setting> = [
         Setting(title: "Volume", color: .red, imageName: "speaker.wave.2.fill"),
         Setting(title: "Background Music", color: .blue, imageName: "music.note"),
-        Setting(title: "Credits", color: .yellow, imageName: "text.alignleft"),
-        Setting(title: "Snake Color", color: .purple, imageName: "pencil.tip.crop.circle")
+        Setting(title: "Snake Color", color: .purple, imageName: "pencil.tip.crop.circle"),
+        Setting(title: "Credits", color: .yellow, imageName: "text.alignleft")
     ]
     var body: some View {
         NavigationStack {

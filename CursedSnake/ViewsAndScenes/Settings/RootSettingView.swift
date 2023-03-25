@@ -20,12 +20,12 @@ struct RootSettingView: View {
         case "Background Music":
             BGMSettingsView()
             
+        case "Snake Color":
+            SnakeColorView()
+            
         case "Credits":
             let creditsScene = CreditsScene()
             SpriteView(scene: creditsScene)
-        
-        case "Snake Color":
-            SnakeColorView()
             
         default:
             RootSettingView(viewToDisplay: "")
