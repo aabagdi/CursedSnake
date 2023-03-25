@@ -29,7 +29,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     }
     
     func genFood() -> SKSpriteNode {
-        let randNum = Int.random(in: 0...1000)
+        let randNum = Int.random(in: 0...10000)
         if randNum < 1 {
             let claw = SKSpriteNode(imageNamed: "Claw.png")
             claw.position = randomPosition()

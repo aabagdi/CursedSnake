@@ -163,15 +163,21 @@ class Snake {
         var currentX = point.x
         var currentY = point.y
         
-        let xRange = -190.0...190.0
-        let yRange = -432.0...432.0
+        if currentX < -190.0 {
+            currentX = -190.0
+        }
         
-        currentX = currentX < xRange.lowerBound ? xRange.lowerBound : currentX
-        currentX = currentX > xRange.upperBound ? xRange.upperBound : currentX
-
-        currentY = currentY < yRange.lowerBound ? yRange.lowerBound : currentY
-        currentY = currentY > yRange.upperBound ? yRange.upperBound : currentY
-
+        else if currentX > 190.0 {
+            currentX = 190.0
+        }
+        
+        if currentY < -432.0 {
+            currentY = -432.0
+        }
+        
+        else if currentY > 432.0 {
+            currentY = 432.0
+        }
         return CGPointMake(currentX, currentY)
     }
     
