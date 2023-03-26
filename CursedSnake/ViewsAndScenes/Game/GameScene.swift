@@ -147,7 +147,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             }
         }
         
-        player.lengthDependantSpeed()
+        player.lengthDependentSpeed()
         
         if head!.position.x < frame.minX || head!.position.x > frame.maxX {
             player!.changeDirection(direction: .dead)
@@ -225,7 +225,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     }
     
     @objc func swipeUp(sender: UISwipeGestureRecognizer) {
-        if player!.getDirection() != .down && player!.getDirection() != .down{
+        if player!.getDirection() != .down && player!.getDirection() != .up {
             player!.changeDirection(direction: .up)
         }
     }
@@ -234,14 +234,6 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         if player!.getDirection() != .up && player!.getDirection() != .down {
             player!.changeDirection(direction: .down)
         }
-    }
-    
-    func windowHeight() -> CGFloat {
-        return UIScreen.main.bounds.size.height
-    }
-    
-    func windowWidth() -> CGFloat {
-        return UIScreen.main.bounds.size.width
     }
     
     func endGame() {

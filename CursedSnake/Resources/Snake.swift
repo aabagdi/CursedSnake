@@ -18,6 +18,8 @@ class Snake {
         case dead
     }
     
+    private var SnakeLengths : [Int: CGFloat] = [16 : 0.15, 21 : 0.1, 36 : 0.08, 51 : 0.06, 86 : 0.04, 101 : 0.03]
+    
     private var SnakeDirection: SnakeStates = .up
     private var SnakeSpeed: CGFloat
     
@@ -57,30 +59,12 @@ class Snake {
         SnakeBody.append(newSegment)
     }
     
-    func lengthDependantSpeed() {
+    func lengthDependentSpeed() {
         let snakeLength = self.getLength()
-        if snakeLength >= 16 {
-            self.setSpeed(speed: 0.15)
-        }
         
-        if snakeLength >= 21 {
-            self.setSpeed(speed: 0.1)
-        }
-        
-        if snakeLength >= 36 {
-            self.setSpeed(speed: 0.08)
-        }
-        
-        if snakeLength >= 51 {
-            self.setSpeed(speed: 0.06)
-        }
-        
-        if snakeLength >= 86 {
-            self.setSpeed(speed: 0.04)
-        }
-        
-        if snakeLength >= 101 {
-            self.setSpeed(speed: 0.03)
+        if SnakeLengths.keys.contains(snakeLength) {
+            let newSpeed = SnakeLengths[snakeLength]
+            self.setSpeed(speed: newSpeed!)
         }
     }
     
