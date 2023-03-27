@@ -23,6 +23,9 @@ struct RootSettingView: View {
         case "Snake Color":
             SnakeColorView()
             
+        case "Game Difficulty":
+            DifficultyView()
+            
         case "Credits":
             let creditsScene = CreditsScene()
             SpriteView(scene: creditsScene)

@@ -12,6 +12,7 @@ struct SettingsView: View {
     let settings: Array<Setting> = [
         Setting(title: "Volume", color: .red, imageName: "speaker.wave.2.fill"),
         Setting(title: "Background Music", color: .blue, imageName: "music.note"),
+        Setting(title: "Game Difficulty", color: .gray, imageName: "dumbbell.fill"),
         Setting(title: "Snake Color", color: .purple, imageName: "pencil.tip.crop.circle"),
         Setting(title: "Credits", color: .yellow, imageName: "text.alignleft")
     ]

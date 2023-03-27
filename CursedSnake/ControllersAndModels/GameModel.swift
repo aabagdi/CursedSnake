@@ -60,6 +60,7 @@ extension GameScene {
                 
                 // Find an existing achievement.
                 fifteenAchievement = achievements?.first(where: { $0.identifier == fifteenID})
+
                 
                 // Otherwise, create a new achievement.
                 if fifteenAchievement == nil {
@@ -80,11 +81,9 @@ extension GameScene {
                 
                 let thirtyID = "30"
                 var thirtyAchievement: GKAchievement? = nil
-                
-                // Find an existing achievement.
+            
                 thirtyAchievement = achievements?.first(where: { $0.identifier == thirtyID})
-                
-                // Otherwise, create a new achievement.
+
                 if thirtyAchievement == nil {
                     thirtyAchievement = GKAchievement(identifier: thirtyID)
                 }
@@ -93,21 +92,16 @@ extension GameScene {
                     thirtyAchievement?.showsCompletionBanner = true
                     thirtyAchievement?.percentComplete = 100
                 }
-                
-                // Insert code to report the percentage.
-                
+
                 if error != nil {
-                    // Handle the error that occurs.
                     print("Error: \(String(describing: error))")
                 }
                 
                 let fiftyID = "50"
                 var fiftyAchievement: GKAchievement? = nil
                 
-                // Find an existing achievement.
                 fiftyAchievement = achievements?.first(where: { $0.identifier == fiftyID})
-                
-                // Otherwise, create a new achievement.
+
                 if fiftyAchievement == nil {
                     fiftyAchievement = GKAchievement(identifier: fiftyID)
                 }
@@ -116,21 +110,17 @@ extension GameScene {
                     fiftyAchievement?.showsCompletionBanner = true
                     fiftyAchievement?.percentComplete = 100
                 }
-                
-                // Insert code to report the percentage.
+
                 
                 if error != nil {
-                    // Handle the error that occurs.
                     print("Error: \(String(describing: error))")
                 }
                 
                 let hundredID = "100"
                 var hundredAchievement: GKAchievement? = nil
-                
-                // Find an existing achievement.
+
                 hundredAchievement = achievements?.first(where: { $0.identifier == hundredID})
-                
-                // Otherwise, create a new achievement.
+
                 if hundredAchievement == nil {
                     hundredAchievement = GKAchievement(identifier: hundredID)
                 }
@@ -140,8 +130,6 @@ extension GameScene {
                     hundredAchievement?.percentComplete = 100
                 }
                 
-                // Insert code to report the percentage.
-                
                 if error != nil {
                     // Handle the error that occurs.
                     print("Error: \(String(describing: error))")
@@ -149,11 +137,9 @@ extension GameScene {
                 
                 let negativeID = "1"
                 var negativeAchievement: GKAchievement? = nil
-                
-                // Find an existing achievement.
+
                 negativeAchievement = achievements?.first(where: { $0.identifier == negativeID})
-                
-                // Otherwise, create a new achievement.
+
                 if negativeAchievement == nil {
                     negativeAchievement = GKAchievement(identifier: negativeID)
                 }
@@ -163,8 +149,6 @@ extension GameScene {
                     negativeAchievement?.percentComplete = 100
                 }
                 
-                // Insert code to report the percentage.
-                
                 if error != nil {
                     // Handle the error that occurs.
                     print("Error: \(String(describing: error))")
@@ -172,11 +156,9 @@ extension GameScene {
                 
                 let clawID = "69"
                 var clawAchievement: GKAchievement? = nil
-                
-                // Find an existing achievement.
+
                 clawAchievement = achievements?.first(where: { $0.identifier == clawID})
-                
-                // Otherwise, create a new achievement.
+
                 if clawAchievement == nil {
                     clawAchievement = GKAchievement(identifier: clawID)
                 }
@@ -186,10 +168,7 @@ extension GameScene {
                     clawAchievement?.percentComplete = 100
                 }
                 
-                // Insert code to report the percentage.
-                
                 if error != nil {
-                    // Handle the error that occurs.
                     print("Error: \(String(describing: error))")
                 }
                 
@@ -198,7 +177,6 @@ extension GameScene {
                 // Report the progress to Game Center.
                 GKAchievement.report(achievementsToReport, withCompletionHandler: {(error: Error?) in
                     if error != nil {
-                        // Handle the error that occurs.
                         print("Error: \(String(describing: error))")
                     }
                 })

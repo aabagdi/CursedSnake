@@ -24,6 +24,7 @@
 		39845DF229CE7CDB007FD994 /* Color+RawRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39845DF129CE7CDB007FD994 /* Color+RawRepresentable.swift */; };
 		39867DFF29AA689100E9F059 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 39867DFE29AA689100E9F059 /* Main.storyboard */; };
 		399AEF7929CFB41C00CDC087 /* GameModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 399AEF7829CFB41C00CDC087 /* GameModel.swift */; };
+		399AEF7B29D16DB600CDC087 /* DifficultyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 399AEF7A29D16DB600CDC087 /* DifficultyView.swift */; };
 		399D7D7629A5BD5700CC922F /* Adam'sFont-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 399D7D7529A5BD5700CC922F /* Adam'sFont-Regular.otf */; };
 		39E3E931297670C800BE4212 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39E3E930297670C800BE4212 /* AppDelegate.swift */; };
 		39E3E933297670C800BE4212 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 39E3E932297670C800BE4212 /* GameScene.sks */; };
@@ -60,6 +61,7 @@
 		39845DF129CE7CDB007FD994 /* Color+RawRepresentable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Color+RawRepresentable.swift"; sourceTree = "<group>"; };
 		39867DFE29AA689100E9F059 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		399AEF7829CFB41C00CDC087 /* GameModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameModel.swift; sourceTree = "<group>"; };
+		399AEF7A29D16DB600CDC087 /* DifficultyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DifficultyView.swift; sourceTree = "<group>"; };
 		399D7D7529A5BD5700CC922F /* Adam'sFont-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Adam'sFont-Regular.otf"; sourceTree = "<group>"; };
 		39E3E92D297670C800BE4212 /* CursedSnake.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CursedSnake.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		39E3E930297670C800BE4212 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -116,14 +118,14 @@
 			path = SoundsAndMusic;
 			sourceTree = "<group>";
 		};
-		395BE12229A5914200C03742 /* Resources */ = {
+		395BE12229A5914200C03742 /* GameResources */ = {
 			isa = PBXGroup;
 			children = (
 				39504141297B64F300D384F1 /* Snake.swift */,
 				395BE111299EEE3600C03742 /* AudioPlayer.swift */,
 				399D7D7529A5BD5700CC922F /* Adam'sFont-Regular.otf */,
 			);
-			path = Resources;
+			path = GameResources;
 			sourceTree = "<group>";
 		};
 		39845DF329CE7CDF007FD994 /* Extensions */ = {
@@ -158,7 +160,7 @@
 				390EAACD29AD59ED00557C2F /* ControllersAndModels */,
 				39FF9ACB29A72C7E00F38A3D /* ViewsAndScenes */,
 				395BE12429A591BB00C03742 /* Info.plist */,
-				395BE12229A5914200C03742 /* Resources */,
+				395BE12229A5914200C03742 /* GameResources */,
 				395BE115299EEFD100C03742 /* SoundsAndMusic */,
 				39E3E93D297670C900BE4212 /* Assets.xcassets */,
 				39867DFE29AA689100E9F059 /* Main.storyboard */,
@@ -176,6 +178,7 @@
 				39E5539E29BD28180042DF1F /* VolumeSettingsView.swift */,
 				39E553AB29C28AD90042DF1F /* BGMSettingsView.swift */,
 				39845DEF29CE2868007FD994 /* SnakeColorView.swift */,
+				399AEF7A29D16DB600CDC087 /* DifficultyView.swift */,
 			);
 			path = Settings;
 			sourceTree = "<group>";
@@ -303,6 +306,7 @@
 				39E5539929B99DC40042DF1F /* CreditsScene.swift in Sources */,
 				39845DF229CE7CDB007FD994 /* Color+RawRepresentable.swift in Sources */,
 				39E5539D29BD17AA0042DF1F /* RootSettingView.swift in Sources */,
+				399AEF7B29D16DB600CDC087 /* DifficultyView.swift in Sources */,
 				39504142297B64F300D384F1 /* Snake.swift in Sources */,
 				39E5539329B2E4AA0042DF1F /* LeaderboardView.swift in Sources */,
 				39E3E931297670C800BE4212 /* AppDelegate.swift in Sources */,
