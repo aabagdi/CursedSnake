@@ -26,7 +26,6 @@
 		399AEF7929CFB41C00CDC087 /* GameModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 399AEF7829CFB41C00CDC087 /* GameModel.swift */; };
 		399AEF7B29D16DB600CDC087 /* DifficultyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 399AEF7A29D16DB600CDC087 /* DifficultyView.swift */; };
 		399D7D7629A5BD5700CC922F /* Adam'sFont-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 399D7D7529A5BD5700CC922F /* Adam'sFont-Regular.otf */; };
-		39E3E931297670C800BE4212 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39E3E930297670C800BE4212 /* AppDelegate.swift */; };
 		39E3E933297670C800BE4212 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 39E3E932297670C800BE4212 /* GameScene.sks */; };
 		39E3E937297670C800BE4212 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39E3E936297670C800BE4212 /* GameScene.swift */; };
 		39E3E93E297670C900BE4212 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 39E3E93D297670C900BE4212 /* Assets.xcassets */; };
@@ -64,7 +63,6 @@
 		399AEF7A29D16DB600CDC087 /* DifficultyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DifficultyView.swift; sourceTree = "<group>"; };
 		399D7D7529A5BD5700CC922F /* Adam'sFont-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Adam'sFont-Regular.otf"; sourceTree = "<group>"; };
 		39E3E92D297670C800BE4212 /* CursedSnake.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CursedSnake.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		39E3E930297670C800BE4212 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		39E3E932297670C800BE4212 /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
 		39E3E936297670C800BE4212 /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
 		39E3E93D297670C900BE4212 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -164,7 +162,6 @@
 				395BE12229A5914200C03742 /* GameResources */,
 				39E3E93D297670C900BE4212 /* Assets.xcassets */,
 				39867DFE29AA689100E9F059 /* Main.storyboard */,
-				39E3E930297670C800BE4212 /* AppDelegate.swift */,
 				395BE12729A595D800C03742 /* CursedSnakeApp.swift */,
 			);
 			path = CursedSnake;
@@ -309,7 +306,6 @@
 				399AEF7B29D16DB600CDC087 /* DifficultyView.swift in Sources */,
 				39504142297B64F300D384F1 /* Snake.swift in Sources */,
 				39E5539329B2E4AA0042DF1F /* LeaderboardView.swift in Sources */,
-				39E3E931297670C800BE4212 /* AppDelegate.swift in Sources */,
 				395BE112299EEE3600C03742 /* AudioPlayer.swift in Sources */,
 				390EAAD329AEF7B000557C2F /* TitleModel.swift in Sources */,
 				39845DF029CE2868007FD994 /* SnakeColorView.swift in Sources */,
