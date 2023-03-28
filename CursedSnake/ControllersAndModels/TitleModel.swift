@@ -31,7 +31,6 @@ extension TitleView {
                 defaults.set(0.5, forKey: "MusicVol")
                 defaults.set(1.0, forKey: "SoundVol")
                 defaults.set("Cursed Snake Theme", forKey: "BGM")
-                defaults.set(1.0, forKey: "Difficulty")
             }
         }
     }
