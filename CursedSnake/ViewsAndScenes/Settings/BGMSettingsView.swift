@@ -15,7 +15,7 @@ struct BGMSettingsView: View {
     var body: some View {
         List {
             VStack {
-                Picker("Choose your background music!", selection: $selectedBGM) {
+                Picker("Choose your background music!!", selection: $selectedBGM) {
                     ForEach(BGMList, id: \.self) {
                         item in Text(item)
                         
