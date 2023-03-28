@@ -119,8 +119,6 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
                 if randNum > 1 {
                     player!.incrementSnake()
                     self.addChild(player.getBody().last!)
-                    self.score.fontName = UIFont.familyNames.randomElement()
-                    self.score.fontColor = SnakeModel.generateRandomColor()
                     self.score.text = String(Int(self.score.text!)! + 1)
                 }
                 else {
@@ -141,7 +139,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             SnakeModel.calcAchievements(score: Int(self.score.text!)!, claw: self.encounteredClaw)
         }
         if head!.intersects(self.score) {
-            if self.score.fontName == "Adam'sFontRegular" {
+            if self.score.fontName == "Adam\'s Font" {
                 player!.changeDirection(direction: .dead)
                 endGame()
             }

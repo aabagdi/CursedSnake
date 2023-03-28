@@ -10,19 +10,19 @@ import SwiftUI
 var currentDifficulty : String {
     let currentSpeed = UserDefaults.standard.float(forKey: "Difficulty")
     switch currentSpeed {
-    case 1.3:
+    case 1.4:
         return "Pansy"
     
-    case 1.15:
+    case 1.2:
         return "Easy"
         
     case 1.0:
         return "Normal"
     
-    case 0.85:
+    case 0.8:
         return "Hard"
     
-    case 0.7:
+    case 0.6:
         return "Cracked"
         
     default:
@@ -48,19 +48,19 @@ struct DifficultyView: View {
         }.onDisappear() {
             switch difficultyString {
             case "Pansy":
-                UserDefaults.standard.set(1.3, forKey: "Difficulty")
+                UserDefaults.standard.set(1.4, forKey: "Difficulty")
                 
             case "Easy":
-                UserDefaults.standard.set(1.15, forKey: "Difficulty")
+                UserDefaults.standard.set(1.2, forKey: "Difficulty")
             
             case "Normal":
                 UserDefaults.standard.set(1.0, forKey: "Difficulty")
                 
             case "Hard":
-                UserDefaults.standard.set(0.85, forKey: "Difficulty")
+                UserDefaults.standard.set(0.80, forKey: "Difficulty")
             
             case "Cracked":
-                UserDefaults.standard.set(0.7, forKey: "Difficulty")
+                UserDefaults.standard.set(0.6, forKey: "Difficulty")
                 
             default:
                 UserDefaults.standard.set(1.0, forKey: "Difficulty")

@@ -18,6 +18,7 @@ struct BGMSettingsView: View {
                 Picker("Choose your background music!", selection: $selectedBGM) {
                     ForEach(BGMList, id: \.self) {
                         item in Text(item)
+                        
                     }
                 }
             }

@@ -23,7 +23,7 @@ class Snake {
     private var SnakeDirection: SnakeStates = .up
     
     private var SnakeSpeed: CGFloat
-    private var difficultyMultiplier : CGFloat = CGFloat(UserDefaults.standard.float(forKey: "Difficulty"))
+    private var speedMultiplier : CGFloat = CGFloat(UserDefaults.standard.float(forKey: "Difficulty"))
     
     
     private var SnakeBody = [SKShapeNode]()
@@ -66,7 +66,7 @@ class Snake {
         let snakeLength = self.getLength()
         
         if SnakeLengthSpeedDict.keys.contains(snakeLength) {
-            let newSpeed = difficultyMultiplier * SnakeLengthSpeedDict[snakeLength]!
+            let newSpeed = speedMultiplier * SnakeLengthSpeedDict[snakeLength]!
             self.setSpeed(speed: newSpeed)
         }
     }
@@ -220,7 +220,10 @@ class Snake {
         head.physicsBody!.usesPreciseCollisionDetection = true
         head.position = CGPoint(x: 0, y: -300)
         self.SnakeBody.append(head)
-        self.SnakeSpeed = 0.2 * difficultyMultiplier
+        if speedMultiplier == 0.0 {
+            speedMultiplier = 1.0
+        }
+        self.SnakeSpeed = 0.2 * speedMultiplier
         //self.incrementSnake()
         /*for _ in (0...25) {
          incrementSnake()
