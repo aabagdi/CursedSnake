@@ -40,6 +40,15 @@ class AudioPlayer {
         return self.AudioPlayer.isPlaying
     }
     
+    func fadeOut(duration: Double) {
+        self.AudioPlayer.setVolume(0.0, fadeDuration: duration)
+    }
+    
+    func fadeIn(vol: Float, duration: Double) {
+        self.AudioPlayer.play()
+        self.AudioPlayer.setVolume(vol, fadeDuration: duration)
+    }
+    
     func getVol() -> Float {
         return self.AudioPlayer.volume
     }

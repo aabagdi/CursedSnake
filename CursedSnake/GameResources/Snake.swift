@@ -18,13 +18,11 @@ class Snake {
         case dead
     }
     
-    private var SnakeLengthSpeedDict : [Int: CGFloat] = [16 : 0.15, 21 : 0.1, 36 : 0.08, 51 : 0.06, 86 : 0.04, 101 : 0.03]
-    
     private var difficultyMultDict : [String : CGFloat] = ["Pansy" : 1.4, "Easy" : 1.2, "Normal" : 1.0, "Hard" : 0.8, "Cracked" : 0.6]
     
     private var SnakeDirection: SnakeStates = .up
     
-    private var SnakeSpeed: CGFloat
+    private var SnakeSpeed: CGFloat = 0.2
     
     private var SnakeBody = [SKShapeNode]()
     
@@ -64,11 +62,28 @@ class Snake {
     
     func lengthDependentSpeed() {
         let snakeLength = self.getLength()
-        let speedMultiplier = difficultyMultDict[(UserDefaults.standard.string(forKey: "Difficulty")!)]
-                                                  
-        if SnakeLengthSpeedDict.keys.contains(snakeLength) {
-            let newSpeed = speedMultiplier! * SnakeLengthSpeedDict[snakeLength]!
-            self.setSpeed(speed: newSpeed)
+        let diffMult = difficultyMultDict[(UserDefaults.standard.string(forKey: "Difficulty")) ?? "Normal"]!
+        switch snakeLength {
+        case 1...15:
+            self.setSpeed(speed: 0.2 * diffMult)
+            
+        case 16...30:
+            self.setSpeed(speed: 0.15 * diffMult)
+            
+        case 31...45:
+            self.setSpeed(speed: 0.1 * diffMult)
+            
+        case 46...60:
+            self.setSpeed(speed: 0.08 * diffMult)
+            
+        case 61...85:
+            self.setSpeed(speed: 0.06 * diffMult)
+            
+        case 86...100:
+            self.setSpeed(speed: 0.045 * diffMult)
+            
+        default:
+            self.setSpeed(speed: 0.03 * diffMult)
         }
     }
     
@@ -213,7 +228,6 @@ class Snake {
     
     init() {
         let head = SKShapeNode(ellipseOf: CGSize(width: 20, height: 35))
-        let speedMultiplier = difficultyMultDict[(UserDefaults.standard.string(forKey: "Difficulty")!)]
         head.name = "head"
         head.fillColor = UIColor(Color(rawValue: SnakeHeadColor ?? ".white") ?? .white)
         head.zPosition = 2
@@ -222,7 +236,6 @@ class Snake {
         head.physicsBody!.usesPreciseCollisionDetection = true
         head.position = CGPoint(x: 0, y: -300)
         self.SnakeBody.append(head)
-        self.SnakeSpeed = 0.2 * speedMultiplier!
         //self.incrementSnake()
         /*for _ in (0...25) {
          incrementSnake()

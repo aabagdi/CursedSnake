@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct BGMSettingsView: View {
-    @State var selectedBGM: String = UserDefaults.standard.string(forKey: "BGM") ?? "Cursed Snake Theme"
+    @AppStorage("BGM") private var selectedBGM: String = "Cursed Snake Theme"
     
     private var BGMList: [String] = ["Cursed Snake Theme", "Cursed Pong Theme", "Aadit's Presidential Breakdown"]
     
@@ -22,8 +22,6 @@ struct BGMSettingsView: View {
                     }
                 }
             }
-        }.onDisappear {
-            UserDefaults.standard.set(selectedBGM, forKey: "BGM")
         }
     }
 }

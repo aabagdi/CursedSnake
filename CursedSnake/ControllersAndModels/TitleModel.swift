@@ -30,7 +30,6 @@ extension TitleView {
                 defaults.set(true, forKey: "UserDefaultsSet")
                 defaults.set(0.5, forKey: "MusicVol")
                 defaults.set(1.0, forKey: "SoundVol")
-                defaults.set("Cursed Snake Theme", forKey: "BGM")
             }
         }
     }

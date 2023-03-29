@@ -11,6 +11,9 @@ struct SnakeColorView: View {
     @AppStorage("HeadColor") private var HeadColor : Color = .white
     @AppStorage("BodyColor") private var BodyColor : Color = .white
     
+    @State var start = UnitPoint(x: 0.5, y: 0)
+    @State var end = UnitPoint(x: 0.5, y: 1)
+
     var body: some View {
         List {
             ColorPicker("Set the color of the Snake's head!!", selection: $HeadColor)
@@ -35,7 +38,14 @@ struct SnakeColorView: View {
                     }.frame(width: 50, height: 50)
                 }
                 Spacer()
-            }.listRowBackground(LinearGradient(gradient: Gradient(colors: [Color("Bi Pink"), Color("Bi Purple"), Color("Bi Blue")]), startPoint: .top, endPoint: .bottom))
+            }
+            .listRowBackground(LinearGradient(gradient: Gradient(colors: [Color("Bi Pink"), Color("Bi Purple"), Color("Bi Blue")]), startPoint: start, endPoint: end))
         }
+    }
+}
+
+struct SnakeColorView_Previews: PreviewProvider {
+    static var previews: some View {
+        SnakeColorView()
     }
 }

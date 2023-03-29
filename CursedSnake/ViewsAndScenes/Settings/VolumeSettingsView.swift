@@ -10,9 +10,8 @@ import Foundation
 
 
 struct VolumeSettingsView: View {
-    @State var musicVol: Float = UserDefaults.standard.float(forKey: "MusicVol")
-    
-    @State var soundVol: Float = UserDefaults.standard.float(forKey: "SoundVol")
+    @AppStorage("MusicVol") private var musicVol: Double = 0.5
+    @AppStorage("SoundVol") private var soundVol: Double = 1.0
     
     var body: some View {
         List {
@@ -20,10 +19,7 @@ struct VolumeSettingsView: View {
                 HStack{
                     Text("-")
                     Slider(value: $musicVol,
-                           in: 0.0...1.0,
-                           onEditingChanged: {_ in
-                        UserDefaults.standard.set(musicVol, forKey: "MusicVol")
-                    })
+                           in: 0.0...1.0)
                     
                     Text("+")
                 }
@@ -33,10 +29,7 @@ struct VolumeSettingsView: View {
                 HStack{
                     Text("-")
                     Slider(value: $soundVol,
-                           in: 0.0...1.0,
-                           onEditingChanged: {_ in
-                        UserDefaults.standard.set(soundVol, forKey: "SoundVol")
-                    })
+                           in: 0.0...1.0)
                     
                     Text("+")
                 }

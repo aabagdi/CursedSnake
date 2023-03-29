@@ -52,9 +52,9 @@ struct TitleView: View {
                     .sheet(isPresented: $model.showLeaderboard) {
                         GameCenterView()
                     }
-                    /*Button("Reset GC") {
+                    Button("Reset GC") {
                         GKAchievement.resetAchievements()
-                    }*/
+                    }
                 }.buttonStyle(.borderedProminent)
                     .controlSize(.large)
                     .font(.system(size: 35, weight: Font.Weight.bold))
@@ -68,7 +68,7 @@ struct TitleView: View {
                     self.TitleThemePlayer.triggerLoop()
                 })
                 .onDisappear(perform: {
-                    self.TitleThemePlayer.stop()
+                    self.TitleThemePlayer.fadeOut(duration: 0.5)
                 })
         }
     }

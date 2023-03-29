@@ -28,7 +28,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         let initFont = UIFont.familyNames.randomElement()
         let scoreCounter = SKLabelNode(fontNamed: initFont)
         scoreCounter.zPosition = 3
-        scoreCounter.text = String(0)
+        scoreCounter.text = "0"
         scoreCounter.fontSize = 65
         scoreCounter.fontColor = SnakeModel.generateRandomColor()
         scoreCounter.position = CGPoint(x: 0, y: 312)
@@ -45,7 +45,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         self.BGMPlayer = BGMPlayer
         
         self.BGMPlayer.play(sound: UserDefaults.standard.string(forKey: "BGM") ?? "Cursed Snake Theme")
-        self.BGMPlayer.setVol(newVol: UserDefaults.standard.float(forKey: "MusicVol"))
+        self.BGMPlayer.fadeIn(vol: UserDefaults.standard.float(forKey: "MusicVol"), duration: 0.5)
         self.BGMPlayer.triggerLoop()
         
         let swipeRight = UISwipeGestureRecognizer(target: self,
@@ -71,6 +71,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     }
     
     override func update(_ currentTime: TimeInterval) {
+        print(player!.getSpeed())
         let head = player!.getBody().first
         let speed = player.getSpeed()
         let headX = head!.position.x
@@ -189,22 +190,19 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         case true:
             soundPlayer.play(sound: "Pause")
             self.soundPlayer.setVol(newVol: UserDefaults.standard.float(forKey: "SoundVol"))
-            BGMPlayer.pause()
+            self.BGMPlayer.fadeOut(duration: 0.5)
             for recognizer in GestureRecognizers {
                 view?.removeGestureRecognizer(recognizer)
             }
         case false:
             soundPlayer.play(sound: "Unpause")
             self.soundPlayer.setVol(newVol: UserDefaults.standard.float(forKey: "SoundVol"))
-            BGMPlayer.resume()
+            BGMPlayer.fadeIn(vol: UserDefaults.standard.float(forKey: "MusicVol"), duration: 0.7)
             for recognizer in GestureRecognizers {
                 view?.addGestureRecognizer(recognizer)
             }
             
-        case .none:
-            break
-            
-        case .some(_):
+        default:
             break
         }
     }
@@ -235,7 +233,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     }
     
     func endGame() {
-        self.BGMPlayer.stop()
+        self.BGMPlayer.fadeOut(duration: 0.3)
         self.soundPlayer.play(sound: "Explosion")
         self.soundPlayer.setVol(newVol: UserDefaults.standard.float(forKey: "SoundVol"))
         Task {
