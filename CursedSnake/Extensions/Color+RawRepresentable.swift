@@ -18,8 +18,8 @@ extension Color: RawRepresentable {
         }
         
         do {
-            let color = try NSKeyedUnarchiver.unarchiveTopLevelObjectWithData(data) as? UIColor ?? .black
-            self = Color(color)
+            let color = try NSKeyedUnarchiver.unarchivedObject(ofClass: UIColor.self, from: data)
+            self = Color(color ?? .white)
         } catch {
             self = .white
         }

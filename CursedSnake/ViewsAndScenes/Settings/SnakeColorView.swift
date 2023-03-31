@@ -13,11 +13,13 @@ struct SnakeColorView: View {
     
     @State private var animateGradient : Bool = false
     
+    
     var body: some View {
-        let bgGradient = LinearGradient(colors: [Color("Bi Pink"), Color("Bi Purple"), Color("Bi Blue")], startPoint: animateGradient ? .top : .bottom, endPoint: animateGradient ? .bottom : .top)
+        let bgGradient = LinearGradient(colors: [Color("Bi Pink"), Color("Bi Purple"), Color("Bi Blue")], startPoint: .top, endPoint: .bottom)
         
         List {
             ColorPicker("Set the color of the Snake's head!!", selection: $HeadColor)
+                .listRowSeparator(.hidden)
             ColorPicker("Set the color of the Snake's body!!", selection: $BodyColor)
             HStack{
                 Spacer()
@@ -40,12 +42,12 @@ struct SnakeColorView: View {
                 }
                 Spacer()
             }
-            .listRowBackground(bgGradient)
-            .ignoresSafeArea()
+            .listRowBackground(bgGradient
+                .hueRotation(.degrees(animateGradient ? 60 : -60))
+                .animation(Animation.easeInOut(duration: 35).repeatForever(autoreverses: true), value: animateGradient)
+            )
             .onAppear {
-                withAnimation(.linear(duration: 2.0).repeatForever(autoreverses: true)) {
-                    animateGradient.toggle()
-                }
+                animateGradient.toggle()
             }
         }
     }

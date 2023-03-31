@@ -24,7 +24,8 @@ struct VolumeSettingsView: View {
                     Text("+")
                 }
                 Text("Music Volume")
-            }
+            }.listRowSeparator(.hidden)
+            
             VStack {
                 HStack{
                     Text("-")
