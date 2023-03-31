@@ -44,16 +44,33 @@ extension GameScene {
         }
         
         func submitScore(score: Int) async {
+            let currDiff = UserDefaults.standard.string(forKey: "Difficulty")
             if (GKLocalPlayer.local.isAuthenticated) {
-                GKLeaderboard.loadLeaderboards(IDs:["com.aabagdi.CursedSnake.DailyTopScores"]) { (fetchedLBs, error) in
-                    guard let daily = fetchedLBs?.first else { return }
-                    daily.submitScore(score, context: 0, player: GKLocalPlayer.local) { error in }
-                    print("Woo")
+                switch currDiff {
+                case "Pansy":
+                    try! await GKLeaderboard.submitScore(score, context: 0, player: GKLocalPlayer.local, leaderboardIDs: ["com.aabagdi.CursedSnake.AllTimePansy"])
+                    print("Pansy")
+                    
+                case "Easy":
+                    try! await GKLeaderboard.submitScore(score, context: 0, player: GKLocalPlayer.local, leaderboardIDs: ["com.aabagdi.CursedSnake.AllTimeEasy"])
+                    print("Easy")
+                
+                case "Hard":
+                    try! await GKLeaderboard.submitScore(score, context: 0, player: GKLocalPlayer.local, leaderboardIDs: ["com.aabagdi.CursedSnake.AllTimeHard"])
+                    print("Hard")
+                    
+                case "Cracked":
+                    try! await GKLeaderboard.submitScore(score, context: 0, player: GKLocalPlayer.local, leaderboardIDs: ["com.aabagdi.CursedSnake.AllTimeCracked"])
+                    print("Cracked")
+                
+                default:
+                    try! await GKLeaderboard.submitScore(score, context: 0, player: GKLocalPlayer.local, leaderboardIDs: ["com.aabagdi.CursedSnake.AllTimeNormal"])
+                    print("Normal")
                 }
             }
         }
         
-        func calcAchievements(score: Int, claw: Bool) {
+        func calcAchievements(score: Int, claw: Bool, scoreCounter: Bool) {
             GKAchievement.loadAchievements(completionHandler: { (achievements: [GKAchievement]?, error: Error?) in
                 let fifteenID = "15"
                 var fifteenAchievement: GKAchievement? = nil
@@ -146,9 +163,27 @@ extension GameScene {
                     print("Error: \(String(describing: error))")
                 }
                 
+                let scoreCounterID = "2"
+                var scoreCounterAchievement: GKAchievement? = nil
+
+                scoreCounterAchievement = achievements?.first(where: { $0.identifier == scoreCounterID})
+
+                if scoreCounterAchievement == nil {
+                    scoreCounterAchievement = GKAchievement(identifier: scoreCounterID)
+                }
+                
+                if scoreCounter {
+                    scoreCounterAchievement?.showsCompletionBanner = true
+                    scoreCounterAchievement?.percentComplete = 100
+                }
+                
+                if error != nil {
+                    print("Error: \(String(describing: error))")
+                }
+                
                 // Insert code to report the percentage.
             
-                let achievementsToReport: [GKAchievement] = [fifteenAchievement!, thirtyAchievement!, fiftyAchievement!, hundredAchievement!, clawAchievement!, negativeAchievement!]
+                let achievementsToReport: [GKAchievement] = [fifteenAchievement!, thirtyAchievement!, fiftyAchievement!, hundredAchievement!, clawAchievement!, negativeAchievement!, scoreCounterAchievement!]
                 
                 GKAchievement.report(achievementsToReport, withCompletionHandler: {(error: Error?) in
                     if error != nil {

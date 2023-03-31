@@ -26,6 +26,7 @@
 		399AEF7929CFB41C00CDC087 /* GameModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 399AEF7829CFB41C00CDC087 /* GameModel.swift */; };
 		399AEF7B29D16DB600CDC087 /* DifficultyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 399AEF7A29D16DB600CDC087 /* DifficultyView.swift */; };
 		399D7D7629A5BD5700CC922F /* Adam'sFont-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 399D7D7529A5BD5700CC922F /* Adam'sFont-Regular.otf */; };
+		39D8E5F429D623EB0057503D /* Claw.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 39D8E5F329D623EB0057503D /* Claw.mp3 */; };
 		39E3E933297670C800BE4212 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 39E3E932297670C800BE4212 /* GameScene.sks */; };
 		39E3E937297670C800BE4212 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39E3E936297670C800BE4212 /* GameScene.swift */; };
 		39E3E93E297670C900BE4212 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 39E3E93D297670C900BE4212 /* Assets.xcassets */; };
@@ -62,6 +63,7 @@
 		399AEF7829CFB41C00CDC087 /* GameModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameModel.swift; sourceTree = "<group>"; };
 		399AEF7A29D16DB600CDC087 /* DifficultyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DifficultyView.swift; sourceTree = "<group>"; };
 		399D7D7529A5BD5700CC922F /* Adam'sFont-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Adam'sFont-Regular.otf"; sourceTree = "<group>"; };
+		39D8E5F329D623EB0057503D /* Claw.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Claw.mp3; sourceTree = "<group>"; };
 		39E3E92D297670C800BE4212 /* CursedSnake.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CursedSnake.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		39E3E932297670C800BE4212 /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
 		39E3E936297670C800BE4212 /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
@@ -110,6 +112,7 @@
 				39E553AD29C292AD0042DF1F /* Aadit's Presidential Breakdown.mp3 */,
 				39E553A729C21F5A0042DF1F /* TitleScreen.mp3 */,
 				395BE11629A5357600C03742 /* Chew.mp3 */,
+				39D8E5F329D623EB0057503D /* Claw.mp3 */,
 				395BE11829A5376E00C03742 /* Omg.mp3 */,
 				395BE113299EEFC300C03742 /* Explosion.mp3 */,
 			);
@@ -282,6 +285,7 @@
 				395BE114299EEFC300C03742 /* Explosion.mp3 in Resources */,
 				395BE11729A5357600C03742 /* Chew.mp3 in Resources */,
 				39E553AE29C292AD0042DF1F /* Aadit's Presidential Breakdown.mp3 in Resources */,
+				39D8E5F429D623EB0057503D /* Claw.mp3 in Resources */,
 				39E553AA29C28A380042DF1F /* Cursed Pong Theme.mp3 in Resources */,
 				396908FA29A8A19B00188186 /* CreditsSceneDark.sks in Resources */,
 			);

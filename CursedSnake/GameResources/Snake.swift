@@ -18,7 +18,7 @@ class Snake {
         case dead
     }
     
-    private var difficultyMultDict : [String : CGFloat] = ["Pansy" : 1.4, "Easy" : 1.2, "Normal" : 1.0, "Hard" : 0.8, "Cracked" : 0.6]
+    private var difficultyMultDict : [String : CGFloat] = ["Pansy" : 1.4, "Easy" : 1.2, "Normal" : 1.0, "Hard" : 0.6, "Cracked" : 0.3]
     
     private var SnakeDirection: SnakeStates = .up
     

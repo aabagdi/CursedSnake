@@ -14,7 +14,9 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     private var GestureRecognizers: [UIGestureRecognizer] = []
     private var randomDist: GKRandomDistribution!
     private var encounteredClaw : Bool = false
+    private var killedByScoreCounter : Bool = false
     private var SnakeModel : GameModel = GameModel()
+    
     
     override func didMove(to view: SKView) {
         physicsWorld.contactDelegate = self
@@ -25,8 +27,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         for i in body {
             self.addChild(i)
         }
-        let initFont = UIFont.familyNames.randomElement()
-        let scoreCounter = SKLabelNode(fontNamed: initFont)
+        let randFont = UIFont.familyNames.randomElement()
+        let scoreCounter = SKLabelNode(fontNamed: randFont)
         scoreCounter.zPosition = 3
         scoreCounter.text = "0"
         scoreCounter.fontSize = 65
@@ -71,7 +73,6 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     }
     
     override func update(_ currentTime: TimeInterval) {
-        print(player!.getSpeed())
         let head = player!.getBody().first
         let speed = player.getSpeed()
         let headX = head!.position.x
@@ -134,17 +135,19 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             }
             else {
                 self.encounteredClaw = true
+                self.soundPlayer.play(sound: "Claw")
+                self.soundPlayer.setVol(newVol: UserDefaults.standard.float(forKey: "SoundVol"))
                 self.score.text = String(Int(self.score.text!)! + 69)
             }
             self.food = newFood
-            SnakeModel.calcAchievements(score: Int(self.score.text!)!, claw: self.encounteredClaw)
+            SnakeModel.calcAchievements(score: Int(self.score.text!)!, claw: self.encounteredClaw, scoreCounter: self.killedByScoreCounter)
         }
-        if head!.intersects(self.score) {
-            if self.score.fontName == "Adam\'s Font" {
+        if head!.intersects(self.score) && self.score.fontName == "Adam\'s Font" {
+                self.killedByScoreCounter = true
                 player!.changeDirection(direction: .dead)
+                SnakeModel.calcAchievements(score: Int(self.score.text!)!, claw: self.encounteredClaw, scoreCounter: self.killedByScoreCounter)
                 endGame()
             }
-        }
         
         player.lengthDependentSpeed()
         

@@ -11,10 +11,11 @@ struct SnakeColorView: View {
     @AppStorage("HeadColor") private var HeadColor : Color = .white
     @AppStorage("BodyColor") private var BodyColor : Color = .white
     
-    @State var start = UnitPoint(x: 0.5, y: 0)
-    @State var end = UnitPoint(x: 0.5, y: 1)
-
+    @State private var animateGradient : Bool = false
+    
     var body: some View {
+        let bgGradient = LinearGradient(colors: [Color("Bi Pink"), Color("Bi Purple"), Color("Bi Blue")], startPoint: animateGradient ? .top : .bottom, endPoint: animateGradient ? .bottom : .top)
+        
         List {
             ColorPicker("Set the color of the Snake's head!!", selection: $HeadColor)
             ColorPicker("Set the color of the Snake's body!!", selection: $BodyColor)
@@ -39,7 +40,13 @@ struct SnakeColorView: View {
                 }
                 Spacer()
             }
-            .listRowBackground(LinearGradient(gradient: Gradient(colors: [Color("Bi Pink"), Color("Bi Purple"), Color("Bi Blue")]), startPoint: start, endPoint: end))
+            .listRowBackground(bgGradient)
+            .ignoresSafeArea()
+            .onAppear {
+                withAnimation(.linear(duration: 2.0).repeatForever(autoreverses: true)) {
+                    animateGradient.toggle()
+                }
+            }
         }
     }
 }
