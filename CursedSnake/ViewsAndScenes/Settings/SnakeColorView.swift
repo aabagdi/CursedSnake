@@ -43,8 +43,8 @@ struct SnakeColorView: View {
                 Spacer()
             }
             .listRowBackground(bgGradient
-                .hueRotation(.degrees(animateGradient ? 60 : -60))
-                .animation(Animation.easeInOut(duration: 35).repeatForever(autoreverses: true), value: animateGradient)
+                .hueRotation(.degrees(animateGradient ? -50 : 0))
+                .animation(Animation.easeInOut(duration: 40).repeatForever(autoreverses: true), value: animateGradient)
             )
             .onAppear {
                 animateGradient.toggle()
