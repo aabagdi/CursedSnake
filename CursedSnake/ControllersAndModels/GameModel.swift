@@ -26,7 +26,7 @@ extension GameScene {
         }
         
         func genFood() -> SKSpriteNode {
-            let randNum = GKRandomSource.sharedRandom().nextInt(upperBound: 1000)
+            let randNum = GKRandomSource.sharedRandom().nextInt(upperBound: 999)
             if randNum < 5 {
                 let claw = SKSpriteNode(imageNamed: "Claw.png")
                 claw.position = randomPosition()

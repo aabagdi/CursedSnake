@@ -113,7 +113,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             self.score.fontName = UIFont.familyNames.randomElement()
             self.score.fontColor = SnakeModel.generateRandomColor()
             if food.name == "Egg" {
-                let randNum = GKRandomSource.sharedRandom().nextInt(upperBound: 100)
+                let randNum = GKRandomSource.sharedRandom().nextInt(upperBound: 99)
                 if randNum < 1 {
                     self.soundPlayer.play(sound: "Omg")
                     self.soundPlayer.setVol(newVol: UserDefaults.standard.float(forKey: "SoundVol"))
