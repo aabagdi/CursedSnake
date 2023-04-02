@@ -14,6 +14,7 @@ struct SnakeColorView: View {
     
     @State private var animateGradient : Bool = false
     
+    let snakeHeadFrameWidth = 97.0
     
     var body: some View {
         let bgGradient = LinearGradient(colors: [Color("Bi Pink"), Color("Bi Purple"), Color("Bi Blue")], startPoint: .top, endPoint: .bottom)
@@ -31,7 +32,7 @@ struct SnakeColorView: View {
                         Ellipse()
                             .strokeBorder(.white, lineWidth: 3.0)
                         
-                    }.frame(width: 98.25, height: 171.9375)
+                    }.frame(width: snakeHeadFrameWidth, height: snakeHeadFrameWidth / 0.571428571428571)
                     ForEach(0..<7) { _ in
                         ZStack {
                             Circle()
@@ -39,7 +40,7 @@ struct SnakeColorView: View {
                             Circle()
                                 .strokeBorder(.white, lineWidth: 3.0)
                         }
-                    }.frame(width: 49.125, height: 49.125)
+                    }.frame(width: snakeHeadFrameWidth/2, height: snakeHeadFrameWidth/2)
                 }
                 Spacer()
             }
