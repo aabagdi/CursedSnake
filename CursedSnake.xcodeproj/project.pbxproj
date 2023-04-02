@@ -20,6 +20,7 @@
 		395BE12629A592B900C03742 /* TitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 395BE12529A592B900C03742 /* TitleView.swift */; };
 		395BE12829A595D800C03742 /* CursedSnakeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 395BE12729A595D800C03742 /* CursedSnakeApp.swift */; };
 		396908FA29A8A19B00188186 /* CreditsSceneDark.sks in Resources */ = {isa = PBXBuildFile; fileRef = 396908F929A8A19B00188186 /* CreditsSceneDark.sks */; };
+		3979516B29DA4D4200A79156 /* HellYeaBrother.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 3979516A29DA4D4200A79156 /* HellYeaBrother.mp3 */; };
 		39845DF029CE2868007FD994 /* SnakeColorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39845DEF29CE2868007FD994 /* SnakeColorView.swift */; };
 		39845DF229CE7CDB007FD994 /* Color+RawRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39845DF129CE7CDB007FD994 /* Color+RawRepresentable.swift */; };
 		39867DFF29AA689100E9F059 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 39867DFE29AA689100E9F059 /* Main.storyboard */; };
@@ -57,6 +58,7 @@
 		395BE12529A592B900C03742 /* TitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleView.swift; sourceTree = "<group>"; };
 		395BE12729A595D800C03742 /* CursedSnakeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CursedSnakeApp.swift; sourceTree = "<group>"; };
 		396908F929A8A19B00188186 /* CreditsSceneDark.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = CreditsSceneDark.sks; sourceTree = "<group>"; };
+		3979516A29DA4D4200A79156 /* HellYeaBrother.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = HellYeaBrother.mp3; sourceTree = "<group>"; };
 		39845DEF29CE2868007FD994 /* SnakeColorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnakeColorView.swift; sourceTree = "<group>"; };
 		39845DF129CE7CDB007FD994 /* Color+RawRepresentable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Color+RawRepresentable.swift"; sourceTree = "<group>"; };
 		39867DFE29AA689100E9F059 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
@@ -105,6 +107,7 @@
 		395BE115299EEFD100C03742 /* SoundsAndMusic */ = {
 			isa = PBXGroup;
 			children = (
+				3979516A29DA4D4200A79156 /* HellYeaBrother.mp3 */,
 				3947B3ED29C92D1000D44581 /* Cursed Snake Theme.mp3 */,
 				3920E1A029C6BA2200CCAFC8 /* Pause.mp3 */,
 				3920E1A129C6BA2200CCAFC8 /* Unpause.mp3 */,
@@ -275,6 +278,7 @@
 				3947B3EE29C92D1000D44581 /* Cursed Snake Theme.mp3 in Resources */,
 				3920E19F29C66FB100CCAFC8 /* CreditsSceneLight.sks in Resources */,
 				395BE11929A5376E00C03742 /* Omg.mp3 in Resources */,
+				3979516B29DA4D4200A79156 /* HellYeaBrother.mp3 in Resources */,
 				3920E1A329C6BA2200CCAFC8 /* Unpause.mp3 in Resources */,
 				39867DFF29AA689100E9F059 /* Main.storyboard in Resources */,
 				3920E1A229C6BA2200CCAFC8 /* Pause.mp3 in Resources */,

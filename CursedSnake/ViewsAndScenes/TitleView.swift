@@ -14,7 +14,8 @@ import Foundation
 struct TitleView: View {
     @State private var tapped : Bool = false
     @StateObject private var model = TitleModel()
-    let TitleThemePlayer = AudioPlayer()
+    private var TitleThemePlayer = AudioPlayer()
+    private var HellYeaBroPlayer = AudioPlayer()
     
     var body: some View {
         NavigationStack {
@@ -30,6 +31,8 @@ struct TitleView: View {
                     .scaleEffect(tapped ? 1.3 : 1)
                     .animation(.spring(response: 0.35, dampingFraction: 0.15), value: tapped)
                     .onTapGesture {
+                        self.HellYeaBroPlayer.play(sound: "HellYeaBrother")
+                        self.TitleThemePlayer.setVol(newVol: UserDefaults.standard.float(forKey: "SoundVol"))
                         tapped.toggle()
                         DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
                             tapped.toggle()
