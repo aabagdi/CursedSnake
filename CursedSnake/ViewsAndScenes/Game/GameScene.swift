@@ -44,7 +44,12 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         self.BGMPlayer = BGMPlayer
         
         self.BGMPlayer.play(sound: UserDefaults.standard.string(forKey: "BGM") ?? "Cursed Snake Theme")
-        self.BGMPlayer.fadeIn(vol: UserDefaults.standard.float(forKey: "MusicVol"), duration: 0.5)
+        if UserDefaults.standard.float(forKey: "MusicVol") != 0.0 {
+            self.BGMPlayer.fadeIn(vol: UserDefaults.standard.float(forKey: "MusicVol"), duration: 0.5)
+        }
+        else {
+            self.BGMPlayer.setVol(newVol: 0.0)
+        }
         self.BGMPlayer.triggerLoop()
         
         let swipeRight = UISwipeGestureRecognizer(target: self,
