@@ -12,7 +12,7 @@ import Foundation
 
 
 struct TitleView: View {
-    
+    @State private var tapped : Bool = false
     @StateObject private var model = TitleModel()
     let TitleThemePlayer = AudioPlayer()
     
@@ -26,6 +26,14 @@ struct TitleView: View {
                             .multilineTextAlignment(.center)
                             .lineLimit(2)
                             .minimumScaleFactor(0.01)
+                    }
+                    .scaleEffect(tapped ? 1.3 : 1)
+                    .animation(.spring(response: 0.35, dampingFraction: 0.15), value: tapped)
+                    .onTapGesture {
+                        tapped.toggle()
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
+                            tapped.toggle()
+                        }
                     }
                 }
                 VStack{
@@ -53,8 +61,8 @@ struct TitleView: View {
                         GameCenterView()
                     }
                     /*Button("Reset GC") {
-                        GKAchievement.resetAchievements()
-                    }*/
+                     GKAchievement.resetAchievements()
+                     }*/
                 }.buttonStyle(.borderedProminent)
                     .controlSize(.large)
                     .font(.system(size: 35, weight: Font.Weight.bold))
