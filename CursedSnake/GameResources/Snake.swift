@@ -206,7 +206,7 @@ class Snake {
         currentY = currentY < yRange.lowerBound ? yRange.lowerBound : currentY
         currentY = currentY > yRange.upperBound ? yRange.upperBound : currentY
         
-
+        
         return CGPointMake(currentX, currentY)
     }
     

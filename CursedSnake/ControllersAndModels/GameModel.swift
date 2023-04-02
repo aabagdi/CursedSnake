@@ -52,13 +52,13 @@ extension GameScene {
                     
                 case "Easy":
                     try! await GKLeaderboard.submitScore(score, context: 0, player: GKLocalPlayer.local, leaderboardIDs: ["com.aabagdi.CursedSnake.AllTimeEasy"])
-                
+                    
                 case "Hard":
                     try! await GKLeaderboard.submitScore(score, context: 0, player: GKLocalPlayer.local, leaderboardIDs: ["com.aabagdi.CursedSnake.AllTimeHard"])
                     
                 case "Cracked":
                     try! await GKLeaderboard.submitScore(score, context: 0, player: GKLocalPlayer.local, leaderboardIDs: ["com.aabagdi.CursedSnake.AllTimeCracked"])
-                
+                    
                 default:
                     try! await GKLeaderboard.submitScore(score, context: 0, player: GKLocalPlayer.local, leaderboardIDs: ["com.aabagdi.CursedSnake.AllTimeNormal"])
                 }
@@ -72,7 +72,7 @@ extension GameScene {
                 
                 // Find an existing achievement.
                 fifteenAchievement = achievements?.first(where: { $0.identifier == fifteenID})
-
+                
                 
                 // Otherwise, create a new achievement.
                 if fifteenAchievement == nil {
@@ -86,9 +86,9 @@ extension GameScene {
                 
                 let thirtyID = "30"
                 var thirtyAchievement: GKAchievement? = nil
-            
+                
                 thirtyAchievement = achievements?.first(where: { $0.identifier == thirtyID})
-
+                
                 if thirtyAchievement == nil {
                     thirtyAchievement = GKAchievement(identifier: thirtyID)
                 }
@@ -102,7 +102,7 @@ extension GameScene {
                 var fiftyAchievement: GKAchievement? = nil
                 
                 fiftyAchievement = achievements?.first(where: { $0.identifier == fiftyID})
-
+                
                 if fiftyAchievement == nil {
                     fiftyAchievement = GKAchievement(identifier: fiftyID)
                 }
@@ -114,9 +114,9 @@ extension GameScene {
                 
                 let hundredID = "100"
                 var hundredAchievement: GKAchievement? = nil
-
+                
                 hundredAchievement = achievements?.first(where: { $0.identifier == hundredID})
-
+                
                 if hundredAchievement == nil {
                     hundredAchievement = GKAchievement(identifier: hundredID)
                 }
@@ -125,12 +125,12 @@ extension GameScene {
                     hundredAchievement?.showsCompletionBanner = true
                     hundredAchievement?.percentComplete = 100
                 }
-
+                
                 let negativeID = "1"
                 var negativeAchievement: GKAchievement? = nil
-
+                
                 negativeAchievement = achievements?.first(where: { $0.identifier == negativeID})
-
+                
                 if negativeAchievement == nil {
                     negativeAchievement = GKAchievement(identifier: negativeID)
                 }
@@ -142,9 +142,9 @@ extension GameScene {
                 
                 let clawID = "69"
                 var clawAchievement: GKAchievement? = nil
-
+                
                 clawAchievement = achievements?.first(where: { $0.identifier == clawID})
-
+                
                 if clawAchievement == nil {
                     clawAchievement = GKAchievement(identifier: clawID)
                 }
@@ -160,9 +160,9 @@ extension GameScene {
                 
                 let scoreCounterID = "2"
                 var scoreCounterAchievement: GKAchievement? = nil
-
+                
                 scoreCounterAchievement = achievements?.first(where: { $0.identifier == scoreCounterID})
-
+                
                 if scoreCounterAchievement == nil {
                     scoreCounterAchievement = GKAchievement(identifier: scoreCounterID)
                 }
@@ -177,7 +177,7 @@ extension GameScene {
                 }
                 
                 // Insert code to report the percentage.
-            
+                
                 let achievementsToReport: [GKAchievement] = [fifteenAchievement!, thirtyAchievement!, fiftyAchievement!, hundredAchievement!, clawAchievement!, negativeAchievement!, scoreCounterAchievement!]
                 
                 GKAchievement.report(achievementsToReport, withCompletionHandler: {(error: Error?) in
@@ -188,5 +188,5 @@ extension GameScene {
             })
         }
     }
-
+    
 }

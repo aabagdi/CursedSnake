@@ -145,10 +145,10 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             SnakeModel.calcAchievements(score: Int(self.score.text!)!, claw: self.encounteredClaw, scoreCounter: false)
         }
         if head!.intersects(self.score) && self.score.fontName == "Adam\'s Font" {
-                player!.changeDirection(direction: .dead)
-                SnakeModel.calcAchievements(score: Int(self.score.text!)!, claw: self.encounteredClaw, scoreCounter: true)
-                endGame()
-            }
+            player!.changeDirection(direction: .dead)
+            SnakeModel.calcAchievements(score: Int(self.score.text!)!, claw: self.encounteredClaw, scoreCounter: true)
+            endGame()
+        }
         
         player.lengthDependentSpeed()
         
