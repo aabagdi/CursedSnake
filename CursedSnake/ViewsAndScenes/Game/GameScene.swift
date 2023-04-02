@@ -12,7 +12,6 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     private var BGMPlayer: AudioPlayer!
     private var GestureRecognizers: [UIGestureRecognizer] = []
     private var encounteredClaw : Bool = false
-    private var killedByScoreCounter : Bool = false
     private var SnakeModel : GameModel = GameModel()
     
     
@@ -138,12 +137,11 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
                 self.score.text = String(Int(self.score.text!)! + 69)
             }
             self.food = newFood
-            SnakeModel.calcAchievements(score: Int(self.score.text!)!, claw: self.encounteredClaw, scoreCounter: self.killedByScoreCounter)
+            SnakeModel.calcAchievements(score: Int(self.score.text!)!, claw: self.encounteredClaw, scoreCounter: false)
         }
         if head!.intersects(self.score) && self.score.fontName == "Adam\'s Font" {
-                self.killedByScoreCounter = true
                 player!.changeDirection(direction: .dead)
-                SnakeModel.calcAchievements(score: Int(self.score.text!)!, claw: self.encounteredClaw, scoreCounter: self.killedByScoreCounter)
+                SnakeModel.calcAchievements(score: Int(self.score.text!)!, claw: self.encounteredClaw, scoreCounter: true)
                 endGame()
             }
         
