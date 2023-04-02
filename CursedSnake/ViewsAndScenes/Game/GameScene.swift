@@ -1,9 +1,8 @@
 import Foundation
+import GameplayKit
 import SwiftUI
 import SpriteKit
 import UIKit
-import GameKit
-import GameplayKit
 
 class GameScene: SKScene, SKPhysicsContactDelegate {
     private var player: Snake!
@@ -12,7 +11,6 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     private var soundPlayer: AudioPlayer!
     private var BGMPlayer: AudioPlayer!
     private var GestureRecognizers: [UIGestureRecognizer] = []
-    private var randomDist: GKRandomDistribution!
     private var encounteredClaw : Bool = false
     private var killedByScoreCounter : Bool = false
     private var SnakeModel : GameModel = GameModel()
@@ -115,15 +113,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             self.score.fontName = UIFont.familyNames.randomElement()
             self.score.fontColor = SnakeModel.generateRandomColor()
             if food.name == "Egg" {
-                self.soundPlayer.play(sound: "Chew")
-                self.soundPlayer.setVol(newVol: UserDefaults.standard.float(forKey: "SoundVol"))
-                let randNum = Int.random(in: 1...101)
-                if randNum > 1 {
-                    player!.incrementSnake()
-                    self.addChild(player.getBody().last!)
-                    self.score.text = String(Int(self.score.text!)! + 1)
-                }
-                else {
+                let randNum = GKRandomSource.sharedRandom().nextInt(upperBound: 100)
+                if randNum < 1 {
                     self.soundPlayer.play(sound: "Omg")
                     self.soundPlayer.setVol(newVol: UserDefaults.standard.float(forKey: "SoundVol"))
                     for _  in (0...snakeLength) {
@@ -131,6 +122,13 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
                         self.addChild(player.getBody().last!)
                     }
                     self.score.text = String(Int(self.score.text!)! - 1)
+                }
+                else {
+                    self.soundPlayer.play(sound: "Chew")
+                    self.soundPlayer.setVol(newVol: UserDefaults.standard.float(forKey: "SoundVol"))
+                    player!.incrementSnake()
+                    self.addChild(player.getBody().last!)
+                    self.score.text = String(Int(self.score.text!)! + 1)
                 }
             }
             else {
@@ -265,14 +263,11 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         gameOver.position = CGPoint(x: 0, y: -550)
         self.addChild(gameOver)
         for i in body {
-            let nodeCopy = i
-            i.removeFromParent()
-            nodeCopy.physicsBody = nil
-            nodeCopy.fillColor = SKColor.orange
-            self.addChild(nodeCopy)
-            nodeCopy.run(explode)
-            nodeCopy.run(fadeAway, completion: {() -> Void in
-                nodeCopy.removeFromParent()
+            i.physicsBody = nil
+            i.fillColor = SKColor.orange
+            i.run(explode)
+            i.run(fadeAway, completion: {() -> Void in
+                i.removeFromParent()
             })
         }
         self.food.run(fadeAway, completion: {() -> Void in

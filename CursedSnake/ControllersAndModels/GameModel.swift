@@ -6,8 +6,8 @@
 //
 
 import Foundation
-import GameKit
 import SpriteKit
+import GameKit
 
 extension GameScene {
     struct GameModel {
@@ -17,17 +17,17 @@ extension GameScene {
             return CGPoint(x: randX, y: randY)
         }
         
-        func generateRandomColor() -> UIColor { //thanks to https://gist.github.com/asarode
-            let hue : CGFloat = CGFloat(arc4random() % 256) / 256 // use 256 to get full range from 0.0 to 1.0
-            let saturation : CGFloat = CGFloat(arc4random() % 128) / 256 + 0.5 // from 0.5 to 1.0 to stay away from white
-            let brightness : CGFloat = CGFloat(arc4random() % 128) / 256 + 0.5 // from 0.5 to 1.0 to stay away from black
+        func generateRandomColor() -> UIColor {
+            let hue : CGFloat = CGFloat.random(in: 0...256) / 256
+            let saturation : CGFloat = CGFloat.random(in: 0...128) / 256 + 0.5
+            let brightness : CGFloat = CGFloat.random(in: 0...128) / 256 + 0.5
             
             return UIColor(hue: hue, saturation: saturation, brightness: brightness, alpha: 1)
         }
         
         func genFood() -> SKSpriteNode {
-            let randNum = Int.random(in: 1...1001)
-            if randNum < 2 {
+            let randNum = GKRandomSource.sharedRandom().nextInt(upperBound: 1000)
+            if randNum < 5 {
                 let claw = SKSpriteNode(imageNamed: "Claw.png")
                 claw.position = randomPosition()
                 claw.zPosition = 2
@@ -49,23 +49,18 @@ extension GameScene {
                 switch currDiff {
                 case "Pansy":
                     try! await GKLeaderboard.submitScore(score, context: 0, player: GKLocalPlayer.local, leaderboardIDs: ["com.aabagdi.CursedSnake.AllTimePansy"])
-                    print("Pansy")
                     
                 case "Easy":
                     try! await GKLeaderboard.submitScore(score, context: 0, player: GKLocalPlayer.local, leaderboardIDs: ["com.aabagdi.CursedSnake.AllTimeEasy"])
-                    print("Easy")
                 
                 case "Hard":
                     try! await GKLeaderboard.submitScore(score, context: 0, player: GKLocalPlayer.local, leaderboardIDs: ["com.aabagdi.CursedSnake.AllTimeHard"])
-                    print("Hard")
                     
                 case "Cracked":
                     try! await GKLeaderboard.submitScore(score, context: 0, player: GKLocalPlayer.local, leaderboardIDs: ["com.aabagdi.CursedSnake.AllTimeCracked"])
-                    print("Cracked")
                 
                 default:
                     try! await GKLeaderboard.submitScore(score, context: 0, player: GKLocalPlayer.local, leaderboardIDs: ["com.aabagdi.CursedSnake.AllTimeNormal"])
-                    print("Normal")
                 }
             }
         }
@@ -84,7 +79,7 @@ extension GameScene {
                     fifteenAchievement = GKAchievement(identifier: fifteenID)
                 }
                 
-                if score == 15 {
+                if score >= 15 {
                     fifteenAchievement?.showsCompletionBanner = true
                     fifteenAchievement?.percentComplete = 100
                 }
@@ -98,7 +93,7 @@ extension GameScene {
                     thirtyAchievement = GKAchievement(identifier: thirtyID)
                 }
                 
-                if score == 30 {
+                if score >= 30 {
                     thirtyAchievement?.showsCompletionBanner = true
                     thirtyAchievement?.percentComplete = 100
                 }
@@ -112,7 +107,7 @@ extension GameScene {
                     fiftyAchievement = GKAchievement(identifier: fiftyID)
                 }
                 
-                if score == 50 {
+                if score >= 50 {
                     fiftyAchievement?.showsCompletionBanner = true
                     fiftyAchievement?.percentComplete = 100
                 }
@@ -126,7 +121,7 @@ extension GameScene {
                     hundredAchievement = GKAchievement(identifier: hundredID)
                 }
                 
-                if score == 100 {
+                if score >= 100 {
                     hundredAchievement?.showsCompletionBanner = true
                     hundredAchievement?.percentComplete = 100
                 }
