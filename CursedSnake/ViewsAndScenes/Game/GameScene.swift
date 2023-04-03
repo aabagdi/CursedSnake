@@ -269,8 +269,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             i.fillColor = SKColor.orange
             i.run(explode)
             i.run(fadeAway, completion: {() -> Void in
-                i.removeFromParent()
                 i.removeAllActions()
+                i.removeFromParent()
             })
         }
         self.food.run(fadeAway, completion: {() -> Void in
