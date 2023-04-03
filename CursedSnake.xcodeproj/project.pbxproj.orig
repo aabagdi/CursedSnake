@@ -1,0 +1,524 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		390EAAD329AEF7B000557C2F /* TitleModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 390EAAD229AEF7B000557C2F /* TitleModel.swift */; };
+		3920E19F29C66FB100CCAFC8 /* CreditsSceneLight.sks in Resources */ = {isa = PBXBuildFile; fileRef = 3920E19E29C66FB100CCAFC8 /* CreditsSceneLight.sks */; };
+		3920E1A229C6BA2200CCAFC8 /* Pause.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 3920E1A029C6BA2200CCAFC8 /* Pause.mp3 */; };
+		3920E1A329C6BA2200CCAFC8 /* Unpause.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 3920E1A129C6BA2200CCAFC8 /* Unpause.mp3 */; };
+		3947B3EE29C92D1000D44581 /* Cursed Snake Theme.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 3947B3ED29C92D1000D44581 /* Cursed Snake Theme.mp3 */; };
+		39504142297B64F300D384F1 /* Snake.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39504141297B64F300D384F1 /* Snake.swift */; };
+		395BE112299EEE3600C03742 /* AudioPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 395BE111299EEE3600C03742 /* AudioPlayer.swift */; };
+		395BE114299EEFC300C03742 /* Explosion.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 395BE113299EEFC300C03742 /* Explosion.mp3 */; };
+		395BE11729A5357600C03742 /* Chew.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 395BE11629A5357600C03742 /* Chew.mp3 */; };
+		395BE11929A5376E00C03742 /* Omg.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 395BE11829A5376E00C03742 /* Omg.mp3 */; };
+		395BE12629A592B900C03742 /* TitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 395BE12529A592B900C03742 /* TitleView.swift */; };
+		395BE12829A595D800C03742 /* CursedSnakeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 395BE12729A595D800C03742 /* CursedSnakeApp.swift */; };
+		396908FA29A8A19B00188186 /* CreditsSceneDark.sks in Resources */ = {isa = PBXBuildFile; fileRef = 396908F929A8A19B00188186 /* CreditsSceneDark.sks */; };
+		39845DF029CE2868007FD994 /* SnakeColorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39845DEF29CE2868007FD994 /* SnakeColorView.swift */; };
+		39845DF229CE7CDB007FD994 /* Color+RawRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39845DF129CE7CDB007FD994 /* Color+RawRepresentable.swift */; };
+		39867DFF29AA689100E9F059 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 39867DFE29AA689100E9F059 /* Main.storyboard */; };
+		399D7D7629A5BD5700CC922F /* Adam'sFont-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 399D7D7529A5BD5700CC922F /* Adam'sFont-Regular.otf */; };
+		39E3E931297670C800BE4212 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39E3E930297670C800BE4212 /* AppDelegate.swift */; };
+		39E3E933297670C800BE4212 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 39E3E932297670C800BE4212 /* GameScene.sks */; };
+		39E3E937297670C800BE4212 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39E3E936297670C800BE4212 /* GameScene.swift */; };
+		39E3E93E297670C900BE4212 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 39E3E93D297670C900BE4212 /* Assets.xcassets */; };
+		39E5539329B2E4AA0042DF1F /* LeaderboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39E5539229B2E4AA0042DF1F /* LeaderboardView.swift */; };
+		39E5539929B99DC40042DF1F /* CreditsScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39E5539829B99DC40042DF1F /* CreditsScene.swift */; };
+		39E5539B29BD177B0042DF1F /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39E5539A29BD177B0042DF1F /* SettingsView.swift */; };
+		39E5539D29BD17AA0042DF1F /* RootSettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39E5539C29BD17AA0042DF1F /* RootSettingView.swift */; };
+		39E5539F29BD28180042DF1F /* VolumeSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39E5539E29BD28180042DF1F /* VolumeSettingsView.swift */; };
+		39E553A829C21F5A0042DF1F /* TitleScreen.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 39E553A729C21F5A0042DF1F /* TitleScreen.mp3 */; };
+		39E553AA29C28A380042DF1F /* Cursed Pong Theme.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 39E553A929C28A380042DF1F /* Cursed Pong Theme.mp3 */; };
+		39E553AC29C28AD90042DF1F /* BGMSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39E553AB29C28AD90042DF1F /* BGMSettingsView.swift */; };
+		39E553AE29C292AD0042DF1F /* Aadit's Presidential Breakdown.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 39E553AD29C292AD0042DF1F /* Aadit's Presidential Breakdown.mp3 */; };
+		39FF9AC829A6C10F00F38A3D /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39FF9AC729A6C10F00F38A3D /* GameViewController.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		390EAAD229AEF7B000557C2F /* TitleModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleModel.swift; sourceTree = "<group>"; };
+		3920E19E29C66FB100CCAFC8 /* CreditsSceneLight.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = CreditsSceneLight.sks; sourceTree = "<group>"; };
+		3920E1A029C6BA2200CCAFC8 /* Pause.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Pause.mp3; sourceTree = "<group>"; };
+		3920E1A129C6BA2200CCAFC8 /* Unpause.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Unpause.mp3; sourceTree = "<group>"; };
+		3947B3ED29C92D1000D44581 /* Cursed Snake Theme.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Cursed Snake Theme.mp3"; sourceTree = "<group>"; };
+		39504141297B64F300D384F1 /* Snake.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Snake.swift; sourceTree = "<group>"; };
+		395BE111299EEE3600C03742 /* AudioPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioPlayer.swift; sourceTree = "<group>"; };
+		395BE113299EEFC300C03742 /* Explosion.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Explosion.mp3; sourceTree = "<group>"; };
+		395BE11629A5357600C03742 /* Chew.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Chew.mp3; sourceTree = "<group>"; };
+		395BE11829A5376E00C03742 /* Omg.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Omg.mp3; sourceTree = "<group>"; };
+		395BE12429A591BB00C03742 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		395BE12529A592B900C03742 /* TitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleView.swift; sourceTree = "<group>"; };
+		395BE12729A595D800C03742 /* CursedSnakeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CursedSnakeApp.swift; sourceTree = "<group>"; };
+		396908F929A8A19B00188186 /* CreditsSceneDark.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = CreditsSceneDark.sks; sourceTree = "<group>"; };
+		39845DEF29CE2868007FD994 /* SnakeColorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnakeColorView.swift; sourceTree = "<group>"; };
+		39845DF129CE7CDB007FD994 /* Color+RawRepresentable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Color+RawRepresentable.swift"; sourceTree = "<group>"; };
+		39867DFE29AA689100E9F059 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		399D7D7529A5BD5700CC922F /* Adam'sFont-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Adam'sFont-Regular.otf"; sourceTree = "<group>"; };
+		39E3E92D297670C800BE4212 /* CursedSnake.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CursedSnake.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		39E3E930297670C800BE4212 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		39E3E932297670C800BE4212 /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
+		39E3E936297670C800BE4212 /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
+		39E3E93D297670C900BE4212 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		39E5538C29B1990C0042DF1F /* CursedSnakeRelease.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = CursedSnakeRelease.entitlements; sourceTree = "<group>"; };
+		39E5539229B2E4AA0042DF1F /* LeaderboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeaderboardView.swift; sourceTree = "<group>"; };
+		39E5539829B99DC40042DF1F /* CreditsScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreditsScene.swift; sourceTree = "<group>"; };
+		39E5539A29BD177B0042DF1F /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		39E5539C29BD17AA0042DF1F /* RootSettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootSettingView.swift; sourceTree = "<group>"; };
+		39E5539E29BD28180042DF1F /* VolumeSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VolumeSettingsView.swift; sourceTree = "<group>"; };
+		39E553A729C21F5A0042DF1F /* TitleScreen.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = TitleScreen.mp3; sourceTree = "<group>"; };
+		39E553A929C28A380042DF1F /* Cursed Pong Theme.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Cursed Pong Theme.mp3"; sourceTree = "<group>"; };
+		39E553AB29C28AD90042DF1F /* BGMSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BGMSettingsView.swift; sourceTree = "<group>"; };
+		39E553AD29C292AD0042DF1F /* Aadit's Presidential Breakdown.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Aadit's Presidential Breakdown.mp3"; sourceTree = "<group>"; };
+		39FF9AC729A6C10F00F38A3D /* GameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		39E3E92A297670C800BE4212 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		390EAACD29AD59ED00557C2F /* ControllersAndModels */ = {
+			isa = PBXGroup;
+			children = (
+				390EAAD229AEF7B000557C2F /* TitleModel.swift */,
+				39FF9AC729A6C10F00F38A3D /* GameViewController.swift */,
+			);
+			path = ControllersAndModels;
+			sourceTree = "<group>";
+		};
+		395BE115299EEFD100C03742 /* SoundsAndMusic */ = {
+			isa = PBXGroup;
+			children = (
+				3947B3ED29C92D1000D44581 /* Cursed Snake Theme.mp3 */,
+				3920E1A029C6BA2200CCAFC8 /* Pause.mp3 */,
+				3920E1A129C6BA2200CCAFC8 /* Unpause.mp3 */,
+				39E553A929C28A380042DF1F /* Cursed Pong Theme.mp3 */,
+				39E553AD29C292AD0042DF1F /* Aadit's Presidential Breakdown.mp3 */,
+				39E553A729C21F5A0042DF1F /* TitleScreen.mp3 */,
+				395BE11629A5357600C03742 /* Chew.mp3 */,
+				395BE11829A5376E00C03742 /* Omg.mp3 */,
+				395BE113299EEFC300C03742 /* Explosion.mp3 */,
+			);
+			path = SoundsAndMusic;
+			sourceTree = "<group>";
+		};
+		395BE12229A5914200C03742 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				39504141297B64F300D384F1 /* Snake.swift */,
+				395BE111299EEE3600C03742 /* AudioPlayer.swift */,
+				399D7D7529A5BD5700CC922F /* Adam'sFont-Regular.otf */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		39845DF329CE7CDF007FD994 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				39845DF129CE7CDB007FD994 /* Color+RawRepresentable.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		39E3E924297670C800BE4212 = {
+			isa = PBXGroup;
+			children = (
+				39E3E92F297670C800BE4212 /* CursedSnake */,
+				39E3E92E297670C800BE4212 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		39E3E92E297670C800BE4212 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				39E3E92D297670C800BE4212 /* CursedSnake.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		39E3E92F297670C800BE4212 /* CursedSnake */ = {
+			isa = PBXGroup;
+			children = (
+				39E5538C29B1990C0042DF1F /* CursedSnakeRelease.entitlements */,
+				39845DF329CE7CDF007FD994 /* Extensions */,
+				390EAACD29AD59ED00557C2F /* ControllersAndModels */,
+				39FF9ACB29A72C7E00F38A3D /* ViewsAndScenes */,
+				395BE12429A591BB00C03742 /* Info.plist */,
+				395BE12229A5914200C03742 /* Resources */,
+				395BE115299EEFD100C03742 /* SoundsAndMusic */,
+				39E3E93D297670C900BE4212 /* Assets.xcassets */,
+				39867DFE29AA689100E9F059 /* Main.storyboard */,
+				39E3E930297670C800BE4212 /* AppDelegate.swift */,
+				395BE12729A595D800C03742 /* CursedSnakeApp.swift */,
+			);
+			path = CursedSnake;
+			sourceTree = "<group>";
+		};
+		39E553A029BD29800042DF1F /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				39E5539A29BD177B0042DF1F /* SettingsView.swift */,
+				39E5539C29BD17AA0042DF1F /* RootSettingView.swift */,
+				39E5539E29BD28180042DF1F /* VolumeSettingsView.swift */,
+				39E553AB29C28AD90042DF1F /* BGMSettingsView.swift */,
+				39845DEF29CE2868007FD994 /* SnakeColorView.swift */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		39E553A129BD29890042DF1F /* Game */ = {
+			isa = PBXGroup;
+			children = (
+				39E3E936297670C800BE4212 /* GameScene.swift */,
+				39E3E932297670C800BE4212 /* GameScene.sks */,
+			);
+			path = Game;
+			sourceTree = "<group>";
+		};
+		39E553A229BD29990042DF1F /* Credits */ = {
+			isa = PBXGroup;
+			children = (
+				39E5539829B99DC40042DF1F /* CreditsScene.swift */,
+				396908F929A8A19B00188186 /* CreditsSceneDark.sks */,
+				3920E19E29C66FB100CCAFC8 /* CreditsSceneLight.sks */,
+			);
+			path = Credits;
+			sourceTree = "<group>";
+		};
+		39FF9ACB29A72C7E00F38A3D /* ViewsAndScenes */ = {
+			isa = PBXGroup;
+			children = (
+				39E553A229BD29990042DF1F /* Credits */,
+				39E553A129BD29890042DF1F /* Game */,
+				39E553A029BD29800042DF1F /* Settings */,
+				395BE12529A592B900C03742 /* TitleView.swift */,
+				39E5539229B2E4AA0042DF1F /* LeaderboardView.swift */,
+			);
+			path = ViewsAndScenes;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		39E3E92C297670C800BE4212 /* CursedSnake */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 39E3E944297670C900BE4212 /* Build configuration list for PBXNativeTarget "CursedSnake" */;
+			buildPhases = (
+				39E3E929297670C800BE4212 /* Sources */,
+				39E3E92A297670C800BE4212 /* Frameworks */,
+				39E3E92B297670C800BE4212 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = CursedSnake;
+			productName = CursedSnake;
+			productReference = 39E3E92D297670C800BE4212 /* CursedSnake.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		39E3E925297670C800BE4212 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1420;
+				LastUpgradeCheck = 1420;
+				TargetAttributes = {
+					39E3E92C297670C800BE4212 = {
+						CreatedOnToolsVersion = 14.2;
+					};
+				};
+			};
+			buildConfigurationList = 39E3E928297670C800BE4212 /* Build configuration list for PBXProject "CursedSnake" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 39E3E924297670C800BE4212;
+			productRefGroup = 39E3E92E297670C800BE4212 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				39E3E92C297670C800BE4212 /* CursedSnake */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		39E3E92B297670C800BE4212 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3947B3EE29C92D1000D44581 /* Cursed Snake Theme.mp3 in Resources */,
+				3920E19F29C66FB100CCAFC8 /* CreditsSceneLight.sks in Resources */,
+				395BE11929A5376E00C03742 /* Omg.mp3 in Resources */,
+				3920E1A329C6BA2200CCAFC8 /* Unpause.mp3 in Resources */,
+				39867DFF29AA689100E9F059 /* Main.storyboard in Resources */,
+				3920E1A229C6BA2200CCAFC8 /* Pause.mp3 in Resources */,
+				399D7D7629A5BD5700CC922F /* Adam'sFont-Regular.otf in Resources */,
+				39E3E933297670C800BE4212 /* GameScene.sks in Resources */,
+				39E553A829C21F5A0042DF1F /* TitleScreen.mp3 in Resources */,
+				39E3E93E297670C900BE4212 /* Assets.xcassets in Resources */,
+				395BE114299EEFC300C03742 /* Explosion.mp3 in Resources */,
+				395BE11729A5357600C03742 /* Chew.mp3 in Resources */,
+				39E553AE29C292AD0042DF1F /* Aadit's Presidential Breakdown.mp3 in Resources */,
+				39E553AA29C28A380042DF1F /* Cursed Pong Theme.mp3 in Resources */,
+				396908FA29A8A19B00188186 /* CreditsSceneDark.sks in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		39E3E929297670C800BE4212 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				395BE12829A595D800C03742 /* CursedSnakeApp.swift in Sources */,
+				39E3E937297670C800BE4212 /* GameScene.swift in Sources */,
+				395BE12629A592B900C03742 /* TitleView.swift in Sources */,
+				39E5539F29BD28180042DF1F /* VolumeSettingsView.swift in Sources */,
+				39E553AC29C28AD90042DF1F /* BGMSettingsView.swift in Sources */,
+				39FF9AC829A6C10F00F38A3D /* GameViewController.swift in Sources */,
+				39E5539929B99DC40042DF1F /* CreditsScene.swift in Sources */,
+				39845DF229CE7CDB007FD994 /* Color+RawRepresentable.swift in Sources */,
+				39E5539D29BD17AA0042DF1F /* RootSettingView.swift in Sources */,
+				39504142297B64F300D384F1 /* Snake.swift in Sources */,
+				39E5539329B2E4AA0042DF1F /* LeaderboardView.swift in Sources */,
+				39E3E931297670C800BE4212 /* AppDelegate.swift in Sources */,
+				395BE112299EEE3600C03742 /* AudioPlayer.swift in Sources */,
+				390EAAD329AEF7B000557C2F /* TitleModel.swift in Sources */,
+<<<<<<< Updated upstream
+=======
+				39845DF029CE2868007FD994 /* SnakeColorView.swift in Sources */,
+>>>>>>> Stashed changes
+				39E5539B29BD177B0042DF1F /* SettingsView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		39E3E942297670C900BE4212 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		39E3E943297670C900BE4212 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		39E3E945297670C900BE4212 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 3798C43WZH;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = CursedSnake/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "Cursed Snake";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.games";
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UIRequiresFullScreen = YES;
+				INFOPLIST_KEY_UIStatusBarHidden = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.aabagdi.CursedSnake;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		39E3E946297670C900BE4212 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = CursedSnake/CursedSnakeRelease.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 3798C43WZH;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = CursedSnake/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "Cursed Snake";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.games";
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UIRequiresFullScreen = YES;
+				INFOPLIST_KEY_UIStatusBarHidden = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.aabagdi.CursedSnake;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		39E3E928297670C800BE4212 /* Build configuration list for PBXProject "CursedSnake" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				39E3E942297670C900BE4212 /* Debug */,
+				39E3E943297670C900BE4212 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		39E3E944297670C900BE4212 /* Build configuration list for PBXNativeTarget "CursedSnake" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				39E3E945297670C900BE4212 /* Debug */,
+				39E3E946297670C900BE4212 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 39E3E925297670C800BE4212 /* Project object */;
+}

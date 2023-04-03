@@ -12,10 +12,9 @@ import Foundation
 
 
 struct TitleView: View {
-    @State private var tapped : Bool = false
+    
     @StateObject private var model = TitleModel()
-    private var TitleThemePlayer = AudioPlayer()
-    private var HellYeaBroPlayer = AudioPlayer()
+    let TitleThemePlayer = AudioPlayer()
     
     var body: some View {
         NavigationStack {
@@ -27,17 +26,6 @@ struct TitleView: View {
                             .multilineTextAlignment(.center)
                             .lineLimit(2)
                             .minimumScaleFactor(0.01)
-                    }
-                    .scaleEffect(tapped ? 1.5 : 1.0)
-                    .animation(.spring(response: 0.35, dampingFraction: 0.3), value: tapped)
-                    .onTapGesture {
-                        self.HellYeaBroPlayer.play(sound: "HellYeaBrother")
-                        self.TitleThemePlayer.setVol(newVol: UserDefaults.standard.float(forKey: "SoundVol"))
-                        tapped.toggle()
-                        Task {
-                            try await Task.sleep(nanoseconds: 200_000_000)
-                            tapped.toggle()
-                        }
                     }
                 }
                 VStack{
@@ -64,23 +52,35 @@ struct TitleView: View {
                     .sheet(isPresented: $model.showLeaderboard) {
                         GameCenterView()
                     }
-                    /*Button("Reset GC") {
-                        GKAchievement.resetAchievements()
-                    }*/
                 }.buttonStyle(.borderedProminent)
                     .controlSize(.large)
                     .font(.system(size: 35, weight: Font.Weight.bold))
+                
             }.scaledToFit()
+<<<<<<< Updated upstream
+            .onAppear(perform: {
+                //TitleModel.authenticateUser()
+                TitleModel.initUserDefaults()
+                self.TitleThemePlayer.play(sound: "TitleScreen")
+                self.TitleThemePlayer.setVol(newVol: UserDefaults.standard.float(forKey: "MusicVol"))
+                self.TitleThemePlayer.triggerLoop()
+            })
+            .onDisappear(perform: {
+                self.TitleThemePlayer.stop()
+            })
+=======
                 .onAppear(perform: {
                     model.authenticateUser()
+                    //GKAchievement.resetAchievements()
                     model.initUserDefaults()
                     self.TitleThemePlayer.play(sound: "TitleScreen")
                     self.TitleThemePlayer.setVol(newVol: UserDefaults.standard.float(forKey: "MusicVol"))
                     self.TitleThemePlayer.triggerLoop()
                 })
                 .onDisappear(perform: {
-                    self.TitleThemePlayer.fadeOut(duration: 0.5)
+                    self.TitleThemePlayer.stop()
                 })
+>>>>>>> Stashed changes
         }
     }
 }
