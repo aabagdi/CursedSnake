@@ -64,8 +64,8 @@ struct TitleView: View {
                         GameCenterView()
                     }
                     /*Button("Reset GC") {
-                     GKAchievement.resetAchievements()
-                     }*/
+                        GKAchievement.resetAchievements()
+                    }*/
                 }.buttonStyle(.borderedProminent)
                     .controlSize(.large)
                     .font(.system(size: 35, weight: Font.Weight.bold))

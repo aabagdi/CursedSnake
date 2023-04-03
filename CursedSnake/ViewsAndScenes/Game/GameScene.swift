@@ -85,7 +85,6 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         
         switch player!.getDirection() {
         case .up:
-            
             let moveAction = SKAction.move(to: CGPoint(x: headX, y: headY + 20.0), duration: speed)
             head!.run(moveAction)
             player!.moveTail()

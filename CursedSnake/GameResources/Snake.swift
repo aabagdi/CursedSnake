@@ -40,6 +40,7 @@ class Snake {
         newSegment.zPosition = 2
         newSegment.physicsBody = SKPhysicsBody(circleOfRadius: 3)
         newSegment.physicsBody!.contactTestBitMask = 0b11
+        newSegment.physicsBody!.isDynamic = false
         let lastSegmentPos = SnakeBody.last?.position
         switch SnakeDirection {
         case .up:
@@ -238,7 +239,7 @@ class Snake {
         self.SnakeBody.append(head)
         //self.incrementSnake()
         /*for _ in (0...25) {
-         incrementSnake()
+            incrementSnake()
          }*/
     }
 }
