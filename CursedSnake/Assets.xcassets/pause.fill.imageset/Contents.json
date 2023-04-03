@@ -10,6 +10,7 @@
     "version" : 1
   },
   "properties" : {
-    "compression-type" : "lossless"
+    "compression-type" : "gpu-optimized-smallest",
+    "template-rendering-intent" : "original"
   }
 }

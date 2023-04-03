@@ -270,10 +270,12 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             i.run(explode)
             i.run(fadeAway, completion: {() -> Void in
                 i.removeFromParent()
+                i.removeAllActions()
             })
         }
         self.food.run(fadeAway, completion: {() -> Void in
             self.food.removeFromParent()
+            self.food.removeAllActions()
         })
         
         let pauseButton = self.childNode(withName: "Pause")
@@ -282,6 +284,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         gameOver.run(rotate, completion: {
             returnToMenu.run(moveIntoView, completion: {
                 returnToMenu.run(moveDown, completion: {
+                    gameOver.removeAllActions()
+                    returnToMenu.removeAllActions()
                     returnToMenu.name = "returnToMenu"
                 })
             })
