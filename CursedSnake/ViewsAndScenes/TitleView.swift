@@ -28,8 +28,8 @@ struct TitleView: View {
                             .lineLimit(2)
                             .minimumScaleFactor(0.01)
                     }
-                    .scaleEffect(tapped ? 1.3 : 1)
-                    .animation(.spring(response: 0.35, dampingFraction: 0.15), value: tapped)
+                    .scaleEffect(tapped ? 1.5 : 1.0)
+                    .animation(.spring(response: 0.35, dampingFraction: 0.3), value: tapped)
                     .onTapGesture {
                         self.HellYeaBroPlayer.play(sound: "HellYeaBrother")
                         self.TitleThemePlayer.setVol(newVol: UserDefaults.standard.float(forKey: "SoundVol"))
