@@ -14,6 +14,7 @@ struct SettingsView: View {
         Setting(title: "Background Music", color: .blue, imageName: "music.note"),
         Setting(title: "Game Difficulty", color: .gray, imageName: "dumbbell.fill"),
         Setting(title: "Snake Color", color: .purple, imageName: "pencil.tip.crop.circle"),
+        Setting(title: "Game Statistics", color: .orange, imageName: "list.bullet.clipboard"),
         Setting(title: "Credits", color: .yellow, imageName: "text.alignleft")
     ]
     var body: some View {

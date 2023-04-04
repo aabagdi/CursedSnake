@@ -21,6 +21,7 @@
 		395BE12829A595D800C03742 /* CursedSnakeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 395BE12729A595D800C03742 /* CursedSnakeApp.swift */; };
 		396908FA29A8A19B00188186 /* CreditsSceneDark.sks in Resources */ = {isa = PBXBuildFile; fileRef = 396908F929A8A19B00188186 /* CreditsSceneDark.sks */; };
 		3979516B29DA4D4200A79156 /* HellYeaBrother.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 3979516A29DA4D4200A79156 /* HellYeaBrother.mp3 */; };
+		3979517129DB81E700A79156 /* StatsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3979517029DB81E700A79156 /* StatsView.swift */; };
 		39845DF029CE2868007FD994 /* SnakeColorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39845DEF29CE2868007FD994 /* SnakeColorView.swift */; };
 		39845DF229CE7CDB007FD994 /* Color+RawRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39845DF129CE7CDB007FD994 /* Color+RawRepresentable.swift */; };
 		39867DFF29AA689100E9F059 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 39867DFE29AA689100E9F059 /* Main.storyboard */; };
@@ -59,6 +60,7 @@
 		395BE12729A595D800C03742 /* CursedSnakeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CursedSnakeApp.swift; sourceTree = "<group>"; };
 		396908F929A8A19B00188186 /* CreditsSceneDark.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = CreditsSceneDark.sks; sourceTree = "<group>"; };
 		3979516A29DA4D4200A79156 /* HellYeaBrother.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = HellYeaBrother.mp3; sourceTree = "<group>"; };
+		3979517029DB81E700A79156 /* StatsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsView.swift; sourceTree = "<group>"; };
 		39845DEF29CE2868007FD994 /* SnakeColorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnakeColorView.swift; sourceTree = "<group>"; };
 		39845DF129CE7CDB007FD994 /* Color+RawRepresentable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Color+RawRepresentable.swift"; sourceTree = "<group>"; };
 		39867DFE29AA689100E9F059 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
@@ -94,14 +96,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		390EAACD29AD59ED00557C2F /* ControllersAndModels */ = {
+		390EAACD29AD59ED00557C2F /* Models */ = {
 			isa = PBXGroup;
 			children = (
 				399AEF7829CFB41C00CDC087 /* GameModel.swift */,
 				390EAAD229AEF7B000557C2F /* TitleModel.swift */,
-				39FF9AC729A6C10F00F38A3D /* GameViewController.swift */,
 			);
-			path = ControllersAndModels;
+			path = Models;
 			sourceTree = "<group>";
 		};
 		395BE115299EEFD100C03742 /* SoundsAndMusic */ = {
@@ -133,6 +134,30 @@
 			path = GameResources;
 			sourceTree = "<group>";
 		};
+		3979516C29DB7FD200A79156 /* Title */ = {
+			isa = PBXGroup;
+			children = (
+				395BE12529A592B900C03742 /* TitleView.swift */,
+			);
+			path = Title;
+			sourceTree = "<group>";
+		};
+		3979516D29DB7FDE00A79156 /* Leaderboard */ = {
+			isa = PBXGroup;
+			children = (
+				39E5539229B2E4AA0042DF1F /* LeaderboardView.swift */,
+			);
+			path = Leaderboard;
+			sourceTree = "<group>";
+		};
+		3979516E29DB7FF700A79156 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				39FF9AC729A6C10F00F38A3D /* GameViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
 		39845DF329CE7CDF007FD994 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
@@ -160,9 +185,10 @@
 		39E3E92F297670C800BE4212 /* CursedSnake */ = {
 			isa = PBXGroup;
 			children = (
+				3979516E29DB7FF700A79156 /* ViewControllers */,
 				39E5538C29B1990C0042DF1F /* CursedSnakeRelease.entitlements */,
 				39845DF329CE7CDF007FD994 /* Extensions */,
-				390EAACD29AD59ED00557C2F /* ControllersAndModels */,
+				390EAACD29AD59ED00557C2F /* Models */,
 				39FF9ACB29A72C7E00F38A3D /* ViewsAndScenes */,
 				395BE12429A591BB00C03742 /* Info.plist */,
 				395BE12229A5914200C03742 /* GameResources */,
@@ -176,6 +202,7 @@
 		39E553A029BD29800042DF1F /* Settings */ = {
 			isa = PBXGroup;
 			children = (
+				3979517029DB81E700A79156 /* StatsView.swift */,
 				39E5539A29BD177B0042DF1F /* SettingsView.swift */,
 				39E5539C29BD17AA0042DF1F /* RootSettingView.swift */,
 				39E5539E29BD28180042DF1F /* VolumeSettingsView.swift */,
@@ -208,11 +235,11 @@
 		39FF9ACB29A72C7E00F38A3D /* ViewsAndScenes */ = {
 			isa = PBXGroup;
 			children = (
+				3979516D29DB7FDE00A79156 /* Leaderboard */,
+				3979516C29DB7FD200A79156 /* Title */,
 				39E553A229BD29990042DF1F /* Credits */,
 				39E553A129BD29890042DF1F /* Game */,
 				39E553A029BD29800042DF1F /* Settings */,
-				395BE12529A592B900C03742 /* TitleView.swift */,
-				39E5539229B2E4AA0042DF1F /* LeaderboardView.swift */,
 			);
 			path = ViewsAndScenes;
 			sourceTree = "<group>";
@@ -310,6 +337,7 @@
 				39FF9AC829A6C10F00F38A3D /* GameViewController.swift in Sources */,
 				39E5539929B99DC40042DF1F /* CreditsScene.swift in Sources */,
 				39845DF229CE7CDB007FD994 /* Color+RawRepresentable.swift in Sources */,
+				3979517129DB81E700A79156 /* StatsView.swift in Sources */,
 				39E5539D29BD17AA0042DF1F /* RootSettingView.swift in Sources */,
 				399AEF7B29D16DB600CDC087 /* DifficultyView.swift in Sources */,
 				39504142297B64F300D384F1 /* Snake.swift in Sources */,
@@ -375,7 +403,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -429,7 +457,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -456,8 +484,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UIRequiresFullScreen = YES;
 				INFOPLIST_KEY_UIStatusBarHidden = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -490,8 +517,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UIRequiresFullScreen = YES;
 				INFOPLIST_KEY_UIStatusBarHidden = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

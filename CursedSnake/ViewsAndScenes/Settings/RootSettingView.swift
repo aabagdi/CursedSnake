@@ -26,6 +26,9 @@ struct RootSettingView: View {
         case "Game Difficulty":
             DifficultyView()
             
+        case "Game Statistics":
+            StatsView()
+            
         case "Credits":
             let creditsScene = CreditsScene()
             SpriteView(scene: creditsScene)

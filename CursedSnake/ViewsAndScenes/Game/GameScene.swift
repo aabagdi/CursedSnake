@@ -80,6 +80,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         let headX = head!.position.x
         let headY = head!.position.y
         let snakeLength = player!.getLength()
+        let foodEaten = UserDefaults.standard.integer(forKey: "Food")
         
         head?.physicsBody?.usesPreciseCollisionDetection = true
         
@@ -110,6 +111,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             return
         }
         if head!.intersects(food) {
+            UserDefaults.standard.set(foodEaten + 1, forKey: "Food")
             let newFood = SnakeModel.genFood()
             self.addChild(newFood)
             food.removeFromParent()
@@ -236,12 +238,28 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     }
     
     func endGame() {
+        let currentScore = Int(self.score.text!)!
+        let highScore = UserDefaults.standard.integer(forKey: "HighScore")
+        let maxLength = UserDefaults.standard.integer(forKey: "MaxLength")
+        let deaths = UserDefaults.standard.integer(forKey: "Deaths")
+        UserDefaults.standard.set(deaths + 1, forKey: "Deaths")
+        
+        
         self.BGMPlayer.fadeOut(duration: 0.3)
         self.soundPlayer.play(sound: "Explosion")
         self.soundPlayer.setVol(newVol: UserDefaults.standard.float(forKey: "SoundVol"))
         Task {
-            await SnakeModel.submitScore(score: Int(self.score.text!)!)
+            await SnakeModel.submitScore(score: currentScore)
         }
+        
+        if currentScore > highScore {
+            UserDefaults.standard.set(currentScore, forKey: "HighScore")
+        }
+        
+        if maxLength < player!.getLength() {
+            UserDefaults.standard.set(player!.getLength(), forKey: "MaxLength")
+        }
+        
         let body = player.getBody()
         let gameOver = SKLabelNode(fontNamed: "Zapfino")
         let moveIntoView = SKAction.move(to: CGPoint(x: 0, y: 0), duration: 5)
