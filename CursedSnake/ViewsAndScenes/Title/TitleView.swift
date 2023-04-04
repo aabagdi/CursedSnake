@@ -63,6 +63,7 @@ struct TitleView: View {
                     }
                     .sheet(isPresented: $model.showLeaderboard) {
                         GameCenterView()
+                            .ignoresSafeArea()
                     }
                     /*Button("Reset GC") {
                         GKAchievement.resetAchievements()

@@ -54,8 +54,8 @@ struct SnakeColorView: View {
             HStack{
                 Spacer()
                 Button {
-                    self.HeadColor = randColor()
-                    self.BodyColor = randColor()
+                    HeadColor = randColor()
+                    BodyColor = randColor()
                 } label: {
                     Image(systemName: "dice")
                 }
