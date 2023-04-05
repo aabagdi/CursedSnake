@@ -32,7 +32,7 @@
 		39E3E933297670C800BE4212 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 39E3E932297670C800BE4212 /* GameScene.sks */; };
 		39E3E937297670C800BE4212 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39E3E936297670C800BE4212 /* GameScene.swift */; };
 		39E3E93E297670C900BE4212 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 39E3E93D297670C900BE4212 /* Assets.xcassets */; };
-		39E5539329B2E4AA0042DF1F /* LeaderboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39E5539229B2E4AA0042DF1F /* LeaderboardView.swift */; };
+		39E5539329B2E4AA0042DF1F /* GameCenterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39E5539229B2E4AA0042DF1F /* GameCenterView.swift */; };
 		39E5539929B99DC40042DF1F /* CreditsScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39E5539829B99DC40042DF1F /* CreditsScene.swift */; };
 		39E5539B29BD177B0042DF1F /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39E5539A29BD177B0042DF1F /* SettingsView.swift */; };
 		39E5539D29BD17AA0042DF1F /* RootSettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39E5539C29BD17AA0042DF1F /* RootSettingView.swift */; };
@@ -73,7 +73,7 @@
 		39E3E936297670C800BE4212 /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
 		39E3E93D297670C900BE4212 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		39E5538C29B1990C0042DF1F /* CursedSnakeRelease.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = CursedSnakeRelease.entitlements; sourceTree = "<group>"; };
-		39E5539229B2E4AA0042DF1F /* LeaderboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeaderboardView.swift; sourceTree = "<group>"; };
+		39E5539229B2E4AA0042DF1F /* GameCenterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameCenterView.swift; sourceTree = "<group>"; };
 		39E5539829B99DC40042DF1F /* CreditsScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreditsScene.swift; sourceTree = "<group>"; };
 		39E5539A29BD177B0042DF1F /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		39E5539C29BD17AA0042DF1F /* RootSettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootSettingView.swift; sourceTree = "<group>"; };
@@ -142,12 +142,12 @@
 			path = Title;
 			sourceTree = "<group>";
 		};
-		3979516D29DB7FDE00A79156 /* Leaderboard */ = {
+		3979516D29DB7FDE00A79156 /* GameCenter */ = {
 			isa = PBXGroup;
 			children = (
-				39E5539229B2E4AA0042DF1F /* LeaderboardView.swift */,
+				39E5539229B2E4AA0042DF1F /* GameCenterView.swift */,
 			);
-			path = Leaderboard;
+			path = GameCenter;
 			sourceTree = "<group>";
 		};
 		3979516E29DB7FF700A79156 /* ViewControllers */ = {
@@ -235,7 +235,7 @@
 		39FF9ACB29A72C7E00F38A3D /* ViewsAndScenes */ = {
 			isa = PBXGroup;
 			children = (
-				3979516D29DB7FDE00A79156 /* Leaderboard */,
+				3979516D29DB7FDE00A79156 /* GameCenter */,
 				3979516C29DB7FD200A79156 /* Title */,
 				39E553A229BD29990042DF1F /* Credits */,
 				39E553A129BD29890042DF1F /* Game */,
@@ -341,7 +341,7 @@
 				39E5539D29BD17AA0042DF1F /* RootSettingView.swift in Sources */,
 				399AEF7B29D16DB600CDC087 /* DifficultyView.swift in Sources */,
 				39504142297B64F300D384F1 /* Snake.swift in Sources */,
-				39E5539329B2E4AA0042DF1F /* LeaderboardView.swift in Sources */,
+				39E5539329B2E4AA0042DF1F /* GameCenterView.swift in Sources */,
 				395BE112299EEE3600C03742 /* AudioPlayer.swift in Sources */,
 				390EAAD329AEF7B000557C2F /* TitleModel.swift in Sources */,
 				39845DF029CE2868007FD994 /* SnakeColorView.swift in Sources */,
