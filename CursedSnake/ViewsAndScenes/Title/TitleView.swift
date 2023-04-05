@@ -18,6 +18,7 @@ struct TitleView: View {
     private var HellYeaBroPlayer = AudioPlayer()
     
     var body: some View {
+        let textToScreenWidthRatio = 0.08974358974359
         NavigationStack {
             VStack {
                 GeometryReader {g in
@@ -70,7 +71,7 @@ struct TitleView: View {
                     }*/
                 }.buttonStyle(.borderedProminent)
                     .controlSize(.large)
-                    .font(.system(size: 35, weight: Font.Weight.bold))
+                    .font(.system(size: UIScreen.main.bounds.width * textToScreenWidthRatio, weight: Font.Weight.bold))
             }.scaledToFit()
                 .onAppear(perform: {
                     model.authenticateUser()
