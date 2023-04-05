@@ -14,29 +14,27 @@ struct SnakeColorView: View {
     
     @State private var animateGradient : Bool = false
     
-    let snakeHeadFrameWidth = 97.0
+    let snakeHeadFrameWidthRatio = 0.2487179487
     
     var body: some View {
         let bgGradient = LinearGradient(colors: [Color("Bi Pink"), Color("Bi Purple"), Color("Bi Blue")], startPoint: .top, endPoint: .bottom)
-        
+        let snakeHeadFrameWidth = snakeHeadFrameWidthRatio * UIScreen.main.bounds.width * 0.79
         List {
             ColorPicker("Set the color of the Snake's head!!", selection: $HeadColor)
-                .listRowSeparator(.hidden)
             ColorPicker("Set the color of the Snake's body!!", selection: $BodyColor)
             HStack{
                 Spacer()
                 VStack(spacing: 0) {
                     ZStack{
                         Ellipse()
-                            .fill(HeadColor)
+                            .fill(self.HeadColor)
                         Ellipse()
                             .strokeBorder(.white, lineWidth: 3.0)
-                        
                     }.frame(width: snakeHeadFrameWidth, height: snakeHeadFrameWidth / 0.571428571428571)
                     ForEach(0..<7) { _ in
                         ZStack {
                             Circle()
-                                .fill(BodyColor)
+                                .fill(self.BodyColor)
                             Circle()
                                 .strokeBorder(.white, lineWidth: 3.0)
                         }
